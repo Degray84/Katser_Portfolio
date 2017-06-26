@@ -1,7 +1,46 @@
 extends ../_template
 
 block variables
-  - var title = 'Home page'
+  - var title = 'Welcome page'
 
 block content
-  include ../common/_greating
+  main.main
+    .main__login
+      .login
+        a(href="#", title="Авторизация").login__title Авторизация
+    .main__card.main__card_active
+      .card-menu
+        .card-menu__user     
+          .user
+            .user__pic
+              img.user__pic-img
+            .user__description
+              .user__name #{com.user_name}
+              .user__info #{com.user_title}
+        .card-menu__socials
+          ul.socials
+            each item in com.socials
+              li.socials__item
+                a(href="#", class=`socials__item socials__item_${item}`) #{item}
+        .card-menu__nav
+          ul.main-nav
+            each page in com.pages
+              li.main-nav__item
+                a(href="#", class=`main-nav__item`) #{page}
+    //- .main__card
+    //-   .card-login
+    //-     .card-login__title
+    //-     .card-login__name
+    //-     .card-login__pass
+    //-     .card-login__am-i-humman
+    //-       .am-i-humman
+    //-         .am-i-humman__first-check
+    //-         .am-i-human__text
+    //-         .am-i-human__second-check
+    //-     .card-login__menu
+    //-       ul.login-nav
+    //-         each btn in ['На главную','Войти']
+    //-           li.login-nav__item
+    //-             a(href="#", class="login-nav__item") #{btn} 
+    footer.main__footer
+      .footer #{com.main_footer}      

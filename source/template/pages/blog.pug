@@ -1,0 +1,22 @@
+extends ../_template
+
+block variables
+  - var title = 'Blog page'
+
+block content
+  include ../common/header
+    section.section.blog
+      .blog__left
+        .blog-nav
+          ul.blog-nav-list
+            each article in com.articles
+              li.blog-nav-item #{article}
+      .blog__right
+        .blog-content
+          .blog-content__articles
+            //- include ../articles/art1
+            //- include ../articles/art2
+            //- include ../articles/art3
+            //- include ../articles/art4
+            //- include ../articles/art5
+  include ../common/footer

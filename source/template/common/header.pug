@@ -1,0 +1,25 @@
+section.section.hero
+  img.hero__bg(src="./assets/img/mountains.png")
+  .hero__container
+    .hero__socials
+      ul.socials
+        each item in com.socials
+          li.socials__item
+            a(href="#", class=`socials__link socials__link_${item}`)
+    .hamburger.hero__menu
+    .arrow-down.hero__scroll-button
+      svg.arrow-down__pic
+        use(xlink:href="./assets/img/sprite.svg#arrow_down")
+    .hero__title
+      .section-title
+        svg.section-title__pic
+          use(xlink:href="./assets/img/sprite.svg#portfolio_header")
+      .hero__user
+        .user
+          .user__pic
+            img(src="./assets/img/MyPhoto(06.17).jpg", alt="").user__pic-img
+          .user__description
+            .user__name #{com.user_name}
+            .user__info #{com.user_title}
+    
+    

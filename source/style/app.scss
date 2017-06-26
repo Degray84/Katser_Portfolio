@@ -1,5 +1,16 @@
-body {
-  margin: 0;
-}
-
-@import 'common/greating';
+//Цвета
+$white: #efeee9;
+$beige: #eeebdf;
+$main-font-color: #373e42;
+//Вложенности
+@import "mixins/mixins.scss";
+@import "common/base.scss";
+@import "common/fonts.scss";
+@import "components/about.scss";
+@import "components/arrow-down.scss";
+@import "components/block-title.scss";
+@import "components/hero.scss";
+@import "components/section-title.scss";
+@import "components/section.scss";
+@import "components/triangle.scss";
+@import "components/user.scss";
