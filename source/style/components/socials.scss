@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     min-width: 160px;
+    margin-left: -25px;
 }
 
 .socials__item {
@@ -9,11 +10,22 @@
     display: inline-block;
     height: 32px;
     width: 32px;
-    margin-left: 15px;
+    margin-left: 25px;
 }
 
-.socials__item_vk {}
+.social__icon {
+    height: 32px;
+    width: 32px;
+    fill: rgb(0, 191, 165);
+    opacity: 0.5;
+    &:hover {
+        fill: rgb(0, 150, 136);
+        opacity: 0.8;
+    }
+}
 
-.socials__item_fb {}
+.socials__icon_vk {}
 
-.socials__item_in {}
+.socials__icon_fb {}
+
+.socials__icon_in {}
