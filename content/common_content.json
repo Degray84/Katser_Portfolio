@@ -1,0 +1,18 @@
+{
+    "user_name": "Кацер Сергей",
+    "user_title": "Личный сайт разработчика",
+    "socials": ["vk", "fb", "in"],
+    "skills": ["Frontend", "Backend", "WorkFlow"],
+    "frontend": ["HTML5", "CSS3", "JavaScript & jQuery"],
+    "backend": ["PHP", "mySQL", "Node.js & npm", "Mongo.db"],
+    "workflow": ["Git", "Gulp", "Bower"],
+    "contacts": [
+        ["skype", "degray84"],
+        ["mail", "gray84@tut.by"],
+        ["phone", "+37529 953 74 36"],
+        ["mark", "Жодино"]
+    ],
+    "pages": ["Мои работы", "Обо мне", "Блог"],
+    "main_footer": "@ Кацер Сергей | Создано с любовью в LoftSchool 2017",
+    "articles": ["Статья 1", "Статья 2", "Статья 3", "Статья 4", "Статья 5"]
+}
