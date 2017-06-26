@@ -1,4 +1,5 @@
 .user__pic {
+    @include centered(x);
     display: block;
     width: 147px;
     height: 147px;
@@ -8,15 +9,32 @@
     display: inline-block;
 }
 
+.user {
+    position: relative;
+    width: 380px;
+    height: auto;
+}
+
 .user__pic-img {
-    margin: -60px;
+    margin-top: -60px;
+    margin-left: -10px;
     width: 160px;
 }
 
 .user__name {
-    margin-bottom: 10px;
-    color: #fff;
-    font-size: 35px;
+    font-size: 28px;
+    font-family: "Roboto";
+    color: rgb(69, 90, 100);
+    line-height: 1.214;
+    text-align: center;
+}
+
+.user__info {
+    font-size: 16px;
+    font-family: "Roboto";
+    color: rgba(69, 90, 100, 0.8);
+    line-height: 1.5;
+    text-align: center;
 }
 
 .user__desc {
@@ -24,7 +42,11 @@
     color: #fff;
 }
 
-.user-user__description {}
+.user__description {
+    position: absolute;
+    width: 380px;
+    top: 170px;
+}
 
 .user-desription__image {
     display: block;

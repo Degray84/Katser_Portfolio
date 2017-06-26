@@ -1,0 +1,105 @@
+.main {
+    overflow: hidden;
+}
+
+.main__bg {
+    // background: url("./img/bg/mountains.png");
+    width: 100%;
+    position: absolute;
+    display: block;
+}
+
+.main__container {
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    min-width: 970px;
+    height: auto !important;
+    padding-top: 150px;
+    &:after {
+        content: "";
+        height: 80px;
+        display: block;
+    }
+}
+
+.main__login {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+}
+
+.login {
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    width: 178px;
+    height: 43px;
+    text-align: center;
+}
+
+.login__title {
+    font-size: 16px;
+    font-family: "Roboto";
+    color: rgb(0, 191, 165);
+    line-height: 2.257;
+    text-align: center;
+    -moz-transform: matrix( 1, 0, 0, 0.99997573159189, 0, 0);
+    -webkit-transform: matrix( 1, 0, 0, 0.99997573159189, 0, 0);
+    -ms-transform: matrix( 1, 0, 0, 0.99997573159189, 0, 0);
+}
+
+.main__card {
+    // position: relative;
+    margin: auto;
+    width: 380px;
+    height: 395px;
+    &_active {}
+    &:hover {}
+}
+
+.card-menu {
+    position: relative;
+    border-radius: 5px;
+    background-color: rgb(252, 252, 252);
+    opacity: 0.851;
+    width: 380px;
+    height: 395px;
+}
+
+.card-menu__user {
+    position: absolute;
+    top: 35px;
+}
+
+.card-menu__socials {
+    position: absolute;
+    top: 300px;
+}
+
+.card-menu__nav {
+    position: absolute;
+    top: 350px;
+}
+
+.main-nav {
+    margin: 0;
+    padding: 0;
+    min-width: 380px;
+}
+
+.main-nav__item {
+    list-style: none;
+    display: inline-block;
+    width: 100px;
+    margin-left: 15px;
+}
+
+.main__footer {
+    position: relative;
+    text-align: center;
+    height: 80px;
+    margin-top: -80px;
+}
