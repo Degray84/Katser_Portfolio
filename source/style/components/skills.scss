@@ -1,16 +1,37 @@
-.skills-list {}
+.skills-list {
+    position: relative;
+    margin: 25px;
+}
 
-.skills-list__item {}
+.skills-list__item {
+    position: relative;
+    height: 220px;
+}
 
-.skills-row {}
+.skills-row {
+    height: 100%;
+}
 
-.skills-row__title {}
+.skills-row__title {
+    font-size: 28px;
+    font-family: "Roboto";
+    color: rgb(69, 90, 100);
+}
 
-.skills-row-list {}
+.skills-row-list {
+    height: 120px;
+    margin-left: -20px;
+}
 
-.skills-row-item {}
+.skills-row-item {
+    width: 120px;
+    float: left;
+    margin: 20px;
+}
 
-.skills {}
+.skills {
+    position: relative;
+}
 
 .skill__circle {
     display: block;
@@ -30,68 +51,72 @@
     -webkit-transition: all .9s;
     -o-transition: all .9s;
     transition: all .9s;
-    stroke: #6c9c5a;
+    // stroke: #16c2aa;
     stroke-dasharray: .0010 360;
 }
 
-.skill__circle-above--html {
-    stroke-dasharray: 300 360;
+.skill__circle-above_light {
+    stroke: #65ccbb;
 }
 
-.skill__circle-above--css {
-    stroke-dasharray: 200 360;
+.skill__circle-above_cyan {
+    stroke: #16c2aa;
 }
 
-.skill__circle-above--js {
-    stroke-dasharray: 92 360;
-}
-
-.skill__circle-above--jquery {
-    stroke-dasharray: 120 360;
-}
-
-.skill__circle-above--svg {
-    stroke-dasharray: 40 360;
-}
-
-.skill__circle-above--php {
-    stroke-dasharray: 20 360;
-}
-
-.skill__circle-above--mySQL {
-    stroke-dasharray: 180 360;
-}
-
-.skill__circle-above--postgres {
-    stroke-dasharray: 120 360;
-}
-
-.skill__circle-above--nodeJS {
-    stroke-dasharray: 60 360;
-}
-
-.skill__circle-above--mongo {
-    stroke-dasharray: 50 360;
-}
-
-.skill__circle-above--git {
-    stroke-dasharray: 200 360;
-}
-
-.skill__circle-above--gulp {
-    stroke-dasharray: 240 360;
-}
-
-.skill__circle-above--webpack {
-    stroke-dasharray: 60 360;
-}
-
-.skill__circle-above--bower {
-    stroke-dasharray: 250 360;
-}
-
-.skill__circle-above--yarn {
+.skill__circle-above-html {
     stroke-dasharray: 280 360;
+    stroke-opacity: calc(280 / 360);
 }
 
-.skill__title {}
+.skill__circle-above-css {
+    stroke-dasharray: 200 360;
+    stroke-opacity: calc(200 / 360);
+}
+
+.skill__circle-above-js {
+    stroke-dasharray: 130 360;
+    stroke-opacity: calc(130 / 360);
+}
+
+.skill__circle-above-php {
+    stroke-dasharray: 80 360;
+    stroke-opacity: calc(80 / 360);
+}
+
+.skill__circle-above-mySQL {
+    stroke-dasharray: 180 360;
+    stroke-opacity: calc(180 / 360);
+}
+
+.skill__circle-above-nodeJS {
+    stroke-dasharray: 60 360;
+    stroke-opacity: calc(60 / 360);
+}
+
+.skill__circle-above-mongo {
+    stroke-dasharray: 50 360;
+    stroke-opacity: calc(50 / 360);
+}
+
+.skill__circle-above-git {
+    stroke-dasharray: 200 360;
+    stroke-opacity: calc(200 / 360);
+}
+
+.skill__circle-above-gulp {
+    stroke-dasharray: 240 360;
+    stroke-opacity: calc(240 / 360);
+}
+
+.skill__circle-above-yarn {
+    stroke-dasharray: 280 360;
+    stroke-opacity: calc(280 / 360);
+}
+
+.skill__title {
+    @include centered();
+    font-size: 14px;
+    font-family: "Roboto";
+    color: rgb(0, 191, 165);
+    text-align: center;
+}
