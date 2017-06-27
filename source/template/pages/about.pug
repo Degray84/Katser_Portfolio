@@ -106,16 +106,31 @@ block content
                                             circle(class="skill__circle-above skill__circle-above_cyan skill__circle-above-yarn" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
                                             .skill__title Yarn              
     section.section.map  
-        .google-map
+        img.google-map(src="./assets/img/bg/map.png")
         .map__contacts
-        .contacts
-            .contacts__title
-            .block-subtitle Контакты
-            ul.contacts__list
-            each contact in com.contacts 
-                li.contacts__item
-                .contacts-row
-                    .contacts-row__icon #{contact[0]}
-                    .contacts-row__content #{contact[1]}
+            .contacts
+                .contacts__title
+                    .block-title.block-title_subtitle Контакты
+                ul.contacts__list
+                    li.contacts__item
+                            .contacts-row
+                                svg.contacts-row__icon
+                                    use(xlink:href="./assets/img/sprite.svg#skype")
+                                .contacts-row__content #{com.contacts[0]}
+                    li.contacts__item
+                            .contacts-row
+                                svg.contacts-row__icon
+                                    use(xlink:href="./assets/img/sprite.svg#envelope")
+                                .contacts-row__content #{com.contacts[1]}
+                    li.contacts__item
+                            .contacts-row
+                                svg.contacts-row__icon
+                                    use(xlink:href="./assets/img/sprite.svg#phone")
+                                .contacts-row__content #{com.contacts[2]}
+                    li.contacts__item
+                            .contacts-row
+                                svg.contacts-row__icon
+                                    use(xlink:href="./assets/img/sprite.svg#map_marker")
+                                .contacts-row__content #{com.contacts[3]}
         include ../common/footer
         
