@@ -1,0 +1,69 @@
+.map__footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+}
+
+.footer__row {
+    background: rgba(0, 0, 0, 0.5);
+    height: 75px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-footer {
+    @include centered(y);
+    margin-left: -8px;
+}
+
+.menu-footer__item {
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Roboto";
+    color: rgb(255, 255, 255);
+    margin-left: 38px;
+}
+
+.footer__socials {
+    @include centered(y);
+    right: 30px;
+}
+
+.footer__col {}
+
+.footer__col-left {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+.footer__col-right {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    float: right;
+}
+
+.footer__text {
+    font-size: 16px;
+    font-family: "Roboto";
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__text_left {
+    @include centered(y);
+    float: left;
+    left: 30px;
+    width: 70%;
+}
+
+.footer__text_right {
+    @include centered(y);
+    right: 30px;
+    float: right;
+}

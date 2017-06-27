@@ -1,21 +1,30 @@
 .socials {
     margin: 0;
     padding: 0;
-    min-width: 160px;
     margin-left: -25px;
+}
+
+.socials-footer {
+    margin: 0;
+    padding: 0;
+    margin-left: -8px;
+}
+
+.socials-footer__item {
+    list-style: none;
+    display: inline-block;
+    margin-left: 8px;
 }
 
 .socials__item {
     list-style: none;
     display: inline-block;
-    // height: 32px;
-    // width: 32px;
     margin-left: 25px;
 }
 
 .social__icon_big {
-    height: 32px;
-    width: 32px;
+    height: 33px;
+    width: 33px;
 }
 
 .social__icon_small {
@@ -33,10 +42,17 @@
 }
 
 .social__icon_color-white {
-    fill: #fff;
+    fill: white;
     opacity: 0.5;
     &:hover {
         opacity: 1;
+    }
+}
+
+.social__icon_color-inverse {
+    fill: white;
+    &:hover {
+        filter: invert(100%);
     }
 }
 
