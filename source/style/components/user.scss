@@ -16,7 +16,6 @@
 }
 
 .user__pic-img {
-    margin-top: -60px;
     margin-left: -10px;
     width: 160px;
 }
@@ -59,8 +58,14 @@
     color: #fff;
 }
 
+.user-user__description {
+    position: relative;
+    margin: auto;
+    width: 443px;
+}
+
 .user__description {
-    position: absolute;
+    @include centered(x);
     width: 380px;
     top: 170px;
 }
@@ -69,20 +74,22 @@
     display: block;
     width: 443px;
     height: 391px;
-    margin-left: 80px;
     overflow: hidden;
+    margin: auto;
 }
 
 .user-desription__avatar {
-    margin-top: -200px;
-    margin-left: -50px;
     width: 443px;
 }
 
-.user-desription__title {}
+.user-desription__title {
+    text-align: center;
+}
 
 .block-subtitle {}
 
-.user-desription__text {}
+.user-desription__text {
+    margin: auto;
+}
 
 .text-content {}

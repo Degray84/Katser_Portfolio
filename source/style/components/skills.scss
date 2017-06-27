@@ -1,0 +1,97 @@
+.skills-list {}
+
+.skills-list__item {}
+
+.skills-row {}
+
+.skills-row__title {}
+
+.skills-row-list {}
+
+.skills-row-item {}
+
+.skills {}
+
+.skill__circle {
+    display: block;
+    height: 120px;
+    width: 120px;
+    fill: none;
+    stroke-width: 20;
+}
+
+.skill__circle-under {
+    stroke: #dfdcd5;
+    fill: none;
+}
+
+.skill__circle-above {
+    opacity: .9;
+    -webkit-transition: all .9s;
+    -o-transition: all .9s;
+    transition: all .9s;
+    stroke: #6c9c5a;
+    stroke-dasharray: .0010 360;
+}
+
+.skill__circle-above--html {
+    stroke-dasharray: 300 360;
+}
+
+.skill__circle-above--css {
+    stroke-dasharray: 200 360;
+}
+
+.skill__circle-above--js {
+    stroke-dasharray: 92 360;
+}
+
+.skill__circle-above--jquery {
+    stroke-dasharray: 120 360;
+}
+
+.skill__circle-above--svg {
+    stroke-dasharray: 40 360;
+}
+
+.skill__circle-above--php {
+    stroke-dasharray: 20 360;
+}
+
+.skill__circle-above--mySQL {
+    stroke-dasharray: 180 360;
+}
+
+.skill__circle-above--postgres {
+    stroke-dasharray: 120 360;
+}
+
+.skill__circle-above--nodeJS {
+    stroke-dasharray: 60 360;
+}
+
+.skill__circle-above--mongo {
+    stroke-dasharray: 50 360;
+}
+
+.skill__circle-above--git {
+    stroke-dasharray: 200 360;
+}
+
+.skill__circle-above--gulp {
+    stroke-dasharray: 240 360;
+}
+
+.skill__circle-above--webpack {
+    stroke-dasharray: 60 360;
+}
+
+.skill__circle-above--bower {
+    stroke-dasharray: 250 360;
+}
+
+.skill__circle-above--yarn {
+    stroke-dasharray: 280 360;
+}
+
+.skill__title {}

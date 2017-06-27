@@ -11,53 +11,71 @@ block content
                 svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
                     polygon(points="0,0 0,150 1000,150")
             .about__left-title
-                //- +block-title('about-header', 'Обо мне')
+                .block-title.block-title_title Обо мне
+            svg.about-left-title__pic
+                use(xlink:href="./assets/img/sprite.svg#about_header")
             .about__left-content
                 .user-user__description
                     .user-desription__image
                         img(src="./assets/img/MyPhoto(06.17).jpg", alt="").user-desription__avatar
                     .user-desription__title
-                        .block-subtitle Кто я
+                        .block-title.block-title_subtitle Кто я
                     .user-desription__text.text-content
-                        p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
                         p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
         .about__right
             .triangle.triangle_fill_beige.about__left-triangle
                 svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
                     polygon(points="1000,0 1000,150 0,150")
-            .about_right-title
-                .block-subtitle Чем я могу быть полезен
+            .about__right-title
+                .block-title.block-title_subtitle Чем я могу быть полезен
             .about__right-text.text-content
                 p
             .about__right-content
                 ul.skills-list
                     li.skills-list__item
-                    .skills-row
-                        .skills-row__title #{com.skills[0]}
-                        ul.skills-row-list
-                        each skill in com.frontend
-                            li.skills-row-item
-                            .skills
-                                svg.skills__circle
-                                .skill__title #{skill}
+                        .skills-row
+                            .skills-row__title #{com.skills[0]}
+                            ul.skills-row-list
+                                li.skills-row-item
+                                    .skills
+                                        svg.skill__circle
+                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skill__circle-above skill__circle-above--html" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skill__title HTML5
+                                li.skills-row-item
+                                    .skills
+                                        svg.skill__circle
+                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skill__circle-above skill__circle-above--html" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skill__title 111111
+                                li.skills-row-item
+                                    .skills
+                                        svg.skill__circle
+                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skill__circle-above skill__circle-above--html" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skill__title 22222
                     li.skills-list__item
-                    .skills-row
-                        .skills-row__title #{com.skills[1]}
-                        ul.skills-row-list
-                        each skill in com.backend
-                            li.skills-row-item
-                            .skills
-                                svg.skills__circle
-                                .skill__title #{skill}      
+                        .skills-row
+                            .skills-row__title #{com.skills[1]}
+                            ul.skills-row-list
+                                each skill in com.backend
+                                    li.skills-row-item
+                                        .skills
+                                            svg.skill__circle
+                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skill__circle-above skill__circle-above--html" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")                                                   
                     li.skills-list__item
-                    .skills-row
-                        .skills-row__title #{com.skills[2]}
-                        ul.skills-row-list
-                        each skill in com.workflow
-                            li.skills-row-item
-                            .skills
-                                svg.skills__circle
-                                .skill__title #{skill}                  
+                        .skills-row
+                            .skills-row__title #{com.skills[2]}
+                            ul.skills-row-list
+                                each skill in com.workflow
+                                    li.skills-row-item
+                                        .skills
+                                            svg.skill__circle
+                                                circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
+                                                circle(class="skill__circle-above skill__circle-above--html" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                                .skill__title #{skill}                  
     section.section.map  
         .google-map
         .map__contacts

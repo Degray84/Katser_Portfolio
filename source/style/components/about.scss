@@ -1,11 +1,23 @@
 .about {
     @extend %clearfix;
+    min-height: 850px;
 }
 
 .about__left,
 .about__right {
     float: left;
     width: 50%;
+    position: relative;
+    height: 100%;
+}
+
+.about__left-title,
+.about__right-title {
+    position: relative;
+    text-align: center;
+}
+
+.about__left-content {
     position: relative;
 }
 
@@ -15,4 +27,13 @@
 
 .about__right {
     background: $beige;
+}
+
+.about-left-title__pic {
+    position: absolute;
+    @include centered(x);
+    top: -25px;
+    opacity: 0.1;
+    display: block;
+    width: 330px
 }

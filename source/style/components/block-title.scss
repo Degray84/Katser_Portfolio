@@ -1,8 +1,5 @@
 .block-title {
-    font-size: 63px;
-    color: $main-font-color;
-    @include bernier();
-    padding: 45px 85px;
+    padding: 20px 65px;
     position: relative;
     display: inline-block;
     background-position: center center;
@@ -24,4 +21,17 @@
     &:before {
         left: $margin;
     }
+}
+
+.block-title_title {
+    font-size: 63px;
+    color: $main-font-color;
+    font-family: "BERNIER Regular";
+}
+
+.block-title_subtitle {
+    font-size: 35px;
+    font-family: "BERNIER Regular";
+    color: $main-font-color;
+    text-align: center;
 }
