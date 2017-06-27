@@ -1,5 +1,6 @@
 .main {
     overflow: hidden;
+    height: 100vh;
     // height: 100%;
     // min-height: 100%;
     // height: auto !important;
@@ -11,15 +12,14 @@
 }
 
 .main__bg {
-    // background: url("./img/bg/mountains.png");
     width: 100%;
+    height: 100%;
     position: absolute;
     display: block;
 }
 
 .main__container {
     position: relative;
-    padding-top: 150px;
     padding-bottom: 90px;
 }
 
@@ -60,8 +60,9 @@
 }
 
 .main__card {
-    // position: relative;
-    margin: auto;
+    position: absolute;
+    @include centered(x);
+    top: 150px;
     width: 380px;
     height: 395px;
     &_active {}
@@ -146,13 +147,24 @@
 }
 
 .menu-nav__item_about {
-    width: 125px;
+    border-left: 2px solid rgba(222, 227, 231, 0.5);
+    width: 123px;
     height: 45px;
 }
 
 .menu-nav__item_blog {
-    width: 100px;
+    border-left: 2px solid rgba(222, 227, 231, 0.5);
+    width: 98px;
     height: 45px;
+}
+
+.Shape_2 {
+    position: absolute;
+    left: 564px;
+    top: 497px;
+    width: 2px;
+    height: 45px;
+    z-index: 9;
 }
 
 .main__footer {
