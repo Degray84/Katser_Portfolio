@@ -18,21 +18,21 @@ block content
                   .user__pic
                     img(src="./assets/img/MyPhoto(06.17).jpg", alt="").user__pic-img
                   .user__description
-                    .user__name #{com.user_name}
-                    .user__info #{com.user_title}
+                    .user__name.user__name_index #{com.user_name}
+                    .user__info.user__info_index #{com.user_title}
               .card-menu__socials
                 ul.socials
                   li.socials__item
                     a(href="https://vk.com/id258183174", target="_blank")
-                      svg.social__icon.social_icon-vk
+                      svg.social__icon_big.social_icon-vk.social__icon_color-cyan
                         use(xlink:href="./assets/img/sprite.svg#vk")
                   li.socials__item
                     a(href="https://github.com/Degray84", target="_blank")
-                      svg.social__icon.social_icon-github
+                      svg.social__icon_big.social_icon-github.social__icon_color-cyan
                         use(xlink:href="./assets/img/sprite.svg#github")         
                   li.socials__item
                     a(href="https://www.linkedin.com/in/%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B9-%D0%BA%D0%B0%D1%86%D0%B5%D1%80-35b351141/", target="_blank")
-                      svg.social__icon.social_icon-in
+                      svg.social__icon_big.social_icon-in.social__icon_color-cyan
                         use(xlink:href="./assets/img/sprite.svg#in")
             .card-menu__nav
             nav.main-nav

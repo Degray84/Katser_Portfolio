@@ -20,6 +20,7 @@
 }
 
 .hero__user {
+    height: 280px;
     @include centered();
     text-align: center;
 }
@@ -27,4 +28,16 @@
 .hero__scroll-button {
     bottom: 50px;
     @include centered(x);
+}
+
+.hero__socials {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.hero__menu {
+    position: absolute;
+    right: 30px;
+    top: 25px;
 }

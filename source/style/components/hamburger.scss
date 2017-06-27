@@ -1,0 +1,44 @@
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    display: block;
+    height: 35px;
+    position: relative;
+    width: 40px;
+    &:hover .hamburger-icon__line-top {
+        transform: translateY(18px) rotate(45deg);
+        opacity: 0.8;
+    }
+    &:hover .hamburger-icon__line-middle {
+        opacity: 0;
+    }
+    &:hover .hamburger-icon__line-bottom {
+        transform: translateY(-18px) rotate(-45deg);
+        opacity: 0.8;
+    }
+}
+
+.hamburger-icon__line {
+    background: #ffffff;
+    border-radius: 2px;
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    transition: all 0.4s;
+    width: 40px;
+}
+
+.hamburger-icon__line-top {
+    top: 0;
+}
+
+.hamburger-icon__line-middle {
+    top: 50%;
+}
+
+.hamburger-icon__line-bottom {
+    top: 100%;
+}
