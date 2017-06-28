@@ -1,7 +1,62 @@
 extends ../_template
 
 block variables
-  - var title = 'Home page'
+  - var title = 'Welcome page'
 
 block content
-  include ../common/_greating
+  main.main
+    img.main__bg(src="./assets/img/bg/mountains.png")
+    .main__container
+        .main__login
+          .login
+            a(href="#").login__title Авторизация
+        .main__card.main__card_active
+          .card-menu
+            .card-menu__wrapper
+              .card-menu__user     
+                .user
+                  .user__pic
+                    img(src="./assets/img/MyPhoto(06.17).jpg", alt="").user__pic-img
+                  .user__description
+                    .user__name.user__name_index #{com.user_name}
+                    .user__info.user__info_index #{com.user_title}
+              .card-menu__socials
+                ul.socials
+                  li.socials__item
+                    a(href="https://vk.com/id258183174", target="_blank")
+                      svg.social__icon_big.social_icon-vk.social__icon_color-cyan
+                        use(xlink:href="./assets/img/sprite.svg#vk")
+                  li.socials__item
+                    a(href="https://github.com/Degray84", target="_blank")
+                      svg.social__icon_big.social_icon-github.social__icon_color-cyan
+                        use(xlink:href="./assets/img/sprite.svg#github")         
+                  li.socials__item
+                    a(href="https://www.linkedin.com/in/%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B9-%D0%BA%D0%B0%D1%86%D0%B5%D1%80-35b351141/", target="_blank")
+                      svg.social__icon_big.social_icon-in.social__icon_color-cyan
+                        use(xlink:href="./assets/img/sprite.svg#in")
+            .card-menu__nav
+            nav.main-nav
+              ul.main-nav__list
+                  li.main-nav__item.menu-nav__item_works
+                    a(href="works.html", class=`main-nav__link`) Мои работы
+                  li.main-nav__item.menu-nav__item_about
+                    a(href="about.html", class=`main-nav__link`) Обо мне
+                  li.main-nav__item.menu-nav__item_blog
+                    a(href="blog.html", class=`main-nav__link`) Блог
+        //- .main__card
+        //-   .card-login
+        //-     .card-login__title
+        //-     .card-login__name
+        //-     .card-login__pass
+        //-     .card-login__am-i-humman
+        //-       .am-i-humman
+        //-         .am-i-humman__first-check
+        //-         .am-i-human__text
+        //-         .am-i-human__second-check
+        //-     .card-login__menu
+        //-       ul.login-nav
+        //-         each btn in ['На главную','Войти']
+        //-           li.login-nav__item
+        //-             a(href="#", class="login-nav__item") #{btn} 
+  footer.main__footer
+    .footer #{com.main_footer}      

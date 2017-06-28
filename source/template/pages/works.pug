@@ -1,0 +1,80 @@
+extends ../_template
+
+block variables
+  - var title = 'Works page'
+
+block content
+  include ../common/header
+  section.section.works
+    .works__title
+      .works-title Мои работы
+    .works__content
+      .works-slider
+        .works-slider__left
+          .work-desc.work_active
+            .work-desc__title Работа 1
+            .work-desc__tech Html, css, javascript
+            .work-desc__link
+              a(href="#").site-btn
+                i.site-btn__icon
+                span.site-btn__text Посмотреть сайт
+          .work-desc
+            .work-desc__title Работа 2
+            .work-desc__tech Html, css, javascript
+            .work-desc__link
+              a(href="#").site-btn
+                i.site-btn__icon
+                span.site-btn__text Посмотреть сайт
+          .work-desc
+            .work-desc__title Работа 3
+            .work-desc__tech Html, css, javascript
+            .work-desc__link 
+              a(href="#").site-btn
+                i.site-btn__icon
+                span.site-btn__text Посмотреть сайт
+        .works-slider__right
+          .work-present
+              img.first-work-img.work_active
+              img.second-work-img
+              img.third-work-img
+    .works__about
+      .works-about
+        .works-about__title Что обо мне говорят
+        .works-about__content
+          .about
+            .about__img
+            .about__desc.
+              Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            .about__pers
+              .about-pers
+                .about-pers__photo
+                .about-pers__who
+                  .about-pers-who__name Ковальчук Дмитрий
+                  .about-pers-who__desc Основатель LoftSchool
+          .about
+            .about__img
+            .about__desc.
+              Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+            .about__pers
+              .about-pers
+                .about-pers__photo
+                .about-pers__who
+                  .about-pers-who__name Сабанцев Владимир
+                  .about-pers-who__desc Преподаватель
+        .works-about__submit
+          .submit__title
+          .submit__name
+            input(type="text" placeholder="Имя")
+          .submit__email
+            input(type="email"  placeholder="Email")
+          .submit__message
+            textarea(cols="22" rows="5" placeholder="Ваше сообщение")
+          .submit__buttons
+            input(type="submit" value="Отправить").submit-btn-go
+            input(type="reset"  value="Очистить").submit-btn-clear
+        .works-about__to-top
+          .arrow.arrow_to-top           
+        include ../common/footer
+        
+
+  

@@ -1,0 +1,44 @@
+.hero {
+    overflow: hidden;
+}
+
+.hero__bg {
+    width: 100%;
+    position: absolute;
+    display: block;
+    height: 100%;
+}
+
+.hero__container {
+    position: relative;
+    height: 100%;
+}
+
+.hero__title {
+    right: 0;
+    left: 0;
+    @include centered(y);
+}
+
+.hero__user {
+    height: 280px;
+    @include centered();
+    text-align: center;
+}
+
+.hero__scroll-button {
+    bottom: 50px;
+    @include centered(x);
+}
+
+.hero__socials {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.hero__menu {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+}
