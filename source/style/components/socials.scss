@@ -23,8 +23,8 @@
 }
 
 .social__icon_big {
-    height: 33px;
-    width: 33px;
+    height: 35px;
+    width: 35px;
 }
 
 .social__icon_small {
@@ -51,8 +51,10 @@
 
 .social__icon_color-inverse {
     fill: white;
+    fill-opacity: 0.5;
     &:hover {
-        filter: invert(100%);
+        // filter: invert(100%);
+        fill-opacity: 1;
     }
 }
 
