@@ -5,76 +5,107 @@ block variables
 
 block content
   include ../common/header
-  section.section.works
-    .works__title
-      .works-title Мои работы
-    .works__content
-      .works-slider
-        .works-slider__left
-          .work-desc.work_active
-            .work-desc__title Работа 1
-            .work-desc__tech Html, css, javascript
-            .work-desc__link
-              a(href="#").site-btn
-                i.site-btn__icon
-                span.site-btn__text Посмотреть сайт
-          .work-desc
-            .work-desc__title Работа 2
-            .work-desc__tech Html, css, javascript
-            .work-desc__link
-              a(href="#").site-btn
-                i.site-btn__icon
-                span.site-btn__text Посмотреть сайт
-          .work-desc
-            .work-desc__title Работа 3
-            .work-desc__tech Html, css, javascript
-            .work-desc__link 
-              a(href="#").site-btn
-                i.site-btn__icon
-                span.site-btn__text Посмотреть сайт
-        .works-slider__right
-          .work-present
-              img.first-work-img.work_active
-              img.second-work-img
-              img.third-work-img
-    .works__about
-      .works-about
-        .works-about__title Что обо мне говорят
-        .works-about__content
-          .about
-            .about__img
-            .about__desc.
-              Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+  section.works
+    .works-triangle__left
+      .triangle.triangle_fill_clear-white.about__left-triangle
+        svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
+          polygon(points="0,0 0,150 1000,150")
+    .works-triangle__right
+      .triangle.triangle_fill_clear-white.about__left-triangle
+        svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
+          polygon(points="1000,0 1000,150 0,150")
+    .works-content
+      .works__title
+        .works-title
+          svg.works-title__pic
+            use(xlink:href="./assets/img/sprite.svg#works_header")
+          .block-title.block-title_title Мои работы
+      .wk-slider
+        .wk-slider__left
+          .wk-slider-left__card
+            .slider-desc
+              .slider-desc__title
+                .block-title.block-title_subtitle.block-title_width-big Работа 1
+              .slider-desc__tech
+                .desc-tech Html, css, javascript
+              .slider-desc__link
+                include ../common/btn.pug
+            .slider-desc.work_active
+              .slider-desc__title
+                .block-title.block-title_subtitle.block-title_width-big Работа 2
+              .slider-desc__tech
+                .desc-tech Html, css, javascript
+              .slider-desc__link
+                include ../common/btn.pug
+            .slider-desc
+              .slider-desc__title
+                .block-title.block-title_subtitle.block-title_width-big Работа 3
+              .slider-desc__tech
+                .desc-tech Html, css, javascript
+              .slider-desc__link
+                include ../common/btn.pug
+        .wk-slider__right
+          .wk-slider-present__first
+            img(src="./assets/img/work1.png").first-work-img.work_active
+          .wk-slider-present__second
+            .bg_color_gray
+            .arrow-works.works__scroll-button
+              svg.arrow-down__pic
+                use(xlink:href="./assets/img/sprite.svg#arrow_down")
+            img(src="./assets/img/work1.png").second-work-img
+          .wk-slider-present__third
+            .bg_color_gray
+            .arrow-works.works__scroll-button
+              svg.arrow-up__pic
+                use(xlink:href="./assets/img/sprite.svg#arrow_down")
+            img(src="./assets/img/work1.png").third-work-img
+  section.section-big.works__about           
+    img.hero__bg(src="./assets/img/bg/water.png")
+    .works-about__title
+      .block-title.block-title_title Что обо мне говорят
+      svg.works-title__pic
+        use(xlink:href="./assets/img/sprite.svg#about_header")
+    .works-about__content
+      .about
+        .about__first
+          .about-koval
+            .about__img-svg
+              img(src="./assets/img/coma.png").about-svg
+            .about__desc
+              .about__desc-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
             .about__pers
               .about-pers
                 .about-pers__photo
+                  img(src="./assets/img/koval.png").about-svg
                 .about-pers__who
                   .about-pers-who__name Ковальчук Дмитрий
                   .about-pers-who__desc Основатель LoftSchool
-          .about
-            .about__img
-            .about__desc.
-              Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+        .about__second
+          .about-saban
+            img(src="./assets/img/coma.png").about__img-svg
+            .about__desc
+              .about__desc-text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
             .about__pers
               .about-pers
                 .about-pers__photo
+                  img(src="./assets/img/koval.png").about-svg
                 .about-pers__who
                   .about-pers-who__name Сабанцев Владимир
                   .about-pers-who__desc Преподаватель
-        .works-about__submit
-          .submit__title
-          .submit__name
-            input(type="text" placeholder="Имя")
-          .submit__email
-            input(type="email"  placeholder="Email")
-          .submit__message
-            textarea(cols="22" rows="5" placeholder="Ваше сообщение")
-          .submit__buttons
-            input(type="submit" value="Отправить").submit-btn-go
-            input(type="reset"  value="Очистить").submit-btn-clear
-        .works-about__to-top
-          .arrow.arrow_to-top           
-        include ../common/footer
+    .works-about__submit
+      .submit__title
+      .submit__name
+        input(type="text" placeholder="Имя")
+      .submit__email
+        input(type="email"  placeholder="Email")
+      .submit__message
+        textarea(cols="22" rows="5" placeholder="Ваше сообщение")
+      .submit__buttons
+        input(type="submit" value="Отправить").submit-btn-go
+        input(type="reset"  value="Очистить").submit-btn-clear
+    .works-about__to-top
+      .arrow.arrow_to-top           
+    include ../common/footer
         
 
   

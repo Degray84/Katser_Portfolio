@@ -1,0 +1,100 @@
+.works {
+    height: 100%;
+    position: relative;
+}
+
+.works-triangle__left,
+.works-triangle__right {
+    float: left;
+    width: 50%;
+    position: relative;
+    padding-top: 125px;
+}
+
+.works__title {
+    background: $clear-white;
+    height: 180px;
+}
+
+.works-title {
+    @include centered(x);
+    top: 15px;
+}
+
+.works-title__pic {
+    @include centered(x);
+    top: -20px;
+    width: 500px;
+    opacity: 0.1;
+}
+
+.works-content {
+    background: $bg-works;
+    min-height: 100vh;
+}
+
+.wk-slider {
+    height: 100%;
+}
+
+.works__scroll-button {
+    bottom: 50px;
+    @include centered(x);
+}
+
+.works-about__title {
+    @include centered(x);
+    top: 40px;
+}
+
+.works-title__pic {
+    @include centered(x);
+    top: -10px;
+}
+
+.works-about__content {
+    @include centered(x);
+    top: 250px;
+}
+
+.about {
+    position: relative;
+    width: 750px;
+    min-height: 250px;
+}
+
+.about__first {
+    float: left;
+}
+
+.about__second {
+    float: right;
+}
+
+.about-koval,
+.about-saban {
+    position: relative;
+    width: 360px;
+}
+
+.about__img-svg {
+    position: absolute;
+}
+
+.about__desc {
+    position: absolute;
+    top: 60px;
+}
+
+.about__desc-text {
+    font-size: 16px;
+    font-family: "Roboto";
+    color: rgb(69, 90, 100);
+    line-height: 1.625;
+    text-align: left;
+}
+
+.about__pers {
+    position: absolute;
+    top: 150px;
+}

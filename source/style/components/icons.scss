@@ -1,0 +1,52 @@
+.social__icon_big {
+    height: 35px;
+    width: 35px;
+}
+
+.social__icon_small {
+    height: 25px;
+    width: 25px;
+}
+
+.icon_color-cyan {
+    fill: rgb(0, 191, 165);
+    opacity: 0.5;
+    &:hover {
+        fill: rgb(0, 150, 136);
+        opacity: 0.8;
+    }
+}
+
+.icon_color-white {
+    fill: white;
+    opacity: 0.5;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.icon_color-clear-white {
+    fill: white;
+}
+
+.icon_color-rounded {
+    circle {
+        fill: rgba(255, 255, 255, 0.1);
+    }
+    &:hover {
+        fill: white;
+        circle {
+            fill: none;
+        }
+    }
+}
+
+.site-btn__icon {
+    @include centered(y);
+    left: 17px;
+}
+
+.btn-icon {
+    width: 22px;
+    height: 22px;
+}

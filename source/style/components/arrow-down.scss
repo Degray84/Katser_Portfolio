@@ -1,6 +1,14 @@
 .arrow-down {
+    z-index: 5;
+    cursor: pointer;
     width: 26px;
     height: 16px;
+}
+
+.arrow-works {
+    z-index: 5;
+    cursor: pointer;
+    width: 40px;
 }
 
 .arrow-down__pic {
@@ -9,4 +17,13 @@
     height: 100%;
     fill: #fff;
     opacity: .7;
+}
+
+.arrow-up__pic {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+    opacity: .7;
+    transform: rotate(180deg);
 }
