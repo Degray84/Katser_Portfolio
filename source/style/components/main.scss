@@ -62,7 +62,7 @@
 .main__card {
     position: absolute;
     @include centered(x);
-    top: 150px;
+    top: 120px;
     width: 380px;
     height: 395px;
     &_active {}

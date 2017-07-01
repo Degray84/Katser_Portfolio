@@ -27,8 +27,6 @@
 }
 
 .hero__scroll-button {
-    z-index: 5;
-    cursor: pointer;
     bottom: 50px;
     @include centered(x);
 }

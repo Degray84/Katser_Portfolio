@@ -78,8 +78,9 @@ block content
                 .about-pers__photo
                   img(src="./assets/img/koval.png").about-svg
                 .about-pers__who
-                  .about-pers-who__name Ковальчук Дмитрий
-                  .about-pers-who__desc Основатель LoftSchool
+                  .about-pers-desc
+                    .about-pers-who__name.about__pers-text.about__pers-text_bold Ковальчук Дмитрий
+                    .about-pers-who__desc.about__pers-text Основатель LoftSchool
         .about__second
           .about-saban
             img(src="./assets/img/coma.png").about__img-svg
@@ -88,21 +89,26 @@ block content
             .about__pers
               .about-pers
                 .about-pers__photo
-                  img(src="./assets/img/koval.png").about-svg
+                  img(src="./assets/img/saban.png").about-svg
                 .about-pers__who
-                  .about-pers-who__name Сабанцев Владимир
-                  .about-pers-who__desc Преподаватель
+                  .about-pers-desc
+                    .about-pers-who__name.about__pers-text.about__pers-text_bold Сабанцев Владимир
+                    .about-pers-who__desc.about__pers-text Преподаватель
     .works-about__submit
-      .submit__title
-      .submit__name
-        input(type="text" placeholder="Имя")
-      .submit__email
-        input(type="email"  placeholder="Email")
-      .submit__message
-        textarea(cols="22" rows="5" placeholder="Ваше сообщение")
+      .works-submit
+        .works-filter
+        .submit__title
+          .block-title.block-title_subtitle.block-title_width-big Связаться со мной
+        .submit__name
+          input(type="text" placeholder="Имя").submit_place.submit-text
+        .submit__email
+          input(type="email"  placeholder="Email").submit_place.submit-text
+        .submit__message
+          textarea(cols="22" rows="5" placeholder="Ваше сообщение").submit_place.submit_place-area.submit-text
       .submit__buttons
-        input(type="submit" value="Отправить").submit-btn-go
-        input(type="reset"  value="Очистить").submit-btn-clear
+        .submit-buttons
+          input(type="submit" value="Отправить").submit-btn
+          input(type="reset"  value="Очистить").submit-btn
     .works-about__to-top
       .arrow.arrow_to-top           
     include ../common/footer

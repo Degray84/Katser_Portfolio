@@ -1,0 +1,83 @@
+    .works-submit {
+        position: relative;
+        width: 380px;
+        height: 445px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .works-filter {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(252, 252, 252);
+        filter: blur(10px) brightness(1.9) opacity(0.6);
+    }
+    
+    .submit__title {
+        @include centered(x);
+    }
+    
+    .submit__name {
+        @include centered(x);
+        top: 105px;
+    }
+    
+    .submit_place {
+        border-radius: 5px;
+        background-color: rgb(255, 255, 255);
+        width: 308px;
+        height: 8px;
+        padding: 18px;
+    }
+    
+    .submit_place-area {
+        height: 108px;
+    }
+    
+    .submit__email {
+        @include centered(x);
+        top: 170px;
+    }
+    
+    .submit__message {
+        @include centered(x);
+        top: 235px;
+    }
+    
+    .submit-text {
+        font-size: 16px;
+        font-family: "Roboto";
+        color: rgba(55, 62, 66, 0.502);
+        text-align: left;
+    }
+    
+    .submit__buttons {
+        position: absolute;
+        bottom: 0;
+    }
+    
+    .submit-buttons {
+        position: relative;
+        width: 382px;
+        height: 45px;
+        margin-left: -2px;
+    }
+    
+    .submit-btn {
+        cursor: pointer;
+        background-color: rgba(0, 191, 165, 0.8);
+        float: left;
+        width: 50%;
+        height: 100%;
+        font-size: 16px;
+        font-family: "Roboto";
+        color: rgb(255, 255, 255);
+        line-height: 2.257;
+        text-align: center;
+        border: none;
+        border-left: 2px solid rgba(222, 227, 231, 0.5);
+        &:hover {
+            background-color: rgba(0, 191, 165, 0.5);
+        }
+    }
