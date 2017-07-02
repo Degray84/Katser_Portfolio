@@ -5,18 +5,44 @@ block variables
 
 block content
   include ../common/header
-    section.section.blog
-      .blog__left
-        .blog-nav
-          ul.blog-nav-list
-            each article in com.articles
-              li.blog-nav-item #{article}
-      .blog__right
-        .blog-content
-          .blog-content__articles
-            //- include ../articles/art1
-            //- include ../articles/art2
-            //- include ../articles/art3
-            //- include ../articles/art4
-            //- include ../articles/art5
+  section.blog
+    .works-triangle__left
+      .triangle.triangle_fill_clear-clear-white.about__left-triangle
+        svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
+          polygon(points="0,0 0,150 1000,150")
+    .works-triangle__right
+      .triangle.triangle_fill_clear-clear-white.about__left-triangle
+        svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
+          polygon(points="1000,0 1000,150 0,150")
+    .blog__left
+      .blog__left-nav     
+        ul.blog-nav-list
+          li.blog-nav-item
+            .blog-nav-block
+            .blog-nav-text.blog-nav-text_active Самое важное в SASS
+          li.blog-nav-item
+            .blog-nav-block
+            .blog-nav-text Приёмы в вёрстке, без которых не обходится ни один сайт
+          li.blog-nav-item
+            .blog-nav-block
+            .blog-nav-text Статья 3
+          li.blog-nav-item
+            .blog-nav-block
+            .blog-nav-text Статья 4
+          li.blog-nav-item
+            .blog-nav-block
+            .blog-nav-text Статья 5
+    .blog__right
+      .blog__right-content
+        ul.blog-content-list
+          li.blog-content-item
+            include ../articles/art1
+          li.blog-content-item
+            include ../articles/art2
+          li.blog-content-item
+            include ../articles/art3
+          li.blog-content-item
+            include ../articles/art4
+          li.blog-content-item
+            include ../articles/art5
   include ../common/footer

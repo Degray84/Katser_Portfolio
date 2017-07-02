@@ -8,6 +8,11 @@
     width: 25px;
 }
 
+.social__icon_smaller {
+    height: 18px;
+    width: 18px;
+}
+
 .icon_color-cyan {
     fill: rgb(0, 191, 165);
     opacity: 0.5;
@@ -25,14 +30,16 @@
     }
 }
 
+.icon_color-gray {
+    fill: #c4cbcd;
+}
+
 .icon_color-clear-white {
     fill: white;
 }
 
 .icon_color-rounded {
-    circle {
-        fill: rgba(255, 255, 255, 0.1);
-    }
+    fill: rgba(255, 255, 255, 0.3);
     &:hover {
         fill: white;
         circle {

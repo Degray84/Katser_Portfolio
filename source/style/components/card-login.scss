@@ -1,0 +1,205 @@
+        .card-login {
+            position: relative;
+            border-radius: 5px;
+            background-color: rgb(252, 252, 252);
+            opacity: 0.85;
+            width: 380px;
+            height: 395px;
+            overflow: hidden;
+        }
+        
+        .card-login__title {
+            @include centered(x);
+            top: 10px;
+        }
+        
+        .card-login__name {
+            @include centered(x);
+            top: 105px;
+        }
+        
+        .card-login-place {
+            width: 340px;
+            height: 45px;
+        }
+        
+        .card-login-place__rect {
+            @include centered(y);
+            left: 0;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            width: 42px;
+            height: 42px;
+            background: #f0efe9;
+        }
+        
+        .card-login-place__icon {
+            @include centered(y);
+            left: 0;
+        }
+        
+        .login-place-input {
+            position: relative;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background-color: rgb(255, 255, 255);
+            width: 260px;
+            height: 2px;
+            padding: 18px;
+            margin-left: -9px;
+        }
+        
+        .card-login__icon {
+            @include centered();
+        }
+        
+        .card-login-place__input {
+            @include centered(y);
+            left: 50px;
+            ;
+        }
+        
+        .card-login__pass {
+            @include centered(x);
+            top: 170px;
+        }
+        
+        .card-login__am-i-humman {
+            @include centered(x);
+            top: 220px;
+        }
+        
+        .am-i-humman {
+            position: relative;
+            width: 220px;
+        }
+        
+        .am-i-humman__first-check {
+            @include centered(x);
+            top: -5px;
+        }
+        
+        .human-ckeckbox {
+            position: relative;
+            width: 155px;
+            height: 40px;
+        }
+        
+        .human-ckeckbox__ch {
+            @include centered(y);
+        }
+        
+        .human-ckeckbox__tx {
+            @include centered(y);
+            left: 30px;
+        }
+        
+        .human-tx {
+            font-size: 16px;
+            font-family: "Roboto";
+            color: rgba(69, 90, 100, 0.8);
+            &_bold {
+                font-weight: bold;
+            }
+            &_width-big {
+                width: 150px;
+            }
+        }
+        
+        .am-i-human__ques {
+            @include centered(x);
+            top: 50px;
+        }
+        
+        input[type="checkbox"] {
+            display: none;
+        }
+        
+        input[type="checkbox"]+label {
+            padding: 18px 20px 0 20px;
+            cursor: pointer;
+        }
+        
+        input[type="checkbox"]+label::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin: 18px 20px -5px 0;
+            opacity: 0.8;
+            background-image: url("../img/checked-rect.png");
+            background-repeat: no-repeat;
+        }
+        
+        input[type="checkbox"]:checked+label::before {
+            opacity: 0.8;
+            background-image: url("../img/checked.png");
+            background-repeat: no-repeat;
+        }
+        
+        input[type="radio"] {
+            display: none;
+        }
+        
+        input[type="radio"]+label {
+            cursor: pointer;
+        }
+        
+        input[type="radio"]+label::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin: 18px 10px -5px 0;
+            opacity: 0.8;
+            background-image: url("../img/radio_no.png");
+            background-repeat: no-repeat;
+        }
+        
+        input[type="radio"]:checked+label::before {
+            opacity: 0.8;
+            background-image: url("../img/radio_yes.png");
+            background-repeat: no-repeat;
+        }
+        
+        .am-i-human__second-check {
+            @include centered(x);
+            top: 55px;
+        }
+        
+        .second-check-cont {
+            width: 260px;
+            height: 45px;
+        }
+        
+        .second-check-yes {
+            @include centered(y);
+            left: 0;
+        }
+        
+        .second-check-no {
+            @include centered(y);
+            left: 120px;
+        }
+        
+        .second-check__tx {
+            @include centered(y);
+            left: 22px;
+        }
+        
+        .second-check__radio {
+            @include centered(y);
+            left: 0;
+        }
+        
+        .main-nav__list-login {
+            width: 384px;
+            margin-left: -4px;
+            padding: 0;
+        }
+        
+        .main-nav__item_login {
+            border-left: 2px solid rgba(222, 227, 231, 0.5);
+            width: 190px;
+            height: 45px;
+        }

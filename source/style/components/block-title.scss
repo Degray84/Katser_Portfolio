@@ -27,6 +27,8 @@
     font-size: 63px;
     color: $main-font-color;
     font-family: "BERNIER Regular";
+    text-align: center;
+    line-height: 1;
 }
 
 .block-title_subtitle {
@@ -38,5 +40,9 @@
 }
 
 .block-title_width-big {
+    width: 300px;
+}
+
+.block-title_width-small {
     width: 300px;
 }

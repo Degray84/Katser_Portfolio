@@ -59,14 +59,14 @@ block content
               svg.arrow-up__pic
                 use(xlink:href="./assets/img/sprite.svg#arrow_down")
             img(src="./assets/img/work1.png").third-work-img
-  section.section-big.works__about           
-    img.hero__bg(src="./assets/img/bg/water.png")
+  section.section-big.works__about         
+    img.hero__bg(src="./assets/img/bg/water.png" filter="url(#blur)")
     .works-about__title
-      .block-title.block-title_title Что обо мне говорят
+      .block-title.block-title_title.block-title_width-big Что обо мне говорят
       svg.works-title__pic
         use(xlink:href="./assets/img/sprite.svg#about_header")
     .works-about__content
-      .about
+      .works-about
         .about__first
           .about-koval
             .about__img-svg
@@ -105,10 +105,10 @@ block content
           input(type="email"  placeholder="Email").submit_place.submit-text
         .submit__message
           textarea(cols="22" rows="5" placeholder="Ваше сообщение").submit_place.submit_place-area.submit-text
-      .submit__buttons
-        .submit-buttons
-          input(type="submit" value="Отправить").submit-btn
-          input(type="reset"  value="Очистить").submit-btn
+        .submit__buttons
+          .submit-buttons
+            input(type="submit" value="Отправить").submit-btn
+            input(type="reset"  value="Очистить").submit-btn
     .works-about__to-top
       .arrow.arrow_to-top           
     include ../common/footer
