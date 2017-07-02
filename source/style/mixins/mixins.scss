@@ -22,3 +22,33 @@
         transform: translateY(-50%);
     }
 }
+
+@mixin desktop {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: 1200px) and (max-width: 1799px) {
+        @content;
+    }
+}
+
+@mixin tablets {
+    @media (min-width: 768px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin phones {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin landscape {
+    @media (orientation: landscape) {
+        @content;
+    }
+}

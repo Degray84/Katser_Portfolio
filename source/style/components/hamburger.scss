@@ -7,9 +7,16 @@
     height: 35px;
     position: relative;
     width: 40px;
+    @include phones {
+        width: 25px;
+        height: 22px;
+    }
     &:hover .hamburger-icon__line-top {
         transform: translateY(18px) rotate(45deg);
         opacity: 0.8;
+        @include phones {
+            transform: translateY(11px) rotate(45deg);
+        }
     }
     &:hover .hamburger-icon__line-middle {
         opacity: 0;
@@ -17,6 +24,9 @@
     &:hover .hamburger-icon__line-bottom {
         transform: translateY(-18px) rotate(-45deg);
         opacity: 0.8;
+        @include phones {
+            transform: translateY(-11px) rotate(-45deg);
+        }
     }
 }
 
@@ -29,6 +39,9 @@
     position: absolute;
     transition: all 0.4s;
     width: 40px;
+    @include phones {
+        width: 25px;
+    }
 }
 
 .hamburger-icon__line-top {

@@ -6,6 +6,10 @@
 .social__icon_small {
     height: 25px;
     width: 25px;
+    @include phones {
+        height: 20px;
+        width: 20px;
+    }
 }
 
 .social__icon_smaller {

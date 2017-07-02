@@ -1,22 +1,24 @@
 .socials {
     margin: 0;
     padding: 0;
+    width: 100%;
+    min-width: 200px;
+    &__item {
+        list-style: none;
+        display: inline-block;
+        margin-left: 25px;
+    }
 }
 
 .socials-footer {
     margin: 0;
     padding: 0;
     margin-left: -8px;
-}
-
-.socials-footer__item {
-    list-style: none;
-    display: inline-block;
-    margin-left: 8px;
-}
-
-.socials__item {
-    list-style: none;
-    display: inline-block;
-    margin-left: 25px;
+    height: 35px;
+    &__item {
+        list-style: none;
+        display: inline-block;
+        margin-left: 8px;
+        height: 35px;
+    }
 }

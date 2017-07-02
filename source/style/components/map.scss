@@ -1,6 +1,18 @@
 .map {
     position: relative;
     padding-bottom: 150px;
+    @include desktop {
+        padding-bottom: 150px;
+    }
+    @include laptop {
+        padding-bottom: 150px;
+    }
+    @include tablets {
+        padding-bottom: 270px;
+    }
+    @include phones {
+        padding-bottom: 400px;
+    }
 }
 
 .google-map {
