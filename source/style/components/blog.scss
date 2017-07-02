@@ -45,6 +45,7 @@
 
 .blog-nav-text {
     @include centered(y);
+    cursor: pointer;
     right: 20px;
     font-size: 16px;
     width: 280px;

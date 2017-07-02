@@ -26,13 +26,17 @@
     .submit_place {
         border-radius: 5px;
         background-color: rgb(255, 255, 255);
-        width: 308px;
-        height: 8px;
-        padding: 18px;
+        width: 325px;
+        height: 40px;
+        padding-left: 18px;
+        outline: none;
+        border: 0;
     }
     
     .submit_place-area {
-        height: 108px;
+        padding-top: 18px;
+        height: 125px;
+        resize: none;
     }
     
     .submit__email {

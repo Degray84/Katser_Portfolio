@@ -17,6 +17,9 @@
     height: 100%;
     fill: #fff;
     opacity: .7;
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .arrow-up__pic {

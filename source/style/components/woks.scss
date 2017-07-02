@@ -38,8 +38,7 @@
 }
 
 .works__scroll-button {
-    bottom: 50px;
-    @include centered(x);
+    @include centered();
 }
 
 .works-about__title {
