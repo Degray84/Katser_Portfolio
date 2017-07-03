@@ -27,6 +27,10 @@
         font-family: "bernier";
         text-align: center;
         line-height: 1;
+        @include phones {
+            font-size: 35px;
+            line-height: 1.2;
+        }
     }
     &_subtitle {
         font-size: 35px;

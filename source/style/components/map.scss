@@ -11,7 +11,7 @@
         padding-bottom: 270px;
     }
     @include phones {
-        padding-bottom: 400px;
+        padding-bottom: 560px;
     }
 }
 
@@ -24,7 +24,18 @@
 
 .map__contacts {
     position: absolute;
-    @include centered();
+    @include desktop {
+        @include centered();
+    }
+    @include laptop {
+        @include centered();
+    }
+    @include tablets {
+        @include centered();
+    }
+    @include phones {
+        @include centered(x);
+    }
 }
 
 .contacts {
@@ -33,6 +44,12 @@
     opacity: 0.851;
     width: 380px;
     height: 290px;
+    @include phones {
+        opacity: 1;
+        border-radius: 0;
+        width: 100%;
+        min-width: 400px;
+    }
 }
 
 .contacts__title {

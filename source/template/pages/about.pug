@@ -5,11 +5,17 @@ block variables
 
 block content
     include ../common/header
-    section.section.about
+    section.about
+        .about__triangles
+            .works-triangle__left
+                .triangle.triangle_fill_white.about__left-triangle
+                    svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
+                        polygon(points="0,0 0,150 1000,150")
+            .works-triangle__left
+                .triangle.triangle_fill_beige.about__left-triangle
+                        svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
+                            polygon(points="1000,0 1000,150 0,150")
         .about__left
-            .triangle.triangle_fill_white.about__left-triangle
-                svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
-                    polygon(points="0,0 0,150 1000,150")
             .about__left-title
                 .block-title.block-title_title Обо мне
             svg.about-left-title__pic
@@ -24,9 +30,6 @@ block content
                         p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                         p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
         .about__right
-            .triangle.triangle_fill_beige.about__left-triangle
-                svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
-                    polygon(points="1000,0 1000,150 0,150")
             .about__right-title
                 .block-title.block-title_subtitle.block-title_width-big Чем я могу быть вам полезен
             .about__right-text.text-content Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
@@ -38,72 +41,72 @@ block content
                             ul.skills-row-list
                                 li.skills-row-item
                                     .skills
-                                        svg.skill__circle
-                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class="skill__circle-above skill__circle-above_cyan skill__circle-above-html" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skill__title HTML5
+                                        svg.skills__circle
+                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skills__circle-above skills__circle-above_cyan skills__circle-above-html" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skills__title HTML5
                                 li.skills-row-item
                                     .skills
-                                        svg.skill__circle
-                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class="skill__circle-above skill__circle-above_cyan skill__circle-above-css" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skill__title CSS
+                                        svg.skills__circle
+                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skills__circle-above skills__circle-above_cyan skills__circle-above-css" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skills__title CSS
                                 li.skills-row-item
                                     .skills
-                                        svg.skill__circle
-                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class="skill__circle-above skill__circle-above_cyan skill__circle-above-js" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skill__title JavaScript & Jquery
+                                        svg.skills__circle
+                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skills__circle-above skills__circle-above_cyan skills__circle-above-js" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skills__title JavaScript & Jquery
                     li.skills-list__item
                         .skills-row
                             .skills-row__title #{com.skills[1]}
                             ul.skills-row-list
                                 li.skills-row-item
                                     .skills
-                                        svg.skill__circle
-                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class="skill__circle-above skill__circle-above_light skill__circle-above-php" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skill__title PHP
+                                        svg.skills__circle
+                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skills__circle-above skills__circle-above_light skills__circle-above-php" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skills__title PHP
                                 li.skills-row-item
                                     .skills
-                                        svg.skill__circle
-                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class="skill__circle-above skill__circle-above_light skill__circle-above-mySQL" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skill__title mySQL
+                                        svg.skills__circle
+                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skills__circle-above skills__circle-above_light skills__circle-above-mySQL" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skills__title mySQL
                                 li.skills-row-item
                                     .skills
-                                        svg.skill__circle
-                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class="skill__circle-above skill__circle-above_light skill__circle-above-nodeJS" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skill__title Node.js & npm   
+                                        svg.skills__circle
+                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skills__circle-above skills__circle-above_light skills__circle-above-nodeJS" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skills__title Node.js & npm   
                                 li.skills-row-item
                                     .skills
-                                        svg.skill__circle
-                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class="skill__circle-above skill__circle-above_light skill__circle-above-mongo" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skill__title Mongo.db                                                
+                                        svg.skills__circle
+                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skills__circle-above skills__circle-above_light skills__circle-above-mongo" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skills__title Mongo.db                                                
                     li.skills-list__item
                         .skills-row
                             .skills-row__title #{com.skills[2]}
                             ul.skills-row-list
                                 li.skills-row-item
                                     .skills
-                                        svg.skill__circle
-                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class="skill__circle-above skill__circle-above_cyan skill__circle-above-git" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skill__title Git
+                                        svg.skills__circle
+                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skills__circle-above skills__circle-above_cyan skills__circle-above-git" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skills__title Git
                                 li.skills-row-item
                                     .skills
-                                        svg.skill__circle
-                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class="skill__circle-above skill__circle-above_cyan skill__circle-above-gulp" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skill__title Gulp
+                                        svg.skills__circle
+                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skills__circle-above skills__circle-above_cyan skills__circle-above-gulp" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skills__title Gulp
                                 li.skills-row-item
                                     .skills
-                                        svg.skill__circle
-                                            circle(class="skill__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class="skill__circle-above skill__circle-above_cyan skill__circle-above-yarn" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skill__title Yarn              
+                                        svg.skills__circle
+                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
+                                            circle(class="skills__circle-above skills__circle-above_cyan skills__circle-above-yarn" cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                            .skills__title Yarn              
     section.section.map  
         img.google-map(src="./assets/img/bg/map.png")
         .map__contacts
