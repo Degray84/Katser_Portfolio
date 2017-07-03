@@ -3,31 +3,60 @@
     width: 100%;
     position: relative;
     margin-bottom: 500px;
+    &__left {
+        position: relative;
+        height: 100%;
+        margin-top: -80px;
+        margin-right: 50px;
+        float: left;
+        width: 30%;
+        @include phones {
+            position: fixed;
+            z-index: 100;
+            top: 130px;
+            left: -30vw;
+        }
+        @include tablets {
+            display: none;
+        }
+        &-nav {
+            display: flex;
+            flex-flow: column;
+            align-items: flex-end;
+        }
+    }
+    &__right {
+        position: relative;
+        height: 100%;
+        margin-top: -80px;
+        float: right;
+        width: 70%;
+        @include phones {
+            width: 100vw;
+            padding-bottom: 150px;
+        }
+        @include tablets {
+            width: 100vw;
+            padding-bottom: 150px;
+        }
+        &-content {
+            display: flex;
+            flex-flow: column;
+        }
+    }
 }
 
-.blog__left,
-.blog__right {
-    position: relative;
-    height: 100%;
-    margin-top: -80px;
-}
-
-.blog__left {
-    float: left;
-    width: 30%;
-    display: block;
-}
-
-.blog__right {
-    float: right;
-    width: 70%;
-    display: block;
-    clear: both;
-}
-
-.blog__left-nav {
-    @include centered(x);
-    top: 12px;
+.halfcircle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 70px;
+    right: -20px;
+    z-index: -10;
+    display: none;
+    @include phones {
+        display: block;
+    }
 }
 
 .blog-nav-list {
@@ -35,6 +64,8 @@
     display: block;
     width: 280px;
     text-align: right;
+    background: white;
+    overflow: hidden;
 }
 
 .blog-nav-item {
@@ -63,21 +94,28 @@
     background-color: rgb(0, 191, 165);
     width: 3px;
     height: 42px;
-    // display: none;
 }
-
-.blog__right-content {}
 
 .blog-content-list {
     width: 85%;
-    min-width: 400px;
+    min-width: 300px;
     height: 100%;
     padding-bottom: 220px;
 }
 
 .blog-content-item {
     width: 100%;
-    min-width: 400px;
+    min-width: 300px;
+    @include phones {
+        width: 94vw;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    @include tablets {
+        width: 90vw;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
     &:after {
         content: "";
         display: block;
