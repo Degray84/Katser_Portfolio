@@ -1,22 +1,7 @@
         .card-login {
-            position: relative;
+            // position: relative;
             border-radius: 5px;
-            height: 395px;
             overflow: hidden;
-            @include desktop {
-                width: 380px;
-            }
-            @include laptop {
-                width: 380px;
-            }
-            @include tablets {
-                width: 348px;
-            }
-            @include phones {
-                min-width: 300px;
-                width: 94%;
-                @include centered(x);
-            }
             &__title {
                 @include centered(x);
                 top: 10px;
