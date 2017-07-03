@@ -108,6 +108,7 @@
         @include centered(x);
         width: 380px;
         height: 400px;
-        background-color: rgb(152, 152, 152);
-        filter: brightness(1.7) opacity(0.4) blur(0.5px);
+        // background: url("../img/bg/water.png");
+        background: lightgray;
+        filter: blur(.5px) opacity(.5);
     }
