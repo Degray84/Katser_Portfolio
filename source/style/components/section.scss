@@ -9,4 +9,7 @@
     width: 100%;
     height: 1290px;
     position: relative;
+    @include phones {
+        height: 1550px;
+    }
 }

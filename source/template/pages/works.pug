@@ -21,32 +21,31 @@ block content
             use(xlink:href="./assets/img/sprite.svg#works_header")
           .block-title.block-title_title Мои работы
       .wk-slider
-        .wk-slider__left
-          .wk-slider-left__card
-            .slider-desc
-              .slider-desc__title
-                .block-title.block-title_subtitle.block-title_width-big Работа 1
-              .slider-desc__tech
-                .desc-tech Html, css, javascript
-              .slider-desc__link
-                include ../common/btn.pug
-            .slider-desc.work_active
-              .slider-desc__title
-                .block-title.block-title_subtitle.block-title_width-big Работа 2
-              .slider-desc__tech
-                .desc-tech Html, css, javascript
-              .slider-desc__link
-                include ../common/btn.pug
-            .slider-desc
-              .slider-desc__title
-                .block-title.block-title_subtitle.block-title_width-big Работа 3
-              .slider-desc__tech
-                .desc-tech Html, css, javascript
-              .slider-desc__link
-                include ../common/btn.pug
-        .wk-slider__right
-          .wk-slider-present__first
-            img(src="./assets/img/work1.png").first-work-img.work_active
+        .wk-slider-left__card
+          .slider-desc
+            .slider-desc__title
+              .block-title.block-title_subtitle.block-title_width-big Работа 1
+            .slider-desc__tech
+              .desc-tech Html, css, javascript
+            .slider-desc__link
+              include ../common/btn.pug
+          .slider-desc.work_active
+            .slider-desc__title
+              .block-title.block-title_subtitle.block-title_width-big Работа 2
+            .slider-desc__tech
+              .desc-tech Html, css, javascript
+            .slider-desc__link
+              include ../common/btn.pug
+          .slider-desc
+            .slider-desc__title
+              .block-title.block-title_subtitle.block-title_width-big Работа 3
+            .slider-desc__tech
+              .desc-tech Html, css, javascript
+            .slider-desc__link
+              include ../common/btn.pug
+        .wk-slider-present__first
+          img(src="./assets/img/work1.png").first-work-img.work_active
+        .wk-slider-present
           .wk-slider-present__second
             .bg_color_gray
             .arrow-works.works__scroll-button
@@ -59,56 +58,55 @@ block content
               svg.arrow-up__pic
                 use(xlink:href="./assets/img/sprite.svg#arrow_down")
             img(src="./assets/img/work1.png").third-work-img
-  section.section-big.works__about         
+  section.section-big.works-about         
     img.hero__bg(src="./assets/img/bg/water.png" filter="url(#blur)")
     .works-about__title
       .block-title.block-title_title.block-title_width-big Что обо мне говорят
-      svg.works-title__pic
+      svg.works-title__pic.works-title__pic_to-bottom
         use(xlink:href="./assets/img/sprite.svg#about_header")
     .works-about__content
-      .works-about
-        .about__first
-          .about-koval
-            .about__img-svg
-              img(src="./assets/img/coma.png").about-svg
-            .about__desc
-              .about__desc-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-            .about__pers
-              .about-pers
-                .about-pers__photo
-                  img(src="./assets/img/koval.png").about-svg
-                .about-pers__who
-                  .about-pers-desc
-                    .about-pers-who__name.about__pers-text.about__pers-text_bold Ковальчук Дмитрий
-                    .about-pers-who__desc.about__pers-text Основатель LoftSchool
-        .about__second
-          .about-saban
-            img(src="./assets/img/coma.png").about__img-svg
-            .about__desc
-              .about__desc-text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-            .about__pers
-              .about-pers
-                .about-pers__photo
-                  img(src="./assets/img/saban.png").about-svg
-                .about-pers__who
-                  .about-pers-desc
-                    .about-pers-who__name.about__pers-text.about__pers-text_bold Сабанцев Владимир
-                    .about-pers-who__desc.about__pers-text Преподаватель
+      .content-about
+        .content-about__first
+          .content-about__img-svg
+            img(src="./assets/img/coma.png").content-about-svg
+          .content-about__desc
+            .content-about__desc-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+          .content-about__pers
+            .content-about-pers
+              .content-about-pers__photo
+                img(src="./assets/img/koval.png").content-about-svg
+              .content-about-pers__who
+                .content-about-pers-desc
+                  .content-about-pers-who__name.content-about__pers-text.content-about__pers-text_bold Ковальчук Дмитрий
+                  .content-about-pers-who__desc.content-about__pers-text Основатель LoftSchool
+        .content-about__second
+          .content-about__img-svg
+            img(src="./assets/img/coma.png").content-about-svg
+          .content-about__desc
+            .content-about__desc-text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+          .content-about__pers
+            .content-about-pers
+              .content-about-pers__photo
+                img(src="./assets/img/saban.png").content-about-svg
+              .content-about-pers__who
+                .content-about-pers-desc
+                  .content-about-pers-who__name.content-about__pers-text.content-about__pers-text_bold Сабанцев Владимир
+                  .content-about-pers-who__desc.content-about__pers-text Преподаватель
     .works-about__submit
       .works-submit
         .works-filter
-        .submit__title
+        .works-submit__title
           .block-title.block-title_subtitle.block-title_width-big Связаться со мной
-        .submit__name
-          input(type="text" placeholder="Имя").submit_place.submit-text
-        .submit__email
-          input(type="email"  placeholder="Email").submit_place.submit-text
-        .submit__message
-          textarea(cols="22" rows="5" placeholder="Ваше сообщение").submit_place.submit_place-area.submit-text
-        .submit__buttons
-          .submit-buttons
-            input(type="submit" value="Отправить").submit-btn
-            input(type="reset"  value="Очистить").submit-btn
+        .works-submit__name
+          input(type="text" placeholder="Имя").works-submit_place.works-submit-text
+        .works-submit__email
+          input(type="email"  placeholder="Email").works-submit_place.works-submit-text
+        .works-submit__message
+          textarea(cols="22" rows="5" placeholder="Ваше сообщение").works-submit_place.works-submit_place-area.works-submit-text
+        .works-submit__buttons
+          .works-submit-buttons
+            input(type="submit" value="Отправить").works-submit-btn
+            input(type="reset"  value="Очистить").works-submit-btn
     .works-about__to-top
       .arrow.arrow_to-top           
   include ../common/footer

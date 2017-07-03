@@ -1,9 +1,107 @@
     .works-submit {
         position: relative;
-        width: 380px;
         height: 445px;
         border-radius: 5px;
         overflow: hidden;
+        @include desktop {
+            width: 380px;
+        }
+        @include laptop {
+            width: 380px;
+        }
+        @include tablets {
+            width: 348px;
+        }
+        @include phones {
+            min-width: 300px;
+            width: 94%;
+        }
+        &__title {
+            @include centered(x);
+        }
+        &__name {
+            @include centered(x);
+            top: 105px;
+        }
+        &_place {
+            border-radius: 5px;
+            background-color: rgb(255, 255, 255);
+            @include desktop {
+                width: calc(380px - 55px);
+            }
+            @include laptop {
+                width: calc(380px - 55px);
+            }
+            @include tablets {
+                width: calc(348px - 55px);
+            }
+            @include phones {
+                min-width: calc(300px - 55px);
+                width: 94%;
+            }
+            height: 40px;
+            padding-left: 18px;
+            outline: none;
+            border: 0;
+            &-area {
+                padding-top: 18px;
+                height: 125px;
+                resize: none;
+            }
+        }
+        &__email {
+            @include centered(x);
+            top: 170px;
+        }
+        &__message {
+            @include centered(x);
+            top: 235px;
+        }
+        &-text {
+            font-size: 16px;
+            font-family: "Roboto";
+            color: rgba(55, 62, 66, 0.502);
+            text-align: left;
+        }
+        &__buttons {
+            position: absolute;
+            bottom: 0;
+            margin-left: -2px;
+        }
+        &-buttons {
+            position: relative;
+            @include desktop {
+                width: 382px;
+            }
+            @include laptop {
+                width: 382px;
+            }
+            @include tablets {
+                width: 350px;
+            }
+            @include phones {
+                min-width: 302px;
+                width: 94%;
+            }
+            height: 45px;
+            display: flex;
+            justify-content: space-between;
+        }
+        &-btn {
+            cursor: pointer;
+            background-color: rgba(0, 191, 165, 0.8);
+            width: 50%;
+            font-size: 16px;
+            font-family: "Roboto";
+            color: rgb(255, 255, 255);
+            line-height: 2.257;
+            text-align: center;
+            border: none;
+            border-left: 2px solid rgba(222, 227, 231, 0.5);
+            &:hover {
+                background-color: rgba(0, 191, 165, 0.5);
+            }
+        }
     }
     
     .works-filter {
@@ -12,76 +110,4 @@
         height: 400px;
         background-color: rgb(152, 152, 152);
         filter: brightness(1.7) opacity(0.4) blur(0.5px);
-    }
-    
-    .submit__title {
-        @include centered(x);
-    }
-    
-    .submit__name {
-        @include centered(x);
-        top: 105px;
-    }
-    
-    .submit_place {
-        border-radius: 5px;
-        background-color: rgb(255, 255, 255);
-        width: 325px;
-        height: 40px;
-        padding-left: 18px;
-        outline: none;
-        border: 0;
-    }
-    
-    .submit_place-area {
-        padding-top: 18px;
-        height: 125px;
-        resize: none;
-    }
-    
-    .submit__email {
-        @include centered(x);
-        top: 170px;
-    }
-    
-    .submit__message {
-        @include centered(x);
-        top: 235px;
-    }
-    
-    .submit-text {
-        font-size: 16px;
-        font-family: "Roboto";
-        color: rgba(55, 62, 66, 0.502);
-        text-align: left;
-    }
-    
-    .submit__buttons {
-        position: absolute;
-        bottom: 0;
-        margin-left: -2px;
-    }
-    
-    .submit-buttons {
-        position: relative;
-        width: 382px;
-        height: 45px;
-    }
-    
-    .submit-btn {
-        cursor: pointer;
-        background-color: rgba(0, 191, 165, 0.8);
-        float: left;
-        width: 50%;
-        height: 100%;
-        font-size: 16px;
-        font-family: "Roboto";
-        color: rgb(255, 255, 255);
-        line-height: 2.257;
-        text-align: center;
-        border: none;
-        border-left: 2px solid rgba(222, 227, 231, 0.5);
-        &:hover {
-            background-color: rgba(0, 191, 165, 0.5);
-        }
     }

@@ -1,36 +1,84 @@
 .wk-slider {
     position: relative;
-    height: inherit;
     min-height: 700px;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    @include desktop {
+        justify-content: space-between;
+        flex-flow: column wrap;
+    }
+    @include laptop {
+        justify-content: space-between;
+        flex-flow: row wrap;
+        flex-direction: row-reverse;
+    }
+    &-left__card {
+        position: relative;
+        order: 2;
+        align-self: flex-end;
+        @include desktop {
+            width: 50vw;
+            flex: 1 1 500px;
+        }
+        @include laptop {
+            width: 50vw;
+            flex: 1 1 500px;
+        }
+    }
+    &-present {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        order: 3;
+        width: 100vw;
+        @include desktop {
+            width: 50vw;
+        }
+        @include laptop {
+            width: 50vw;
+            align-self: flex-end;
+        }
+        &__second {
+            order: 1;
+            width: 50vw;
+            position: relative;
+        }
+        &__third {
+            order: 2;
+            width: 50vw;
+            position: relative;
+        }
+    }
+    &-present__first {
+        order: 1;
+        position: relative;
+        @include desktop {
+            width: 50vw;
+        }
+        @include laptop {
+            width: 50vw;
+        }
+    }
 }
-
-.wk-slider__left,
-.wk-slider__right {
-    float: left;
-    width: 50%;
-    position: relative;
-    height: 100%;
-    min-height: 700px;
-}
-
-.wk-slider__left {
-    padding-top: 200px;
-}
-
-.wk-slider-left__card {
-    margin-left: 15%;
-    ;
-}
-
-.work-desc {}
 
 .slider-desc {
     position: relative;
     display: none;
     width: 420px;
-    min-height: 500px;
-    clear: both;
-    text-align: center;
+    height: 300px;
+    margin: auto;
+    &__link {
+        @include centered(x);
+        top: 200px;
+    }
+    &__title {
+        @include centered(x);
+    }
+    &__tech {
+        @include centered(x);
+        top: 125px;
+    }
 }
 
 .desc-tech {
@@ -65,45 +113,15 @@
     display: block;
 }
 
-.slider-desc__link {
-    @include centered(x);
-    top: 200px;
+.first-work-img {
+    width: 90vw;
+    @include desktop {
+        width: 45vw;
+    }
+    @include laptop {
+        width: 45vw;
+    }
 }
-
-.slider-desc__title {
-    @include centered(x);
-}
-
-.slider-desc__tech {
-    @include centered(x);
-    top: 125px;
-}
-
-.wk-slider__right-present {
-    padding-top: 112px;
-}
-
-.wk-slider-present__first {
-    @include centered(x);
-    top: 100px;
-}
-
-.wk-slider-present__second,
-{
-    width: 50%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.wk-slider-present__third {
-    width: 50%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
-.first-work-img {}
 
 .second-work-img {
     width: 100%;
