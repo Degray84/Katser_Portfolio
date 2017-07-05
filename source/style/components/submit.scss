@@ -104,11 +104,11 @@
         }
     }
     
-    .works-filter {
-        @include centered(x);
-        width: 380px;
-        height: 400px;
-        // background: url("../img/bg/water.png");
-        background: lightgray;
-        filter: blur(.5px) opacity(.5);
-    }
+    // .works-filter {
+    //     @include centered(x);
+    //     width: 380px;
+    //     height: 400px;
+    //     // background: url("../img/bg/water.png");
+    //     background: lightgray;
+    //     filter: blur(.5px) opacity(.5);
+    // }

@@ -1,10 +1,30 @@
 .hero {
     overflow: hidden;
     &__bg {
-        width: 100%;
         position: absolute;
-        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        // width: 100vw;
         height: 100%;
+        & img {
+            display: block;
+            // max-width: 100%;
+            width: 100vw;
+            height: 150%;
+        }
+        // @include desktop {
+        //     height: 2870px;
+        // }
+        // @include laptop {
+        //     height: 1870px;
+        // }
+        // @include tablets {
+        //     height: 1270px;
+        // }
+        // @include phones {
+        //     height: 770px;
+        // }
     }
     &__container {
         position: relative;

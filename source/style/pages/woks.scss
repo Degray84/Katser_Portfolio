@@ -1,6 +1,55 @@
     .works {
         height: 100%;
         position: relative;
+        &__bg {
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+            height: 100%;
+            & img {
+                display: block;
+                // max-width: 100%;
+                height: 100%;
+                @include desktop {
+                    width: 3000px;
+                }
+                @include laptop {
+                    width: 1840px;
+                }
+                @include tablets {
+                    width: 1240px;
+                }
+                @include phones {
+                    width: 740px;
+                }
+            }
+            &-blur {
+                @include centered(x);
+                bottom: 450px;
+                height: 445px;
+                border-radius: 5px;
+                overflow: hidden;
+                @include desktop {
+                    width: 380px;
+                }
+                @include laptop {
+                    width: 380px;
+                }
+                @include tablets {
+                    width: 348px;
+                }
+                @include phones {
+                    min-width: 300px;
+                    // width: 94%;
+                }
+                &-form {
+                    width: 110%;
+                    height: 110%;
+                    background: url('../img/bg/water.png') center no-repeat;
+                    filter: blur(20px);
+                }
+            }
+        }
         &__title {
             background: $clear-white;
             height: 180px;
@@ -47,7 +96,8 @@
             position: relative;
         }
         &__submit {
-            position: relative;
+            @include centered(x);
+            bottom: 450px;
         }
         .content-about {
             display: flex;

@@ -58,8 +58,11 @@ block content
               svg.arrow-up__pic
                 use(xlink:href="./assets/img/sprite.svg#arrow_down")
             img(src="./assets/img/work1.png").third-work-img
-  section.section-big.works-about         
-    img.hero__bg(src="./assets/img/bg/water.png" filter="url(#blur)")
+  section.section-big.works-about 
+    .works__bg        
+      img(src="./assets/img/bg/water.png")
+    .works__bg-blur
+      .works__bg-blur-form
     .works-about__title
       .block-title.block-title_title.block-title_width-big Что обо мне говорят
       svg.works-title__pic.works-title__pic_to-bottom
