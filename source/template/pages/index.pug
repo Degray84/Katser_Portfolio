@@ -5,8 +5,18 @@ block variables
 
 block content
   main.main
-    .main__bg 
-      img(src="./assets/img/bg/mountains.png")
+    #main__parallax.parallax
+      -for(var i = 0; i<10; i++)
+        .parallax__layer.parallax_desktop
+          img(src=`./assets/img/parallax(desktop-2100)/Layer(00${i}).png`).parallax__image
+      -for(var i = 0; i<10; i++)
+        .parallax__layer.parallax_laptop
+          img(src=`./assets/img/parallax(laptop-1575)/Layer(00${i}).png`).parallax__image
+      -for(var i = 0; i<10; i++)
+        .parallax__layer.parallax_retina
+          img(src=`./assets/img/parallax(2x)/Layer(00${i}).png`).parallax__image  
+      img(src="./assets/img/bg/mountains-tablets.jpg").parallax__scroll.parallax_tablets
+      img(src="./assets/img/bg/mountains-phones.jpg").parallax__scroll.parallax_phones
     .main__container
         .main__login
           .login
@@ -19,7 +29,7 @@ block content
                 .card-menu__user     
                   .user
                     .user__pic
-                      img(src="./assets/img/MyPhoto(06.17).jpg", alt="").user__pic-img
+                      img(src="./assets/img/MyPhoto(06.17).png", alt="").user__pic-img
                     .user__description
                       .user__name.user__name_index #{com.user_name}
                       .user__info.user__info_index #{com.user_title}

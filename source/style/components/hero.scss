@@ -5,14 +5,8 @@
         top: 0;
         left: 0;
         right: 0;
-        // width: 100vw;
-        height: 100%;
-        & img {
-            display: block;
-            // max-width: 100%;
-            width: 100vw;
-            height: 150%;
-        }
+        width: 100vw;
+        height: 150%;
         // @include desktop {
         //     height: 2870px;
         // }

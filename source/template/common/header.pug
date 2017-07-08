@@ -1,6 +1,10 @@
 section.section.hero
   .hero__bg
-    img(src="./assets/img/bg/mountains.png")
+      img(src="./assets/img/bg/mountains-retina.jpg").parallax__scroll.parallax_retina
+      img(src="./assets/img/bg/mountains-desktop.jpg").parallax__scroll.parallax_desktop
+      img(src="./assets/img/bg/mountains-laptop.jpg").parallax__scroll.parallax_laptop
+      img(src="./assets/img/bg/mountains-tablets.jpg").parallax__scroll.parallax_tablets
+      img(src="./assets/img/bg/mountains-phones.jpg").parallax__scroll.parallax_phones
   .hero__container
     .hero__socials
       ul.socials
@@ -31,7 +35,7 @@ section.section.hero
     .hero__user
       .user
         .user__pic
-          img(src="./assets/img/MyPhoto(06.17).jpg", alt="").user__pic-img
+          img(src="./assets/img/MyPhoto(06.17).png", alt="").user__pic-img
         .user__description
           .user__name.user__name_about #{com.user_name}
           .user__info.user__info_about #{com.user_title}

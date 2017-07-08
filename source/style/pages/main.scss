@@ -1,5 +1,4 @@
         .main {
-            overflow: hidden;
             height: 100vh;
             @include landscape {
                 height: 560px;
@@ -13,6 +12,12 @@
                 left: -10%;
                 width: 120vw;
                 height: 120%;
+                @include desktop {
+                    display: none;
+                }
+                @include laptop {
+                    display: none;
+                }
                 & img {
                     display: block;
                     height: 100%;
@@ -20,6 +25,7 @@
                 }
             }
             &__container {
+                height: 100%;
                 position: relative;
                 padding-bottom: 90px;
             }
@@ -45,16 +51,16 @@
             &__card {
                 @include centered(x);
                 @include desktop {
-                    top: 250px;
+                    top: 40%;
                 }
                 @include laptop {
-                    top: 145px;
+                    top: 25%;
                 }
                 @include tablets {
-                    top: 145px;
+                    top: 18%;
                 }
                 @include phones {
-                    top: 85px;
+                    top: 12%;
                 }
                 &_active {
                     display: block;
