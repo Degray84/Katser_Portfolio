@@ -1,0 +1,57 @@
+extends ../_template
+
+block variables
+  - var title = 'Welcome page'
+
+block content
+  main.main
+    img.main__bg(src="./assets/img/bg/mountains.png")
+    .main__container
+        .main__card
+          .card-login
+            .card__bg
+            .card-login__title
+              .block-title.block-title_subtitle.block-title_title-big АВТОРИЗУЙТЕСЬ
+            .card-login__name
+              .card-login-place
+                .card-login-place__rect
+                  .card-login__icon
+                    svg.social__icon_smaller.icon_color-gray
+                      use(xlink:href="./assets/img/sprite.svg#login")
+                .card-login-place__input
+                  input(type="text" placeholder="Логин").login-place-input
+            .card-login__pass
+              .card-login-place
+                .card-login-place__icon
+                .card-login-place__rect
+                  .card-login__icon
+                    svg.social__icon_smaller.icon_color-gray
+                      use(xlink:href="./assets/img/sprite.svg#password")
+                .card-login-place__input
+                  input(type="text" placeholder="Пароль").login-place-input
+            .card-login__am-i-humman
+              .am-i-humman
+                  .am-i-human__first-check
+                    .human-ckeckbox
+                      input(id="ch" type="checkbox" hidden).human-ckeckbox__ch
+                      label(for="ch").human-tx Я человек                       
+                  .am-i-human__ques 
+                    .am-i-human-ques
+                      .human-tx.human-tx_bold.human-tx_center Вы точно не робот?
+                  .am-i-human__second-check
+                    .second-check-cont
+                      .second-check-yes
+                        input(type="radio" id="rad1" name="robot" hidden checked).second-check__radio
+                        label(for="rad1").human-tx.second-check__tx.human-tx_width-big Да
+                      .second-check-no
+                        input(type="radio" id="rad2" name="robot" hidden).second-check__radio
+                        label(for="rad2").human-tx.second-check__tx.human-tx_width-big Не уверен
+            .card-login__menu
+              nav.card-login-nav
+                ul.card-login-nav__list-login
+                  li.card-login-nav__item.card-login-nav__item_login
+                    a(href="index.html", class="card-login-nav__link") На главную
+                  li.card-login-nav__item.card-login-nav__item_login
+                    a(href="#", class="card-login-nav__link") Войти
+    footer.main__footer
+      .footer #{com.main_footer}      

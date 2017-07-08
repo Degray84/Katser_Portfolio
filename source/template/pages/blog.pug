@@ -1,0 +1,46 @@
+extends ../_template
+
+block variables
+  - var title = 'Blog page'
+
+block content
+  include ../common/header
+  section.blog
+    .works-triangle__left
+      .triangle.triangle_fill_clear-clear-white.about__left-triangle
+        svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
+          polygon(points="0,0 0,150 1000,150")
+    .works-triangle__right
+      .triangle.triangle_fill_clear-clear-white.about__left-triangle
+        svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
+          polygon(points="1000,0 1000,150 0,150")
+    .blog__left
+      .blog__left-nav   
+        ul.blog-nav-list
+          li.blog-nav-item
+            .blog-nav-block
+            a.blog-nav-text.blog-nav-text_active Самое важное в SASS
+          li.blog-nav-item
+            a.blog-nav-text Приёмы в вёрстке, без которых не обходится ни один сайт
+          li.blog-nav-item
+            a.blog-nav-text Статья 3
+          li.blog-nav-item
+            a.blog-nav-text Статья 4
+          li.blog-nav-item
+            a.blog-nav-text Статья 5
+        svg.halfcircle 
+          circle(r="25" cx="30" cy="30" fill="#00bfa5" stroke="#d6d6d6" stroke-width="5") 
+    .blog__right
+      .blog__right-content
+        ul.blog-content-list
+          li.blog-content-item
+            include ../articles/art1
+          li.blog-content-item
+            include ../articles/art2
+          li.blog-content-item
+            include ../articles/art3
+          li.blog-content-item
+            include ../articles/art4
+          li.blog-content-item
+            include ../articles/art5
+  include ../common/footer

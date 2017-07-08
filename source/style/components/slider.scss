@@ -1,0 +1,139 @@
+.wk-slider {
+    position: relative;
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    @include desktop {
+        justify-content: space-between;
+        flex-flow: column wrap;
+    }
+    @include laptop {
+        justify-content: space-between;
+        flex-flow: row wrap;
+        flex-direction: row-reverse;
+    }
+    &-left__card {
+        position: relative;
+        order: 2;
+        align-self: flex-end;
+        @include desktop {
+            width: 50vw;
+            flex: 1 1 500px;
+        }
+        @include laptop {
+            width: 50vw;
+            flex: 1 1 500px;
+        }
+    }
+    &-present {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        order: 3;
+        width: 100vw;
+        @include desktop {
+            width: 50vw;
+        }
+        @include laptop {
+            width: 50vw;
+            align-self: flex-end;
+        }
+        &__second {
+            order: 1;
+            width: 50vw;
+            position: relative;
+        }
+        &__third {
+            order: 2;
+            width: 50vw;
+            position: relative;
+        }
+    }
+    &-present__first {
+        order: 1;
+        position: relative;
+        @include desktop {
+            width: 50vw;
+        }
+        @include laptop {
+            width: 50vw;
+        }
+    }
+}
+
+.slider-desc {
+    position: relative;
+    display: none;
+    width: 420px;
+    height: 300px;
+    margin: auto;
+    &__link {
+        @include centered(x);
+        top: 200px;
+    }
+    &__title {
+        @include centered(x);
+    }
+    &__tech {
+        @include centered(x);
+        top: 125px;
+    }
+}
+
+.desc-tech {
+    font-size: 16px;
+    font-family: "Roboto";
+    color: rgb(32, 181, 161);
+    line-height: 1.2;
+    text-align: center;
+    &:before {
+        content: "";
+        display: block;
+        @include centered(x);
+        top: -18px;
+        background-color: rgb(0, 150, 136);
+        opacity: 0.302;
+        width: 420px;
+        height: 2px;
+    }
+    &:after {
+        content: "";
+        display: block;
+        @include centered(x);
+        top: 34px;
+        background-color: rgb(0, 150, 136);
+        opacity: 0.302;
+        width: 420px;
+        height: 2px;
+    }
+}
+
+.work_active {
+    display: block;
+}
+
+.first-work-img {
+    width: 90vw;
+    @include desktop {
+        width: 45vw;
+    }
+    @include laptop {
+        width: 45vw;
+    }
+}
+
+.second-work-img {
+    width: 100%;
+}
+
+.third-work-img {
+    width: 100%;
+}
+
+.bg_color_gray {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(120, 120, 120, 0.5);
+}

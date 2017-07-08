@@ -1,0 +1,40 @@
+.card-flip {
+    position: relative;
+    border-radius: 5px;
+    height: 395px;
+    // overflow: hidden;
+    @include desktop {
+        width: 380px;
+    }
+    @include laptop {
+        width: 380px;
+    }
+    @include tablets {
+        width: 348px;
+    }
+    @include phones {
+        min-width: 300px;
+        width: 94%;
+    }
+    transition: 1s;
+    transform-style: preserve-3d;
+    // &:hover {
+    //     transform: rotateY(180deg);
+    // }
+}
+
+.card-flip .card-menu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+}
+
+.card-flip .card-login {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}

@@ -1,0 +1,184 @@
+    .works {
+        height: 100%;
+        position: relative;
+        &__bg {
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+            height: 100%;
+            & img {
+                display: block;
+                // max-width: 100%;
+                height: 100%;
+                @include desktop {
+                    width: 3000px;
+                }
+                @include laptop {
+                    width: 1840px;
+                }
+                @include tablets {
+                    width: 1240px;
+                }
+                @include phones {
+                    width: 740px;
+                }
+            }
+            &-blur {
+                @include centered(x);
+                bottom: 450px;
+                height: 445px;
+                border-radius: 5px;
+                overflow: hidden;
+                @include desktop {
+                    width: 380px;
+                }
+                @include laptop {
+                    width: 380px;
+                }
+                @include tablets {
+                    width: 348px;
+                }
+                @include phones {
+                    min-width: 300px;
+                    // width: 94%;
+                }
+                &-form {
+                    width: 110%;
+                    height: 110%;
+                    background: url('../img/bg/water.png') center no-repeat;
+                    filter: blur(20px);
+                }
+            }
+        }
+        &__title {
+            background: $clear-white;
+            height: 180px;
+        }
+        &__scroll-button {
+            @include centered();
+        }
+        &-title {
+            @include centered(x);
+            top: 15px;
+            &__pic {
+                @include centered(x);
+                top: -40px;
+                width: 90vw;
+                max-width: 500px;
+                opacity: 0.1;
+                @include phones {
+                    width: 70vw;
+                    top: -5px;
+                }
+                &_to-bottom {
+                    top: 0;
+                    @include phones {
+                        top: -30px;
+                    }
+                }
+            }
+        }
+        &-content {
+            background: $bg-works;
+            min-height: 100vh;
+        }
+    }
+    
+    .works-about {
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        &__title {
+            position: relative;
+        }
+        &__content {
+            position: relative;
+        }
+        &__submit {
+            @include centered(x);
+            bottom: 450px;
+        }
+        .content-about {
+            display: flex;
+            flex-flow: row;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            @include phones {
+                flex-flow: column;
+            }
+            &__first {
+                position: relative;
+                width: 400px;
+                margin-right: 12px;
+                margin-bottom: 35px;
+                @include phones {
+                    width: 90vw;
+                }
+                display: flex;
+                flex-flow: column;
+            }
+            &__second {
+                position: relative;
+                width: 310px;
+                margin-left: 12px;
+                margin-bottom: 35px;
+                @include phones {
+                    width: 90vw;
+                }
+                display: flex;
+                flex-flow: column;
+            }
+            &__img-svg {
+                position: relative;
+                margin-bottom: 20px;
+            }
+            &__desc {
+                position: relative;
+                margin-bottom: 20px;
+                &-text {
+                    font-size: 16px;
+                    font-family: "Roboto";
+                    color: rgb(69, 90, 100);
+                    line-height: 1.625;
+                    text-align: left;
+                }
+            }
+            &__pers {
+                position: relative;
+                &-text {
+                    font-size: 16px;
+                    font-family: "Roboto";
+                    color: rgb(32, 181, 161);
+                    line-height: 1.5;
+                    text-align: left;
+                    &_bold {
+                        font-weight: bold;
+                    }
+                }
+            }
+            &-pers {
+                width: 100%;
+                height: 80px;
+                &__photo {
+                    position: relative;
+                    float: left
+                }
+                &__who {
+                    @include centered(y);
+                    left: 100px;
+                }
+                &-desc {
+                    width: 250px;
+                }
+            }
+        }
+    }
+    
+    .works-triangle__left,
+    .works-triangle__right {
+        float: left;
+        width: 50%;
+        position: relative;
+        padding-top: 125px;
+    }

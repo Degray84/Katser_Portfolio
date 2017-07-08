@@ -1,0 +1,77 @@
+.hero {
+    overflow: hidden;
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        height: 150%;
+        // @include desktop {
+        //     height: 2870px;
+        // }
+        // @include laptop {
+        //     height: 1870px;
+        // }
+        // @include tablets {
+        //     height: 1270px;
+        // }
+        // @include phones {
+        //     height: 770px;
+        // }
+    }
+    &__container {
+        position: relative;
+        height: 100%;
+    }
+    &__title {
+        @include centered();
+    }
+    &__user {
+        height: 280px;
+        @include centered();
+        text-align: center;
+    }
+    &__scroll-button {
+        bottom: 50px;
+        @include centered(x);
+    }
+    &__socials {
+        position: absolute;
+        @include desktop {
+            top: 30px;
+            left: 5px;
+        }
+        @include laptop {
+            top: 30px;
+            left: 5px;
+        }
+        @include tablets {
+            top: 30px;
+            left: 5px;
+        }
+        @include phones {
+            top: 15px;
+            left: 0;
+        }
+    }
+    &__menu {
+        position: absolute;
+        @include desktop {
+            top: 30px;
+            right: 30px;
+        }
+        @include laptop {
+            top: 30px;
+            right: 30px;
+        }
+        @include tablets {
+            top: 26px;
+            right: 24px;
+        }
+        @include phones {
+            top: 10px;
+            right: 10px;
+        }
+    }
+}
