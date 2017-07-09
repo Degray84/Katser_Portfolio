@@ -3,6 +3,7 @@
 }
 
 .hamburger-icon {
+    z-index: 1001;
     display: block;
     height: 35px;
     position: relative;
@@ -11,17 +12,17 @@
         width: 25px;
         height: 22px;
     }
-    &:hover .hamburger-icon__line-top {
+    &_active .hamburger-icon__line-top {
         transform: translateY(18px) rotate(45deg);
         opacity: 0.8;
         @include phones {
             transform: translateY(11px) rotate(45deg);
         }
     }
-    &:hover .hamburger-icon__line-middle {
+    &_active .hamburger-icon__line-middle {
         opacity: 0;
     }
-    &:hover .hamburger-icon__line-bottom {
+    &_active .hamburger-icon__line-bottom {
         transform: translateY(-18px) rotate(-45deg);
         opacity: 0.8;
         @include phones {

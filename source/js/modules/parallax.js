@@ -1,11 +1,11 @@
-module.exports = (function() {
+export default function() {
     var parallaxCont = document.getElementById('main__parallax'),
         layers = parallaxCont.children;
 
     function _moveLayers(e) {
+
         var initialX = (window.innerWidth / 2) - e.pageX,
             initialY = (window.innerHeight / 2) - e.pageY;
-        console.log(initialX);
         [].slice.call(layers).forEach(function(layer, index) {
             var devider = index / 125,
                 positionX = initialX * devider,
@@ -14,11 +14,12 @@ module.exports = (function() {
                 transformString = 'translate(' + positionX + 'px,' + positionY + 'px)',
                 image = layer.firstElementChild;
             layer.style.transform = transformString;
-            image.style.bottom = '-' + bottomPosition + 'px';
+            // image.style.bottom = '-' + bottomPosition + 'px';
         });
     };
 
     function _mouseMoveListener() {
+
         window.addEventListener('mousemove', _moveLayers);
 
     }
@@ -27,4 +28,4 @@ module.exports = (function() {
         init: _mouseMoveListener()
     };
 
-})();
+};

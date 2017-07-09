@@ -1,4 +1,4 @@
-module.exports = (function() {
+export default function() {
     function _moveY(block, windowScroll, strafeAmount) {
         var strafe = windowScroll / -strafeAmount + '%';
         var style = block.style;
@@ -21,4 +21,4 @@ module.exports = (function() {
         init: _init()
     }
 
-}());
+};

@@ -1,26 +1,41 @@
+import authoriz from './modules/authoriz';
+import blogMenu from './modules/blog_menu';
+import flip from './modules/flip';
+import mainMenu from './modules/main-menu';
+import parallax from './modules/parallax';
+import parallaxScroll from './modules/parallaxScroll';
+import preload from './modules/preload';
+import slider from './modules/slider';
+import submit from './modules/submit';
+
 // Переменная для проверки страницы на наличие контейнера для параллакс
 var main = document.getElementsByClassName('main'),
     heroParallax = document.getElementsByClassName('hero__bg'),
     blog = document.getElementsByClassName('blog'),
     works = document.getElementsByClassName('works');
 // Подключаемые модули
-if (heroParallax) {
-    var parallaxY = require('./modules/parallaxScroll'); //модуль параллакса от скролла мышью
-    var main_menu = require('./modules/main-menu'); //Модуль меню в шапке страниц
+
+if (heroParallax.length) {
+    parallaxScroll(); //модуль параллакса от скролла мышью
+    mainMenu(); //Модуль меню в шапке страниц
 };
-if ((window.matchMedia("(min-width: 1200px)").matches) && (main)) {
-    var parallax = require('./modules/parallax'); //Модуль параллакса от передвижения мыши
+if (window.matchMedia("(min-width: 1200px)").matches) {
+    if (main.length) {
+        parallax();
+        // Модуль параллакса от передвижения мыши
+    };
 };
-if (main) {
-    var flip = require('./modules/flip'); //Модуль для флип-эффекта
-    var authoriz = require('./modules/authoriz'); //Модуль для валидации на главной странице
+if (main.length) {
+    flip(); //Модуль для флип-эффекта
+    authoriz(); //Модуль для валидации на главной странице
+    preload();
+    //Модуль для прелоадеров
 
 };
-if (blog) {
-    var blog_menu = require('./modules/blog_menu'); //Модуль для меню блога
+if (blog.length) {
+    blogMenu(); //Модуль для меню блога
 };
-if (works) {
-    var slider = require('./modules/slider'); //Модуль для слайдера
-    var submit = require('./modules/submit'); //Модуль для валидации submit`a
+if (works.length) {
+    slider(); //Модуль для слайдера
+    submit(); //Модуль для валидации submit`a
 };
-var preload = require('./modules/preload'); //Модуль для прелоадеров

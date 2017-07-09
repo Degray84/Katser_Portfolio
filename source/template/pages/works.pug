@@ -29,9 +29,8 @@ block content
               .desc-tech Html, css, javascript
             .slider-desc__link
               include ../common/btn.pug
-          .slider-desc.work_active
+          .slider-desc
             .slider-desc__title
-              .block-title.block-title_subtitle.block-title_width-big Работа 2
             .slider-desc__tech
               .desc-tech Html, css, javascript
             .slider-desc__link
@@ -44,20 +43,20 @@ block content
             .slider-desc__link
               include ../common/btn.pug
         .wk-slider-present__first
-          img(src="./assets/img/work1.png").first-work-img.work_active
+          img.first-work-img
         .wk-slider-present
           .wk-slider-present__second
             .bg_color_gray
             .arrow-works.works__scroll-button
               svg.arrow-down__pic
                 use(xlink:href="./assets/img/sprite.svg#arrow_down")
-            img(src="./assets/img/work1.png").second-work-img
+            img.second-work-img
           .wk-slider-present__third
             .bg_color_gray
             .arrow-works.works__scroll-button
               svg.arrow-up__pic
                 use(xlink:href="./assets/img/sprite.svg#arrow_down")
-            img(src="./assets/img/work1.png").third-work-img
+            img.third-work-img
   section.section-big.works-about 
     .works__bg        
       img(src="./assets/img/bg/water.png")
@@ -102,17 +101,38 @@ block content
           .block-title.block-title_subtitle.block-title_width-big Связаться со мной
         .works-submit__name
           input(type="text" placeholder="Имя").works-submit_place.works-submit-text
+        //- .works-submit__name-validat
+        //-   .pop-message.pop-message_color-red
+        //-     .pop-message__arrow
+        //-     .pop-message__box
         .works-submit__email
           input(type="email"  placeholder="Email").works-submit_place.works-submit-text
+        //- .works-submit__email-validat
+        //-   .pop-message.pop-message_color-red
+        //-     .pop-message__arrow
+        //-     .pop-message__box
         .works-submit__message
           textarea(cols="22" rows="5" placeholder="Ваше сообщение").works-submit_place.works-submit_place-area.works-submit-text
+        //- .works-submit__message-validat
+        //-   .pop-message.pop-message_color-red
+        //-     .pop-message__arrow
+        //-     .pop-message__box
         .works-submit__buttons
           .works-submit-buttons
-            input(type="submit" value="Отправить").works-submit-btn
-            input(type="reset"  value="Очистить").works-submit-btn
+            input(type="submit" value="Отправить").works-submit-sb
+            input(type="reset"  value="Очистить").works-submit-rs
     .works-about__to-top
       .arrow.arrow_to-top           
   include ../common/footer
+  .messages
+    .messages__notify
+      .notify-complite
+        .notify-complite__title
+          .notify-title Сообщение отправлено
+        .notify-complite__btn
+          button.notify-btn Закрыть
+
+
         
 
   

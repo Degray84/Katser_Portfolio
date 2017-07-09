@@ -1,4 +1,5 @@
 section.section.hero
+  
   .hero__bg
       img(src="./assets/img/bg/mountains-retina.jpg").parallax__scroll.parallax_retina
       img(src="./assets/img/bg/mountains-desktop.jpg").parallax__scroll.parallax_desktop
@@ -21,10 +22,19 @@ section.section.hero
             svg.social__icon_small.icon_color-white
               use(xlink:href="./assets/img/sprite.svg#in")
     .hamburger.hero__menu
+      
       .hamburger-icon
         span.hamburger-icon__line.hamburger-icon__line-top
         span.hamburger-icon__line.hamburger-icon__line-middle
         span.hamburger-icon__line.hamburger-icon__line-bottom
+      .hero__hideMenu
+        .hero__menuBg
+        .hero__menuBlock
+          nav.hideMenu-nav
+            a(href="works.html").hideMenu-nav__item Мои работы
+            a(href="about.html").hideMenu-nav__item Обо мне
+            a(href="blog.html").hideMenu-nav__item Блог
+            a(href="index.html").hideMenu-nav__item Авторизация
     .arrow-down.hero__scroll-button
       svg.arrow-down__pic
         use(xlink:href="./assets/img/sprite.svg#arrow_down")
@@ -39,4 +49,7 @@ section.section.hero
         .user__description
           .user__name.user__name_about #{com.user_name}
           .user__info.user__info_about #{com.user_title}
+
+    
+  
     

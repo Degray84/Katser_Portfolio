@@ -10,6 +10,13 @@ module.exports = {
         filename: 'assets/js/[name].bundle.js',
         path: __dirname + "./build"
     },
+    module: {
+        rules: [{
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+        }, ],
+    },
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             compress: {

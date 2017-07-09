@@ -6,15 +6,6 @@ block variables
 block content
   main.main
     #main__parallax.parallax
-      -for(var i = 0; i<10; i++)
-        .parallax__layer.parallax_desktop
-          img(src=`./assets/img/parallax(desktop-2100)/Layer(00${i}).png`).parallax__image
-      -for(var i = 0; i<10; i++)
-        .parallax__layer.parallax_laptop
-          img(src=`./assets/img/parallax(laptop-1575)/Layer(00${i}).png`).parallax__image
-      -for(var i = 0; i<10; i++)
-        .parallax__layer.parallax_retina
-          img(src=`./assets/img/parallax(2x)/Layer(00${i}).png`).parallax__image  
       img(src="./assets/img/bg/mountains-tablets.jpg").parallax__scroll.parallax_tablets
       img(src="./assets/img/bg/mountains-phones.jpg").parallax__scroll.parallax_phones
     .main__container
@@ -97,9 +88,9 @@ block content
                 nav.card-login-nav
                   ul.card-login-nav__list-login
                     li.card-login-nav__item.card-login-nav__item_login
-                      a(href="index.html", class="card-login-nav__link") На главную
+                      a(href="index.html", id="goBack" class="card-login-nav__link") На главную
                     li.card-login-nav__item.card-login-nav__item_login
-                      a(href="#", class="card-login-nav__link") Войти
+                      a(href="#", id="comeIn" class="card-login-nav__link") Войти
         .main__card
           
   footer.main__footer
