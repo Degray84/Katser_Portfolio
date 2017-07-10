@@ -4,22 +4,34 @@
     position: relative;
     margin-bottom: 500px;
     &__left {
-        position: relative;
         height: 100%;
-        margin-top: -80px;
-        margin-right: 50px;
-        float: left;
         width: 30%;
-        @include phones {
+        &_relative {
+            position: relative;
+            margin-top: -80px;
+            float: left;
+        }
+        &_fixed {
             position: fixed;
             z-index: 100;
             top: 130px;
-            left: -30vw;
+        }
+        @include phones {
+            position: fixed;
+            z-index: 100;
+            top: 200px;
+            left: 0;
+            margin-top: 0;
         }
         @include tablets {
-            display: none;
+            position: fixed;
+            z-index: 100;
+            top: 200px;
+            left: 0;
+            margin-top: 0;
         }
         &-nav {
+            padding-right: 40px;
             display: flex;
             flex-flow: column;
             align-items: flex-end;
@@ -51,11 +63,21 @@
     width: 60px;
     height: 60px;
     top: 70px;
-    right: -20px;
     z-index: -10;
     display: none;
     @include phones {
         display: block;
+        left: -30px;
+        &_active {
+            left: 250px;
+        }
+    }
+    @include tablets {
+        display: block;
+        left: -30px;
+        &_active {
+            left: 250px;
+        }
     }
 }
 
@@ -66,6 +88,26 @@
     text-align: right;
     background: white;
     overflow: hidden;
+    @include phones {
+        position: fixed;
+        top: 0;
+        left: -280px;
+        height: 100vh;
+        background: rgb(0, 191, 165);
+        &_active {
+            left: 0;
+        }
+    }
+    @include tablets {
+        position: fixed;
+        top: 0;
+        left: -280px;
+        height: 100vh;
+        background: rgb(0, 191, 165);
+        &_active {
+            left: 0;
+        }
+    }
 }
 
 .blog-nav-item {
@@ -79,21 +121,35 @@
     cursor: pointer;
     right: 20px;
     font-size: 16px;
-    width: 280px;
+    // width: 280px;
     font-family: "Roboto";
     color: rgb(69, 90, 100);
     text-align: right;
     &_active {
         color: rgb(0, 191, 165);
     }
+    @include phones {
+        &_active {
+            color: white;
+        }
+    }
+    @include tablets {
+        &_active {
+            color: white;
+        }
+    }
 }
 
 .blog-nav-block {
+    display: none;
     position: absolute;
     right: 0;
     background-color: rgb(0, 191, 165);
     width: 3px;
     height: 42px;
+    &_active {
+        display: block
+    }
 }
 
 .blog-content-list {

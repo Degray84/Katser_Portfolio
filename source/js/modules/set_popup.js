@@ -1,10 +1,5 @@
-export default function() {
-    var comeIn = document.querySelector('#comeIn'),
-        namePlace = document.querySelector('.card-login__name'),
-        passPlace = document.querySelector('.card-login__pass'),
-        nameInput = namePlace.querySelector('.login-place-input'),
-        passInput = passPlace.querySelector('.login-place-input');
-
+module.exports = function() {
+    return
 
     function _setPopup(place, text) {
         let message = document.createElement('div'),
@@ -30,24 +25,5 @@ export default function() {
         setTimeout(function() {
             place.removeChild(document.querySelector('.pop-message'));
         }, 3000)
-    }
-
-    function _setUpListeners() {
-        comeIn.addEventListener('click', function(ev) {
-            ev.preventDefault();
-            // if (namePlace.querySelector('.works-submit_place').innerHTML == 0) {
-            console.log(namePlace);
-            _setPopup(namePlace, "Вы не ввели логин");
-            // }
-            // compliteMes.style.display = 'block';
-        })
-
-    }
-
-    function _init() {
-        _setUpListeners()
-    }
-    return {
-        init: _init()
     }
 };

@@ -64,14 +64,15 @@ export default function() {
 
         if (window.matchMedia("(max-width: 1959px)").matches) {
             loadImage(urlDesktop1, classDesktop)
-                .then(loadImage(urlDesktop2, classDesktop))
-                .then(loadImage(urlDesktop3, classDesktop))
-                .then(loadImage(urlDesktop4, classDesktop))
-                .then(loadImage(urlDesktop5, classDesktop))
-                .then(loadImage(urlDesktop6, classDesktop))
-                .then(loadImage(urlDesktop7, classDesktop))
-                .then(loadImage(urlDesktop8, classDesktop))
-                .then(loadImage(urlDesktop9, classDesktop));
+                .then(function() { return loadImage(urlDesktop2, classDesktop) })
+                .then(function() { return loadImage(urlDesktop3, classDesktop) })
+                .then(function() { return loadImage(urlDesktop4, classDesktop) })
+                .then(function() { return loadImage(urlDesktop5, classDesktop) })
+                .then(function() { return loadImage(urlDesktop6, classDesktop) })
+                .then(function() { return loadImage(urlDesktop7, classDesktop) })
+                .then(function() { return loadImage(urlDesktop8, classDesktop) })
+                .then(function() { return loadImage(urlDesktop9, classDesktop) });
+
         }
         if (window.matchMedia("(min-width: 1960px)").matches) {
             loadImage(urlRetina1, classRetina)
