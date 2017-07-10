@@ -1,0 +1,36 @@
+.hideMenu-nav {
+    display: flex;
+    flex-flow: column;
+    &__item {
+        position: relative;
+        width: 100%;
+        // height: 90px;
+        text-decoration: none;
+        font-size: 63px;
+        font-family: "bernier";
+        color: rgb(255, 255, 255);
+        text-align: center;
+        display: inline-block;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        // padding: 20px 65px;
+        &:hover {
+            &:after,
+            &:before {
+                content: "";
+                display: block;
+                @include centered(y);
+                width: 22px;
+                height: 5px;
+                background: rgba($main-font-color, .2);
+            }
+            &:after {
+                right: -40px;
+            }
+            &:before {
+                left: -40px;
+            }
+        }
+    }
+}

@@ -1,0 +1,132 @@
+.skills-list {
+    position: relative;
+    margin: 25px;
+    display: flex;
+    flex-flow: column;
+    @include phones {
+        margin: 0;
+    }
+    &__item {
+        position: relative;
+    }
+}
+
+.skills-row {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    @include desktop {
+        justify-content: flex-start;
+    }
+    @include laptop {
+        justify-content: flex-start;
+    }
+    &__title {
+        font-size: 28px;
+        font-family: "Roboto";
+        color: rgb(69, 90, 100);
+        text-align: left;
+        margin-left: 20px;
+        @include phones {
+            text-align: center;
+            margin-left: 0;
+        }
+        @include tablets {
+            text-align: center;
+            margin-left: 0;
+        }
+    }
+}
+
+.skills-row-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    @include desktop {
+        justify-content: flex-start;
+    }
+    @include laptop {
+        justify-content: flex-start;
+    }
+}
+
+.skills-row-item {
+    width: 120px;
+    margin: 20px;
+}
+
+.skills {
+    position: relative;
+    &__title {
+        @include centered();
+        font-size: 14px;
+        font-family: "Roboto";
+        color: rgb(0, 191, 165);
+        text-align: center;
+    }
+    &__circle {
+        display: block;
+        height: 120px;
+        width: 120px;
+        fill: none;
+        stroke-width: 20;
+        &-under {
+            stroke: #dfdcd5;
+            fill: none;
+        }
+        &-above {
+            opacity: .9;
+            -webkit-transition: all .9s;
+            -o-transition: all .9s;
+            transition: all .9s;
+            // stroke: #16c2aa;
+            stroke-dasharray: .0010 360;
+            &_light {
+                stroke: #65ccbb;
+            }
+            &_cyan {
+                stroke: #16c2aa;
+            }
+            &-html {
+                stroke-dasharray: 280 360;
+                stroke-opacity: calc(280 / 360);
+            }
+            &-css {
+                stroke-dasharray: 200 360;
+                stroke-opacity: calc(200 / 360);
+            }
+            &-js {
+                stroke-dasharray: 130 360;
+                stroke-opacity: calc(130 / 360);
+            }
+            &-php {
+                stroke-dasharray: 80 360;
+                stroke-opacity: calc(80 / 360);
+            }
+            &-mySQL {
+                stroke-dasharray: 180 360;
+                stroke-opacity: calc(180 / 360);
+            }
+            &-nodeJS {
+                stroke-dasharray: 60 360;
+                stroke-opacity: calc(60 / 360);
+            }
+            &-mongo {
+                stroke-dasharray: 50 360;
+                stroke-opacity: calc(50 / 360);
+            }
+            &-git {
+                stroke-dasharray: 200 360;
+                stroke-opacity: calc(200 / 360);
+            }
+            &-gulp {
+                stroke-dasharray: 240 360;
+                stroke-opacity: calc(240 / 360);
+            }
+            &-yarn {
+                stroke-dasharray: 280 360;
+                stroke-opacity: calc(280 / 360);
+            }
+        }
+    }
+}

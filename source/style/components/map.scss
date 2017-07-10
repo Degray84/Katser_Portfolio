@@ -1,0 +1,85 @@
+.map {
+    position: relative;
+    padding-bottom: 150px;
+    @include desktop {
+        padding-bottom: 150px;
+    }
+    @include laptop {
+        padding-bottom: 150px;
+    }
+    @include tablets {
+        padding-bottom: 270px;
+    }
+    @include phones {
+        padding-bottom: 560px;
+    }
+}
+
+.google-map {
+    width: 100%;
+    position: absolute;
+    display: block;
+    height: 100%;
+}
+
+.map__contacts {
+    position: absolute;
+    @include desktop {
+        @include centered();
+    }
+    @include laptop {
+        @include centered();
+    }
+    @include tablets {
+        @include centered();
+    }
+    @include phones {
+        @include centered(x);
+    }
+}
+
+.contacts {
+    border-radius: 5px;
+    background-color: rgb(252, 252, 252);
+    opacity: 0.851;
+    width: 380px;
+    height: 290px;
+    @include phones {
+        opacity: 1;
+        border-radius: 0;
+        width: 100%;
+        min-width: 400px;
+    }
+}
+
+.contacts__title {
+    @include centered(x);
+}
+
+.contacts__list {
+    @include centered(x);
+    top: 100px;
+    width: 300px;
+}
+
+.contacts__item {
+    margin-bottom: 22px;
+}
+
+.contacts-row {
+    width: 300px;
+}
+
+.contacts-row__icon {
+    margin-right: 8px;
+    float: left;
+    width: 20px;
+    height: 20px;
+    fill: #16c2aa;
+}
+
+.contacts-row__content {
+    font-size: 16px;
+    font-family: "Roboto";
+    color: rgba(69, 90, 100, 0.8);
+}

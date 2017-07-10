@@ -1,0 +1,188 @@
+.blog {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-bottom: 500px;
+    &__left {
+        height: 100%;
+        width: 30%;
+        &_relative {
+            position: relative;
+            margin-top: -80px;
+            float: left;
+        }
+        &_fixed {
+            position: fixed;
+            z-index: 100;
+            top: 130px;
+        }
+        @include phones {
+            position: fixed;
+            z-index: 100;
+            top: 200px;
+            left: 0;
+            margin-top: 0;
+        }
+        @include tablets {
+            position: fixed;
+            z-index: 100;
+            top: 200px;
+            left: 0;
+            margin-top: 0;
+        }
+        &-nav {
+            padding-right: 40px;
+            display: flex;
+            flex-flow: column;
+            align-items: flex-end;
+        }
+    }
+    &__right {
+        position: relative;
+        height: 100%;
+        margin-top: -80px;
+        float: right;
+        width: 70%;
+        @include phones {
+            width: 100vw;
+            padding-bottom: 150px;
+        }
+        @include tablets {
+            width: 100vw;
+            padding-bottom: 150px;
+        }
+        &-content {
+            display: flex;
+            flex-flow: column;
+        }
+    }
+}
+
+.halfcircle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 70px;
+    z-index: -10;
+    display: none;
+    @include phones {
+        display: block;
+        left: -30px;
+        &_active {
+            left: 250px;
+        }
+    }
+    @include tablets {
+        display: block;
+        left: -30px;
+        &_active {
+            left: 250px;
+        }
+    }
+}
+
+.blog-nav-list {
+    position: relative;
+    display: block;
+    width: 280px;
+    text-align: right;
+    background: white;
+    overflow: hidden;
+    @include phones {
+        position: fixed;
+        top: 0;
+        left: -280px;
+        height: 100vh;
+        background: rgb(0, 191, 165);
+        &_active {
+            left: 0;
+        }
+    }
+    @include tablets {
+        position: fixed;
+        top: 0;
+        left: -280px;
+        height: 100vh;
+        background: rgb(0, 191, 165);
+        &_active {
+            left: 0;
+        }
+    }
+}
+
+.blog-nav-item {
+    position: relative;
+    width: 280px;
+    min-height: 42px;
+}
+
+.blog-nav-text {
+    @include centered(y);
+    cursor: pointer;
+    right: 20px;
+    font-size: 16px;
+    // width: 280px;
+    font-family: "Roboto";
+    color: rgb(69, 90, 100);
+    text-align: right;
+    &_active {
+        color: rgb(0, 191, 165);
+    }
+    @include phones {
+        &_active {
+            color: white;
+        }
+    }
+    @include tablets {
+        &_active {
+            color: white;
+        }
+    }
+}
+
+.blog-nav-block {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgb(0, 191, 165);
+    width: 3px;
+    height: 42px;
+    &_active {
+        display: block
+    }
+}
+
+.blog-content-list {
+    width: 85%;
+    min-width: 300px;
+    height: 100%;
+    padding-bottom: 220px;
+}
+
+.blog-content-item {
+    width: 100%;
+    min-width: 300px;
+    @include phones {
+        width: 94vw;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    @include tablets {
+        width: 90vw;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    &:after {
+        content: "";
+        display: block;
+        background-color: rgb(55, 62, 66);
+        opacity: 0.07;
+        width: 100%;
+        height: 5px;
+        margin-top: 75px;
+        margin-bottom: 65px;
+    }
+    &:last-child:after {
+        display: none;
+    }
+}

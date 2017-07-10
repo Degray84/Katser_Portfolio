@@ -1,0 +1,134 @@
+.about {
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    @include phones {
+        flex-direction: column;
+        align-items: center;
+        flex-flow: column;
+    }
+    &__triangles {
+        position: absolute;
+        width: 100vw;
+        // @include desktop {
+        //     height: 180px;
+        //     padding-top: 180px;
+        //     top: 60px;
+        // }
+        // @include laptop {
+        //     height: 125px;
+        //     padding-top: 125px;
+        //     top: 60px;
+        // }
+        // @include tablets {
+        //     padding-top: 60px;
+        //     top: 30px;
+        // }
+        // @include phones {
+        //     padding-top: 25px;
+        //     top: 12px;
+        // }
+    }
+    &__left {
+        @include desktop {
+            width: 50vw;
+        }
+        @include laptop {
+            width: 50vw;
+        }
+        @include tablets {
+            width: 50vw;
+        }
+        @include phones {
+            width: 100vw;
+        }
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        background: $white;
+        &-title {
+            @include desktop {}
+            @include laptop {}
+            @include tablets {}
+            @include phones {
+                width: 240px;
+            }
+        }
+        &-content {
+            position: relative;
+        }
+    }
+    &__right {
+        @include desktop {
+            width: 50vw;
+        }
+        @include laptop {
+            width: 50vw;
+        }
+        @include tablets {
+            width: 50vw;
+        }
+        @include phones {
+            width: 100vw;
+        }
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        background: $beige;
+        &-title {}
+        &-content {
+            position: relative;
+            @include desktop {
+                width: 50vw;
+            }
+            @include laptop {
+                width: 50vw;
+            }
+            @include tablets {
+                width: 50vw;
+            }
+            @include phones {
+                width: 100vw;
+            }
+        }
+    }
+}
+
+.about-left-title__pic {
+    position: absolute;
+    @include centered(x);
+    top: -45px;
+    opacity: 0.1;
+    display: block;
+    @include desktop {}
+    @include laptop {}
+    @include tablets {}
+    @include phones {
+        width: 200px;
+    }
+}
+
+.about__right-text {
+    margin: 25px;
+}
+
+.works-triangle__left,
+.works-triangle__right {
+    float: left;
+    width: 50vw;
+    position: relative;
+    @include desktop {
+        padding-top: 180px;
+    }
+    @include laptop {
+        padding-top: 125px;
+    }
+    @include tablets {
+        padding-top: 60px;
+    }
+    @include phones {
+        padding-top: 25px;
+    }
+}

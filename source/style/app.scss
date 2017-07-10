@@ -1,5 +1,13 @@
-body {
-  margin: 0;
-}
-
-@import 'common/greating';
+//Цвета
+$white: #efeee9;
+$beige: #eeebdf;
+$main-font-color: #373e42;
+$clear-white: #faf8f0;
+$clear-clear-white: #fff;
+$bg-works: #f0efe9;
+//Вложенности
+@import "mixins/mixins.scss";
+@import "common/base.scss";
+@import "common/fonts.scss";
+@import "components/*.scss";
+@import "pages/*.scss";

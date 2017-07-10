@@ -1,0 +1,281 @@
+        .card-login {
+            // position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            &__title {
+                @include centered(x);
+                top: 10px;
+            }
+            &__name {
+                @include centered(x);
+                top: 105px;
+                z-index: 4;
+            }
+            &__icon {
+                @include centered();
+            }
+            &__pass {
+                @include centered(x);
+                top: 170px;
+                z-index: 3;
+            }
+            &__am-i-humman {
+                @include centered(x);
+                top: 220px;
+            }
+            &__menu {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        }
+        
+        .card__bg {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 350px;
+            background-color: rgb(252, 252, 252);
+            opacity: 0.8;
+        }
+        
+        .card-login-place {
+            display: flex;
+            justify-content: space-between;
+            @include desktop {
+                width: 340px;
+            }
+            @include laptop {
+                width: 340px;
+            }
+            @include tablets {
+                width: 310px;
+            }
+            @include phones {
+                width: 264px;
+            }
+            height: 38px;
+            &__rect {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                position: relative;
+                width: 38px;
+                height: 38px;
+                background: #f0efe9;
+            }
+            &__icon {
+                @include centered();
+            }
+            &__input {
+                @include desktop {
+                    width: calc(340px - 38px);
+                }
+                @include laptop {
+                    width: calc(340px - 38px);
+                }
+                @include tablets {
+                    width: calc(310px - 38px);
+                }
+                @include phones {
+                    width: calc(264px - 38px);
+                }
+            }
+        }
+        
+        .login-place-input {
+            position: relative;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background-color: rgba(255, 255, 255, 1);
+            height: 36px;
+            width: 100%;
+            text-indent: 18px;
+            outline: none;
+            border: 0;
+            &_valid {
+                box-shadow: 0 0 0 1pt #00bfa5;
+            }
+            &_invalid {
+                box-shadow: 0 0 0 1pt #e44845;
+            }
+        }
+        
+        .am-i-human {
+            &__first-check {
+                @include centered(x);
+                top: 20px;
+            }
+            &__ques {
+                @include centered(x);
+                top: 50px;
+            }
+            &__second-check {
+                @include centered(x);
+                top: 90px;
+            }
+        }
+        
+        .am-i-human-ques {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 220px;
+        }
+        
+        .human-ckeckbox {
+            position: relative;
+            width: 260px;
+            display: flex;
+            justify-content: center;
+            &__ch {
+                @include centered();
+            }
+            &__tx {
+                @include centered();
+                left: 30px;
+            }
+        }
+        
+        .human-tx {
+            font-size: 16px;
+            font-family: "Roboto";
+            color: rgba(69, 90, 100, 0.8);
+            &_bold {
+                font-weight: bold;
+            }
+            &_center {
+                text-align: center;
+            }
+        }
+        
+        input[type="checkbox"] {
+            display: none;
+        }
+        
+        input[type="checkbox"]+label {
+            cursor: pointer;
+        }
+        
+        input[type="checkbox"]+label::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-bottom: -5px;
+            padding-left: 10px;
+            opacity: 0.8;
+            background-image: url("../img/checked-rect.png");
+            background-repeat: no-repeat;
+        }
+        
+        input[type="checkbox"]:checked+label::before {
+            opacity: 0.8;
+            background-image: url("../img/checked.png");
+            background-repeat: no-repeat;
+        }
+        
+        input[type="radio"] {
+            display: none;
+        }
+        
+        input[type="radio"]+label {
+            cursor: pointer;
+        }
+        
+        input[type="radio"]+label::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-bottom: -5px;
+            padding-left: 10px;
+            opacity: 0.8;
+            background-image: url("../img/radio_no.png");
+            background-repeat: no-repeat;
+        }
+        
+        input[type="radio"]:checked+label::before {
+            opacity: 0.8;
+            background-image: url("../img/radio_yes.png");
+            background-repeat: no-repeat;
+        }
+        
+        .second-check-cont {
+            position: relative;
+            width: 240px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .second-check-yes {
+            position: relative;
+            width: 115px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .second-check-no {
+            position: relative;
+            width: 200px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .second-check__tx {
+            @include centered(y);
+            left: 22px;
+        }
+        
+        .second-check__radio {
+            @include centered(y);
+            left: 0;
+        }
+        
+        // .main-nav__list-login {
+        //     width: 384px;
+        //     margin-left: -4px;
+        //     padding: 0;
+        // }
+        // .main-nav__item_login {
+        //     border-left: 2px solid rgba(222, 227, 231, 0.5);
+        //     width: 190px;
+        //     height: 45px;
+        // }
+        .card-login-nav {
+            width: 100%;
+            height: 45px;
+            &__list-login {
+                display: flex;
+                justify-content: space-between;
+                margin-left: -2px;
+                ;
+            }
+            &__item {
+                position: relative;
+                height: 45px;
+                list-style: none;
+                background-color: rgb(0, 191, 165);
+                opacity: 0.8;
+                text-align: center;
+                &:hover {
+                    background-color: rgb(0, 150, 136);
+                    opacity: 0.5;
+                }
+            }
+            &__link {
+                font-size: 16px;
+                font-family: "Roboto";
+                color: rgb(255, 255, 255);
+                line-height: 2.8;
+                @include centered();
+                height: inherit;
+                width: inherit;
+                text-decoration: none;
+            }
+            &__item_login {
+                border-left: 2px solid rgba(222, 227, 231, 0.5);
+                width: 190px;
+                height: 45px;
+            }
+        }

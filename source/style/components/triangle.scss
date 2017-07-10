@@ -1,0 +1,37 @@
+.triangle {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 100%;
+    @include desktop {
+        height: 180px;
+    }
+    @include laptop {
+        height: 125px;
+    }
+    @include tablets {
+        height: 60px;
+    }
+    @include phones {
+        height: 25px;
+    }
+    &_fill {
+        &_white {
+            fill: $white;
+        }
+        &_beige {
+            fill: $beige;
+        }
+        &_clear-white {
+            fill: $clear-white;
+        }
+        &_clear-clear-white {
+            fill: $clear-clear-white;
+        }
+    }
+    &__svg {
+        height: 100%;
+        width: 100%;
+        fill: inherit;
+    }
+}

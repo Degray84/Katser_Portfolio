@@ -1,0 +1,78 @@
+%clearfix {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin centered($axis:'both') {
+    position: absolute;
+    @if $axis=='x' {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @if $axis=='both' {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @if $axis=='y' {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@mixin retina-parallax {
+    @media (min-width: 1960px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
+
+@mixin desk-parallax {
+    @media (min-width: 1400px)and (max-width: 1959px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: 1200px) and (max-width: 1799px) {
+        @content;
+    }
+}
+
+@mixin lap-parallax {
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        @content;
+    }
+}
+
+@mixin tablets {
+    @media (min-width: 768px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin tab-parallax {
+    @media (min-width: 768px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin phones {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin landscape {
+    @media (orientation: landscape) {
+        @content;
+    }
+}
