@@ -18,6 +18,7 @@ export default function() {
         });
     };
 
+
     function _mouseMoveListener() {
 
         window.addEventListener('mousemove', _moveLayers);

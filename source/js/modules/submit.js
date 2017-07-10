@@ -5,20 +5,57 @@ export default function() {
         compliteMes = document.querySelector('.notify-complite'),
         namePlace = document.querySelector('.works-submit__name'),
         emailPlace = document.querySelector('.works-submit__email'),
+        messPlace = document.querySelector('.works-submit__message'),
+        nameInput = namePlace.querySelector('.works-submit_place'),
+        emailInput = emailPlace.querySelector('.works-submit_place'),
+        messInput = messPlace.querySelector('.works-submit_place'),
         closeComplite = document.querySelector('.notify-btn');
-    console.log(namePlace.querySelector('.works-submit_place').innerHTML == 1);
 
     function _setUpListeners() {
         submitSb.addEventListener('click', function(ev) {
             ev.preventDefault();
-            if (namePlace.querySelector('.works-submit_place').innerHTML == 0) {
-                _setPopup(namePlace, "Вы не ввели логин");
+            if (nameInput.value == '') {
+                _setPopup(namePlace, "Вы не ввели имя");
+                nameInput.classList.add('login-place-input_invalid');
+                setTimeout(function() {
+                    nameInput.classList.remove('login-place-input_invalid');
+                }, 3000);
+
+            } else if (emailInput.value == '') {
+
+                _setPopup(emailPlace, "Вы не ввели Email");
+                emailInput.classList.add('login-place-input_invalid');
+                setTimeout(function() {
+                    emailInput.classList.remove('login-place-input_invalid');
+                }, 3000);
+
+            } else if (messInput.value == '') {
+                _setPopup(messPlace, "Введите сообщение");
+                messInput.classList.add('login-place-input_invalid');
+                setTimeout(function() {
+                    messInput.classList.remove('login-place-input_invalid');
+                }, 3000);
+
             }
-            // compliteMes.style.display = 'block';
+            if (nameInput.value != '') {
+                nameInput.classList.add('login-place-input_valid');
+                if (emailInput.value != '') {
+                    emailInput.classList.add('login-place-input_valid');
+                }
+                if (messInput.value != '') {
+                    messInput.classList.add('login-place-input_valid');
+                    compliteMes.style.display = 'block';
+                }
+            }
         })
         submitRs.addEventListener('click', function(ev) {
             ev.preventDefault();
-            _setPopup(emailPlace, "Вы не ввели Email")
+            nameInput.value = '';
+            nameInput.classList.remove('login-place-input_valid');
+            emailInput.value = '';
+            emailInput.classList.remove('login-place-input_valid');
+            messInput.value = '';
+            messInput.classList.remove('login-place-input_valid');
         })
         closeComplite.addEventListener('click', function(ev) {
             ev.preventDefault();
@@ -37,9 +74,7 @@ export default function() {
             classColorRed = 'pop-message_color-red',
             classPopMessageArrow = 'pop-message__arrow',
             classPopMessageBox = 'pop-message__box';
-        if (typeof(popMessage) != undefined) {
-            // place.removeChild(document.querySelector('.pop-message'));
-        }
+        if (typeof(popMessage) != undefined) {}
         popMessage = place.appendChild(message);
         popArrow = popMessage.appendChild(arrow);
         popBox = popMessage.appendChild(box);

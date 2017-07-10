@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
+    overflow: hidden;
     @include desktop {
         justify-content: space-between;
         flex-flow: column wrap;
@@ -32,6 +33,7 @@
         justify-content: space-around;
         order: 3;
         width: 100vw;
+        overflow: hidden;
         @include desktop {
             width: 50vw;
         }

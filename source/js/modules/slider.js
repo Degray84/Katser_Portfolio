@@ -2,6 +2,8 @@ export default function() {
     var workUrl1 = "./assets/img/work1.png",
         workUrl2 = "./assets/img/work2.png",
         workUrl3 = "./assets/img/work3.png",
+        workUrl4 = "./assets/img/work4.png",
+        workUrl5 = "./assets/img/work5.png",
         works = [],
         firstWork = document.querySelector('.first-work-img'),
         secondWork = document.querySelector('.second-work-img'),
@@ -98,7 +100,7 @@ export default function() {
     }
     // Инициализация
     function _init() {
-        _pushLinks(workUrl1, workUrl2, workUrl3)
+        _pushLinks(workUrl1, workUrl2, workUrl3, workUrl4, workUrl5)
         _linksInit()
         _leftArrowEvent()
         _rightArrowEvent()

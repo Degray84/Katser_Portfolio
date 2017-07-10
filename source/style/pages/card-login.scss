@@ -93,6 +93,12 @@
             text-indent: 18px;
             outline: none;
             border: 0;
+            &_valid {
+                box-shadow: 0 0 0 1pt #00bfa5;
+            }
+            &_invalid {
+                box-shadow: 0 0 0 1pt #e44845;
+            }
         }
         
         .am-i-human {

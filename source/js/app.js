@@ -4,9 +4,11 @@ import flip from './modules/flip';
 import mainMenu from './modules/main-menu';
 import parallax from './modules/parallax';
 import parallaxScroll from './modules/parallaxScroll';
-import preload from './modules/preload';
+import main_preload from './modules/main_preload';
 import slider from './modules/slider';
 import submit from './modules/submit';
+import preload from './modules/preload';
+import scrollButton from './modules/arrow';
 
 // Переменная для проверки страницы на наличие контейнера для параллакс
 var main = document.getElementsByClassName('main'),
@@ -14,7 +16,6 @@ var main = document.getElementsByClassName('main'),
     blog = document.getElementsByClassName('blog'),
     works = document.getElementsByClassName('works');
 // Подключаемые модули
-
 if (heroParallax.length) {
     parallaxScroll(); //модуль параллакса от скролла мышью
     mainMenu(); //Модуль меню в шапке страниц
@@ -28,9 +29,12 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 if (main.length) {
     flip(); //Модуль для флип-эффекта
     authoriz(); //Модуль для валидации на главной странице
+    main_preload();
+}
+//Модуль для прелоадеров
+if (!main.length) {
     preload();
-    //Модуль для прелоадеров
-
+    scrollButton();
 };
 if (blog.length) {
     blogMenu(); //Модуль для меню блога

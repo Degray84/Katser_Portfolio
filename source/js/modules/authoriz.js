@@ -3,7 +3,9 @@ export default function() {
         namePlace = document.querySelector('.card-login__name'),
         passPlace = document.querySelector('.card-login__pass'),
         nameInput = namePlace.querySelector('.login-place-input'),
-        passInput = passPlace.querySelector('.login-place-input');
+        passInput = passPlace.querySelector('.login-place-input'),
+        nameIcon = namePlace.querySelector('.social__icon_smaller'),
+        passIcon = passPlace.querySelector('.social__icon_smaller');
 
 
     function _setPopup(place, text) {
@@ -35,10 +37,39 @@ export default function() {
     function _setUpListeners() {
         comeIn.addEventListener('click', function(ev) {
             ev.preventDefault();
-            // if (namePlace.querySelector('.works-submit_place').innerHTML == 0) {
-            console.log(namePlace);
-            _setPopup(namePlace, "Вы не ввели логин");
-            // }
+            console.log(namePlace.querySelector('.login-place-input').value);
+            if (nameInput.value == '') {
+                _setPopup(namePlace, "Вы не ввели логин");
+                nameInput.classList.add('login-place-input_invalid');
+                setTimeout(function() {
+                    nameInput.classList.remove('login-place-input_invalid');
+                }, 3000);
+                nameIcon.classList.add('icon_color-red');
+                setTimeout(function() {
+                    nameIcon.classList.remove('icon_color-red');
+                }, 3000);
+            } else if (passInput.value == '') {
+
+                _setPopup(passPlace, "Вы не ввели логин");
+                passInput.classList.add('login-place-input_invalid');
+                setTimeout(function() {
+                    passInput.classList.remove('login-place-input_invalid');
+                }, 3000);
+                passIcon.classList.add('icon_color-red');
+                setTimeout(function() {
+                    passIcon.classList.remove('icon_color-red');
+                }, 3000);
+            }
+            if (nameInput.value != '') {
+                nameInput.classList.add('login-place-input_valid');
+                nameIcon.classList.add('icon_color-green');
+            }
+            if (passInput.value != '') {
+                passInput.classList.add('login-place-input_valid');
+                passIcon.classList.add('icon_color-green');
+            }
+
+
             // compliteMes.style.display = 'block';
         })
 
