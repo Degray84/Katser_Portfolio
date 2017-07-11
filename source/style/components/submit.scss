@@ -49,6 +49,9 @@
                 height: 125px;
                 resize: none;
             }
+            &:focus {
+                box-shadow: 0 0 0 1pt #00bfa5;
+            }
         }
         &__email {
             @include centered(x);
