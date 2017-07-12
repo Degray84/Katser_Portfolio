@@ -7,7 +7,6 @@ export default function() {
         nameIcon = namePlace.querySelector('.social__icon_smaller'),
         passIcon = passPlace.querySelector('.social__icon_smaller');
 
-
     function _setPopup(place, text) {
         let message = document.createElement('div'),
             popMessage,
@@ -34,11 +33,11 @@ export default function() {
         }, 3000)
     }
 
+
     function _setUpListeners() {
         comeIn.addEventListener('click', function(ev) {
-            ev.preventDefault();
-            console.log(namePlace.querySelector('.login-place-input').value);
             if (nameInput.value == '') {
+                ev.preventDefault();
                 _setPopup(namePlace, "Вы не ввели логин");
                 nameInput.classList.add('login-place-input_invalid');
                 setTimeout(function() {
@@ -49,6 +48,7 @@ export default function() {
                     nameIcon.classList.remove('icon_color-red');
                 }, 3000);
             } else if (passInput.value == '') {
+                ev.preventDefault();
 
                 _setPopup(passPlace, "Вы не ввели логин");
                 passInput.classList.add('login-place-input_invalid');
@@ -68,9 +68,6 @@ export default function() {
                 passInput.classList.add('login-place-input_valid');
                 passIcon.classList.add('icon_color-green');
             }
-
-
-            // compliteMes.style.display = 'block';
         })
 
     }

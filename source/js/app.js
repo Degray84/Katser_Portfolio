@@ -9,12 +9,14 @@ import slider from './modules/slider';
 import submit from './modules/submit';
 import preload from './modules/preload';
 import scrollButton from './modules/arrow';
+import tabs from './modules/tabs';
 
 // Переменная для проверки страницы на наличие контейнера для параллакс
 var main = document.getElementsByClassName('main'),
     heroParallax = document.getElementsByClassName('hero__bg'),
     blog = document.getElementsByClassName('blog'),
-    works = document.getElementsByClassName('works');
+    works = document.getElementsByClassName('works'),
+    admin = document.getElementsByClassName('admin');
 // Подключаемые модули
 if (heroParallax.length) {
     parallaxScroll(); //модуль параллакса от скролла мышью
@@ -31,8 +33,11 @@ if (main.length) {
     authoriz(); //Модуль для валидации на главной странице
     main_preload();
 }
+if (admin.length) {
+    tabs(); //Модуль для табов
+}
 //Модуль для прелоадеров
-if (!main.length) {
+if (!main.length && !admin.length) {
     preload();
     scrollButton();
 };

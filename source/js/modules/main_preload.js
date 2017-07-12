@@ -29,12 +29,16 @@ export default function() {
         urlRetina8 = "../assets/img/parallax(2x)/Layer(007).png",
         urlRetina9 = "../assets/img/parallax(2x)/Layer(008).png",
         urlRetina10 = "../assets/img/parallax(2x)/Layer(009).png",
+        urlPhones = "../assets/img/bg/mountains-phones.jpg",
+        urlTablets = "../assets/img/bg/mountains-tablets.jpg",
         classLaptop = "parallax__image parallax_laptop",
         classDesktop = "parallax__image parallax_desktop",
         classRetina = "parallax__image parallax_retina",
+        classTablets = "parallax__scroll parallax_tablets",
+        classPhones = "parallax__scroll parallax_phones",
         preloader = document.querySelector('.preloader'),
         percents = document.querySelector('.preloader__percent'),
-        tot = 9,
+        tot,
         cur = 0;
 
     function loadImage(url, classPar) {
@@ -63,7 +67,14 @@ export default function() {
     }
 
     function _loadAdaptitve() {
-        if (window.matchMedia("(max-width: 1399px)").matches) {
+        if (window.matchMedia("(max-width: 1199px)").matches) {
+            tot = 1;
+            loadImage(urlPhones, classPhones)
+                .then(function() { return loadImage(urlTablets, classTablets) });
+        }
+
+        if ((window.matchMedia("(max-width: 1399px)").matches) && (window.matchMedia("(min-width: 1200px)").matches)) {
+            tot = 8;
             loadImage(urlLaptop1, classLaptop)
                 .then(function() { return loadImage(urlLaptop2, classLaptop) })
                 .then(function() { return loadImage(urlLaptop3, classLaptop) })
@@ -75,7 +86,9 @@ export default function() {
                 .then(function() { return loadImage(urlLaptop9, classLaptop) });
         }
 
-        if (window.matchMedia("(max-width: 1959px)").matches) {
+
+        if ((window.matchMedia("(max-width: 1959px)").matches) && (window.matchMedia("(min-width: 1400px)").matches)) {
+            tot = 8;
             loadImage(urlDesktop1, classDesktop)
                 .then(function() { return loadImage(urlDesktop2, classDesktop) })
                 .then(function() { return loadImage(urlDesktop3, classDesktop) })
@@ -85,10 +98,10 @@ export default function() {
                 .then(function() { return loadImage(urlDesktop7, classDesktop) })
                 .then(function() { return loadImage(urlDesktop8, classDesktop) })
                 .then(function() { return loadImage(urlDesktop9, classDesktop) })
-                .then(function() { return preloader.style.display = "none" });
 
         }
         if (window.matchMedia("(min-width: 1960px)").matches) {
+            tot = 8;
             loadImage(urlRetina1, classRetina)
                 .then(function() { return loadImage(urlRetina2, classRetina) })
                 .then(function() { return loadImage(urlRetina3, classRetina) })
@@ -98,7 +111,6 @@ export default function() {
                 .then(function() { return loadImage(urlRetina7, classRetina) })
                 .then(function() { return loadImage(urlRetina8, classRetina) })
                 .then(function() { return loadImage(urlRetina9, classRetina) })
-                .then(function() { return preloader.style.display = "none" });
         }
     }
     return {
