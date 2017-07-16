@@ -1,7 +1,6 @@
 extends ../_template
 
 block variables
-  - var title = 'Works page'
 
 block content
   include ../common/header
@@ -110,20 +109,19 @@ block content
                   .content-about-pers-who__name.content-about__pers-text.content-about__pers-text_bold Сабанцев Владимир
                   .content-about-pers-who__desc.content-about__pers-text Преподаватель
     .works-about__submit
-      .works-submit
+      form.works-submit#mail
         .works-filter
         .works-submit__title
           .block-title.block-title_subtitle.block-title_width-big Связаться со мной
-        .works-submit__name
-          input(type="text" placeholder="Имя").works-submit_place.works-submit-text
-        .works-submit__email
-          input(type="email"  placeholder="Email").works-submit_place.works-submit-text
-        .works-submit__message
-          textarea(cols="22" rows="5" placeholder="Ваше сообщение").works-submit_place.works-submit_place-area.works-submit-text
-        .works-submit__buttons
-          .works-submit-buttons
-            input(type="submit" value="Отправить").works-submit-sb
-            input(type="reset"  value="Очистить").works-submit-rs
+        label.works-submit__name
+          input(name="name" type="text" placeholder="Имя").works-submit_place.works-submit-text
+        label.works-submit__email
+          input(name="email" type="email"  placeholder="Email").works-submit_place.works-submit-text
+        label.works-submit__message
+          textarea(name="text" cols="22" rows="5" placeholder="Ваше сообщение").works-submit_place.works-submit_place-area.works-submit-text
+        .works-submit__buttons.works-submit-buttons
+          input(name="" type="submit" value="Отправить").works-submit-sb
+          input(name="" type="reset"  value="Очистить").works-submit-rs
     .works-about__to-top
       .arrow.arrow_to-top           
   include ../common/footer

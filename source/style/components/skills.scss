@@ -87,46 +87,118 @@
             &_cyan {
                 stroke: #16c2aa;
             }
-            &-html {
-                stroke-dasharray: 280 360;
-                stroke-opacity: calc(280 / 360);
-            }
-            &-css {
-                stroke-dasharray: 200 360;
-                stroke-opacity: calc(200 / 360);
-            }
-            &-js {
-                stroke-dasharray: 130 360;
-                stroke-opacity: calc(130 / 360);
-            }
-            &-php {
-                stroke-dasharray: 80 360;
-                stroke-opacity: calc(80 / 360);
-            }
-            &-mySQL {
-                stroke-dasharray: 180 360;
-                stroke-opacity: calc(180 / 360);
-            }
-            &-nodeJS {
-                stroke-dasharray: 60 360;
-                stroke-opacity: calc(60 / 360);
-            }
-            &-mongo {
-                stroke-dasharray: 50 360;
-                stroke-opacity: calc(50 / 360);
-            }
-            &-git {
-                stroke-dasharray: 200 360;
-                stroke-opacity: calc(200 / 360);
-            }
-            &-gulp {
-                stroke-dasharray: 240 360;
-                stroke-opacity: calc(240 / 360);
-            }
-            &-yarn {
-                stroke-dasharray: 280 360;
-                stroke-opacity: calc(280 / 360);
-            }
         }
     }
+    &:hover &__circle-above {
+        stroke: #009688;
+        stroke-opacity: 1;
+    }
+    &:hover &__title {
+        color: #009688;
+    }
+}
+
+.circle-0 {
+    stroke-dasharray: .001 314;
+    stroke-opacity: 0;
+}
+
+.circle-5 {
+    stroke-dasharray: 15.7 314;
+    stroke-opacity: calc(15.7 / 314);
+}
+
+.circle-10 {
+    stroke-dasharray: 31.4 314;
+    stroke-opacity: calc(31.4 / 314);
+}
+
+.circle-15 {
+    stroke-dasharray: 47.1 314;
+    stroke-opacity: calc(47.1 / 314);
+}
+
+.circle-20 {
+    stroke-dasharray: 62.8 314;
+    stroke-opacity: calc(63 / 314);
+}
+
+.circle-25 {
+    stroke-dasharray: 78.5 314;
+    stroke-opacity: calc(78 / 314);
+}
+
+.circle-30 {
+    stroke-dasharray: 94.2 314;
+    stroke-opacity: calc(94 / 314);
+}
+
+.circle-35 {
+    stroke-dasharray: 109.9 314;
+    stroke-opacity: calc(110 / 314);
+}
+
+.circle-40 {
+    stroke-dasharray: 125.6 314;
+    stroke-opacity: calc(125 / 314);
+}
+
+.circle-45 {
+    stroke-dasharray: 141.3 314;
+    stroke-opacity: calc(141 / 314);
+}
+
+.circle-50 {
+    stroke-dasharray: 157 314;
+    stroke-opacity: calc(157 / 314);
+}
+
+.circle-55 {
+    stroke-dasharray: 172.7 314;
+    stroke-opacity: calc(172 / 314);
+}
+
+.circle-60 {
+    stroke-dasharray: 188.4 314;
+    stroke-opacity: calc(188 / 314);
+}
+
+.circle-65 {
+    stroke-dasharray: 204.1 314;
+    stroke-opacity: calc(204 / 314);
+}
+
+.circle-70 {
+    stroke-dasharray: 219.8 314;
+    stroke-opacity: calc(220 / 314);
+}
+
+.circle-75 {
+    stroke-dasharray: 235.5 314;
+    stroke-opacity: calc(235 / 314);
+}
+
+.circle-80 {
+    stroke-dasharray: 251.2 314;
+    stroke-opacity: calc(251 / 314);
+}
+
+.circle-85 {
+    stroke-dasharray: 266.9 314;
+    stroke-opacity: calc(267 / 314);
+}
+
+.circle-90 {
+    stroke-dasharray: 282.6 314;
+    stroke-opacity: calc(282 / 314);
+}
+
+.circle-95 {
+    stroke-dasharray: 298.3 314;
+    stroke-opacity: calc(300 / 314);
+}
+
+.circle-100 {
+    stroke-dasharray: 314 314;
+    stroke-opacity: 1;
 }

@@ -1,8 +1,5 @@
 extends ../_admin-template
-
 block variables
-  - var title = 'admin page'
-
 block content
     section.admin
         .admin__header
@@ -79,12 +76,18 @@ block content
                             .adm-blog__title.adm-title Страница "Блог"
                             .adm-blog__content
                                 .adm-blog__content-flow 
-                                    .admin-add
+                                    form.admin-add#blog
                                         .admin-add__title Добавить запись
                                         .admin-add__place
                                             input(type="text" placeholder="Название").admin-add_place.admin-add-text
                                         .admin-add__place
-                                            input(type="text"  placeholder="Дата").admin-add_place.admin-add-text
+                                            -
+                                                var data = new Date().toLocaleDateString('ru',{
+                                                    year: 'numeric',
+                                                    month: '2-digit',
+                                                    day: '2-digit'
+                                                })
+                                            input(type="date"  name="date" value =`${data}`).admin-add_place.admin-add-text
                                         .admin-add__place
                                             textarea(cols="22" rows="5" placeholder="Содержание").admin-add_place.admin-add_place-area.works-submit-text
                             .adm-blog__btn
@@ -94,16 +97,17 @@ block content
                             .adm-works
                                 .adm-works__title.adm-title Страница "Мои работы"
                                 .adm-works__content
-                                    .adm-works__content-flow 
-                                        .admin-add
+                                    .adm-works__content-flow
+                                        form.admin-add#upload(enctype="multipart/form-data")
                                             .admin-add__title Добавить работу
-                                            .admin-add__place
-                                                input(type="text" placeholder="Название проекта").admin-add_place.admin-add-text
-                                            .admin-add__place
-                                                input(type="text"  placeholder="Технологии").admin-add_place.admin-add-text
-                                            .admin-add__place
-                                                a.admin-add__load
+                                            label.admin-add__place
+                                                input(name="name" type="text" placeholder="Название проекта").admin-add_place.admin-add-text
+                                            label.admin-add__place
+                                                input(name="technologie" type="text"  placeholder="Технологии").admin-add_place.admin-add-text
+                                            .admin-add__place      
+                                                label.admin-add__load
                                                     img(src="./assets/img/loadImg.png").admin-add__img
+                                                    input(name="photo" type="file" required accept="img/*" hidden)
                                                     .admin-add__text Загрузить картинку
                                 .adm-works__btn
                                     button.btn-save Добавить

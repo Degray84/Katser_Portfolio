@@ -1,8 +1,5 @@
 extends ../_template
-
 block variables
-  - var title = 'Blog page'
-
 block content
   include ../common/header
   section.blog
@@ -17,34 +14,21 @@ block content
     .blog__left.blog__left_relative
       .blog__left-nav   
         ul.blog-nav-list
-          li.blog-nav-item
-            .blog-nav-block
-            a.blog-nav-text.blog-nav-text_active Самое важное в SASS
-          li.blog-nav-item
-            .blog-nav-block
-            a.blog-nav-text Приёмы в вёрстке, без которых не обходится ни один сайт
-          li.blog-nav-item
-            .blog-nav-block
-            a.blog-nav-text Статья 3
-          li.blog-nav-item
-            .blog-nav-block
-            a.blog-nav-text Статья 4
-          li.blog-nav-item
-            .blog-nav-block
-            a.blog-nav-text Статья 5
+          each titles in items
+            li.blog-nav-item
+              .blog-nav-block
+              a.blog-nav-text.blog-nav-text_active= titles.title
         svg.halfcircle 
           circle(r="25" cx="30" cy="30" fill="#00bfa5" stroke="#d6d6d6" stroke-width="5") 
     .blog__right
       .blog__right-content
         ul.blog-content-list
-          li.blog-content-item
-            include ../articles/art1
-          li.blog-content-item
-            include ../articles/art2
-          li.blog-content-item
-            include ../articles/art3
-          li.blog-content-item
-            include ../articles/art4
-          li.blog-content-item
-            include ../articles/art5
+          each article in items
+            li.blog-content-item
+              .blog-article__title
+                .article-title= article.title
+              .blog-article__date
+                  .article-date= article.data
+              .blog-article__content
+                  .article-content= article.body
   include ../common/footer

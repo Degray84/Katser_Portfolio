@@ -10,6 +10,7 @@ import submit from './modules/submit';
 import preload from './modules/preload';
 import scrollButton from './modules/arrow';
 import tabs from './modules/tabs';
+import prepareSend from './prepareSend';
 
 // Переменная для проверки страницы на наличие контейнера для параллакс
 var main = document.getElementsByClassName('main'),

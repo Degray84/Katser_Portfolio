@@ -1,5 +1,6 @@
+import prepareSend from '../prepareSend';
 export default function() {
-
+    const formMail = document.querySelector('#mail');
     var submitSb = document.querySelector('.works-submit-sb'),
         submitRs = document.querySelector('.works-submit-rs'),
         compliteMes = document.querySelector('.notify-complite'),
@@ -10,7 +11,22 @@ export default function() {
         emailInput = emailPlace.querySelector('.works-submit_place'),
         messInput = messPlace.querySelector('.works-submit_place'),
         closeComplite = document.querySelector('.notify-btn');
+    // if (formMail) {
+    //     formMail.addEventListener('submit', prepareSendMail);
+    // }
 
+    // export default function prepareSendMail(e) {
+    //     e.preventDefault();
+    //     console.log(formMail);
+    //     const data = {
+    //         name: formMail.name.value,
+    //         email: formMail.email.value,
+    //         text: formMail.text.value
+    //     };
+    //     const url = '/works';
+
+    //     prepareSend(url, formMail, data);
+    // }
     function _setUpListeners() {
         submitSb.addEventListener('click', function(ev) {
             ev.preventDefault();
@@ -41,13 +57,30 @@ export default function() {
                 nameInput.classList.add('login-place-input_valid');
                 if (emailInput.value != '') {
                     emailInput.classList.add('login-place-input_valid');
-                }
-                if (messInput.value != '') {
-                    messInput.classList.add('login-place-input_valid');
-                    compliteMes.style.display = 'block';
+                    if (messInput.value != '') {
+                        messInput.classList.add('login-place-input_valid');
+                        const data = {
+                            name: formMail.name.value,
+                            email: formMail.email.value,
+                            text: formMail.text.value
+                        };
+                        const url = './works';
+
+                        prepareSend(url, formMail, data);
+
+                        compliteMes.style.display = 'block';
+                        nameInput.value = '';
+                        nameInput.classList.remove('login-place-input_valid');
+                        emailInput.value = '';
+                        emailInput.classList.remove('login-place-input_valid');
+                        messInput.value = '';
+                        messInput.classList.remove('login-place-input_valid');
+                    }
                 }
             }
         })
+
+
         submitRs.addEventListener('click', function(ev) {
             ev.preventDefault();
             nameInput.value = '';
