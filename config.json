@@ -6,7 +6,7 @@
         "user": "",
         "password": ""
     },
-    "upload": "build/upload",
+    "upload": "build/assets/img/works",
     "mail": {
         "subject": "Сообщение с сайта-портфолио",
         "smtp": {

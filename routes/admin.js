@@ -18,21 +18,30 @@ router.post('/upload', function(req, res) {
     form.uploadDir = path.join(process.cwd(), config.upload);
     form.parse(req, function(err, fields, files) {
         if (err) {
-            return res.json({ status: 'Не удалось загрузить картинку' });
+            return res.json({ status: 'Не удалось загрузить' });
         }
         if (!fields.name) {
             fs.unlink(files.photo.path);
-            return res.json({ status: 'Не указано описание картинки!' });
+            return res.json({ status: 'Не указано название проекта!' });
+        }
+        if (!fields.desc) {
+            fs.unlink(files.photo.path);
+            return res.json({ status: 'Не указаны технологии!' });
         }
 
         let fileName = path.join(config.upload, files.photo.name);
-
+        console.log(fileName);
         fs.rename(files.photo.path, fileName, (err) => {
             if (err) {
                 fs.unlink(fileName);
                 fs.rename(files.photo.path, fileName);
             }
-            res.json({ status: 'Картинка успешно загружена' });
+            res.json({
+                status: "Работа добавлена",
+                work: path.join("./assets/img/works/", files.photo.name),
+                name: fields.name,
+                desc: fields.desc
+            });
         });
     });
 });

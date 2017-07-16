@@ -21,8 +21,10 @@
      let xhr = new XMLHttpRequest();
      xhr.open("POST", url, true);
      xhr.onload = function(e) {
+
          let result = JSON.parse(xhr.responseText);
-         cb(result.status);
+         cb(result);
+         console.log(result);
      };
      xhr.send(data);
  }

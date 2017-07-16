@@ -10,7 +10,9 @@ import submit from './modules/submit';
 import preload from './modules/preload';
 import scrollButton from './modules/arrow';
 import tabs from './modules/tabs';
+import upload from './modules/uploadImg';
 import prepareSend from './prepareSend';
+
 
 // Переменная для проверки страницы на наличие контейнера для параллакс
 var main = document.getElementsByClassName('main'),
@@ -36,6 +38,7 @@ if (main.length) {
 }
 if (admin.length) {
     tabs(); //Модуль для табов
+    upload();
 }
 //Модуль для прелоадеров
 if (!main.length && !admin.length) {

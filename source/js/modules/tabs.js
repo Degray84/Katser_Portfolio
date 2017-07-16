@@ -1,5 +1,5 @@
 export default function() {
-    let tabList = document.querySelectorAll('.admin-tab-list__item'),
+    let tabList = document.querySelectorAll('.admin-tab-item'),
         contentList = document.querySelectorAll('.admin-content-list__item');
 
     function _tabs(tabsArr, contentArr, tabsClass, contentClass) {

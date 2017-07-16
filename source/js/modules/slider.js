@@ -1,9 +1,10 @@
+import { fileUpload } from '../sendAjax';
 export default function() {
-    var workUrl1 = "./assets/img/work1.png",
-        workUrl2 = "./assets/img/work2.png",
-        workUrl3 = "./assets/img/work3.png",
-        workUrl4 = "./assets/img/work4.png",
-        workUrl5 = "./assets/img/work5.png",
+    var workUrl1 = "./assets/img/works/work1.png",
+        workUrl2 = "./assets/img/works/work2.png",
+        workUrl3 = "./assets/img/works/work3.png",
+        workUrl4 = "./assets/img/works/work4.png",
+        workUrl5 = "./assets/img/works/work5.png",
         works = [],
         firstWork = document.querySelector('.first-work-img'),
         secondWork = document.querySelector('.second-work-img'),
@@ -12,7 +13,7 @@ export default function() {
         activeDesc = document.querySelector('.work_active'),
         leftArrow = document.querySelector('.arrow-works'),
         rightArrow = document.querySelector('.arrow-up__pic');
-
+    console.log(works);
     // Передачи ссылок в массив
     function _pushLinks(wirk1, ...workN) {
         for (let i = 0; i < arguments.length; i++) {
