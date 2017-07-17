@@ -1,5 +1,10 @@
+import { sendJson } from '../sendAjax';
 export default function() {
-    var comeIn = document.querySelector('#comeIn'),
+    const comeIn = document.querySelector('#comeIn'),
+        robot = document.querySelector('#rad1'),
+        humman = document.querySelector('#ch'),
+        hummanPlace = document.querySelector('.human-ckeckbox'),
+        cardLogin = document.querySelector('.card-login'),
         namePlace = document.querySelector('.card-login__name'),
         passPlace = document.querySelector('.card-login__pass'),
         nameInput = namePlace.querySelector('.login-place-input'),
@@ -33,43 +38,53 @@ export default function() {
         }, 3000)
     }
 
-
     function _setUpListeners() {
         comeIn.addEventListener('click', function(ev) {
-            if (nameInput.value == '') {
-                ev.preventDefault();
-                _setPopup(namePlace, "Вы не ввели логин");
-                nameInput.classList.add('login-place-input_invalid');
-                setTimeout(function() {
-                    nameInput.classList.remove('login-place-input_invalid');
-                }, 3000);
-                nameIcon.classList.add('icon_color-red');
-                setTimeout(function() {
-                    nameIcon.classList.remove('icon_color-red');
-                }, 3000);
-            } else if (passInput.value == '') {
-                ev.preventDefault();
-
-                _setPopup(passPlace, "Вы не ввели логин");
-                passInput.classList.add('login-place-input_invalid');
-                setTimeout(function() {
-                    passInput.classList.remove('login-place-input_invalid');
-                }, 3000);
-                passIcon.classList.add('icon_color-red');
-                setTimeout(function() {
-                    passIcon.classList.remove('icon_color-red');
-                }, 3000);
-            }
-            if (nameInput.value != '') {
-                nameInput.classList.add('login-place-input_valid');
-                nameIcon.classList.add('icon_color-green');
-            }
-            if (passInput.value != '') {
-                passInput.classList.add('login-place-input_valid');
-                passIcon.classList.add('icon_color-green');
-            }
+            const data = {
+                login: cardLogin.login.value,
+                pass: cardLogin.pass.value,
+                humman: cardLogin.humman.checked,
+                robot: cardLogin.robot[0].checked
+            };
+            const url = '/author';
+            // console.log(data.login, data.pass, data.humman, data.robot);
+            sendJson(url, data, "POST", function(st) {
+                if (st == 'Введите логин!' || st == 'Неправильный логин!') {
+                    ev.preventDefault();
+                    _setPopup(namePlace, st);
+                    nameInput.classList.add('login-place-input_invalid');
+                    setTimeout(function() {
+                        nameInput.classList.remove('login-place-input_invalid');
+                    }, 3000);
+                    nameIcon.classList.add('icon_color-red');
+                    setTimeout(function() {
+                        nameIcon.classList.remove('icon_color-red');
+                    }, 3000);
+                } else if (st == 'Введите пароль!' || st == 'Неправильный пароль!') {
+                    ev.preventDefault();
+                    _setPopup(passPlace, st);
+                    passInput.classList.add('login-place-input_invalid');
+                    setTimeout(function() {
+                        passInput.classList.remove('login-place-input_invalid');
+                    }, 3000);
+                    passIcon.classList.add('icon_color-red');
+                    setTimeout(function() {
+                        passIcon.classList.remove('icon_color-red');
+                    }, 3000);
+                }
+                if (st == "Вход успешно выполнен") {
+                    location.href = '/admin';
+                }
+                if (st != 'Введите логин!' || st != 'Неправильный логин!') {
+                    nameInput.classList.add('login-place-input_valid');
+                    nameIcon.classList.add('icon_color-green');
+                }
+                if (st != 'Введите пароль!' || st != 'Неправильный пароль!') {
+                    passInput.classList.add('login-place-input_valid');
+                    passIcon.classList.add('icon_color-green');
+                }
+            });
         })
-
     }
 
     function _init() {

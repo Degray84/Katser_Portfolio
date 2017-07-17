@@ -17,6 +17,26 @@ const config = require('./config');
 
 const uploadDir = path.join(__dirname, config.upload);
 // view engine setup
+
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+
+mongoose
+    .connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
+        useMongoClient: true
+    })
+    .catch(e => {
+        console.error(e);
+        throw e;
+    });
+
+
+require('./models/db-close');
+
+require('./models/articles');
+require('./models/skills');
+require('./models/works');
+
 app.set('views', path.join(__dirname, 'source/template'));
 app.set('view engine', 'pug');
 

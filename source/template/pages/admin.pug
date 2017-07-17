@@ -5,7 +5,7 @@ block content
         .admin__header
             .admin__title.admin-title Панель администрирования
             .admin__back
-                a(href="index.html").admin-title-link Вернуться на сайт
+                a(href="index").admin-title-link Вернуться на сайт
         .admin__main
             .admin-main
                 ul.admin-main__tab-list.admin-tab-list
@@ -83,7 +83,7 @@ block content
                                     form.admin-add#blog
                                         .admin-add__title Добавить запись
                                         .admin-add__place
-                                            input(type="text" placeholder="Название").admin-add_place.admin-add-text
+                                            input(type="text" placeholder="Название" name="title").admin-add_place.admin-add-text
                                         .admin-add__place
                                             -
                                                 var data = new Date().toLocaleDateString('ru',{
@@ -93,9 +93,9 @@ block content
                                                 })
                                             input(type="date"  name="date" value =`${data}`).admin-add_place.admin-add-text
                                         .admin-add__place
-                                            textarea(cols="22" rows="5" placeholder="Содержание").admin-add_place.admin-add_place-area.works-submit-text
+                                            textarea(cols="22" rows="5" placeholder="Содержание" name="article").admin-add_place.admin-add_place-area.works-submit-text
                             .adm-blog__btn
-                                button.btn-save Добавить
+                                button.btn-save#btn-save-blog Добавить
                     li.admin-content-list__item
                         .adm-works
                             .adm-works

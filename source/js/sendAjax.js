@@ -12,7 +12,7 @@
          } catch (e) {
              cb("В данных ошибка");
          }
-         //  cb(result.status);
+         cb(result.status);
      };
      xhr.send(JSON.stringify(data));
  }
@@ -21,7 +21,6 @@
      let xhr = new XMLHttpRequest();
      xhr.open("POST", url, true);
      xhr.onload = function(e) {
-
          let result = JSON.parse(xhr.responseText);
          cb(result);
          console.log(result);

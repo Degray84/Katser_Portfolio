@@ -21,56 +21,38 @@ block content
           .block-title.block-title_title Мои работы
       .wk-slider
         .wk-slider-left__card
-          .slider-desc
-            .slider-desc__title
-              .block-title.block-title_subtitle.block-title_width-big Работа 1
-            .slider-desc__tech
-              .desc-tech Html, css, javascript
-            .slider-desc__link
-              include ../common/btn.pug
-          .slider-desc
-            .slider-desc__title
-              .block-title.block-title_subtitle.block-title_width-big Работа 2
-            .slider-desc__tech
-              .desc-tech Html, css, javascript
-            .slider-desc__link
-              include ../common/btn.pug
-          .slider-desc
-            .slider-desc__title
-              .block-title.block-title_subtitle.block-title_width-big Работа 3
-            .slider-desc__tech
-              .desc-tech Html, css, javascript
-            .slider-desc__link
-              include ../common/btn.pug
-          .slider-desc
-            .slider-desc__title
-              .block-title.block-title_subtitle.block-title_width-big Работа 4
-            .slider-desc__tech
-              .desc-tech Html, css, javascript
-            .slider-desc__link
-              include ../common/btn.pug
-          .slider-desc
-            .slider-desc__title
-              .block-title.block-title_subtitle.block-title_width-big Работа 5
-            .slider-desc__tech
-              .desc-tech Html, css, javascript
-            .slider-desc__link
-              include ../common/btn.pug
+          each work in items
+            .slider-desc
+              .slider-desc__title
+                .block-title.block-title_subtitle.block-title_width-big= work.work
+              .slider-desc__tech
+                .desc-tech= work.tech
+              .slider-desc__link
+                a(href=`${work.link}`).site-btn
+                  svg.site-btn__icon.btn-icon.icon_color-clear-white
+                      use(xlink:href="./assets/img/sprite.svg#link")
+                  span.site-btn__text Посмотреть сайт
         .wk-slider-present__first
-          img.first-work-img
+          each first,index in items
+            img(src=`${first.picUrl}` class=`first-work-img_${index}`).first-work-img
         .wk-slider-present
           .wk-slider-present__second
             .bg_color_gray
             .arrow-works.works__scroll-button
               svg.arrow-down__pic
                 use(xlink:href="./assets/img/sprite.svg#arrow_down")
-            img.second-work-img
+            each second,index in items
+              img(src=`${second.picUrl}` class=`second-work-img_${index}`).second-work-img
+            //- img.second-work-img
           .wk-slider-present__third
             .bg_color_gray
             .arrow-works.works__scroll-button
               svg.arrow-up__pic
                 use(xlink:href="./assets/img/sprite.svg#arrow_down")
-            img.third-work-img
+            each third,index in items
+              img(src=`${third.picUrl}` class=`third-work-img_${index}`).third-work-img    
+              
+            //- img.third-work-img
   section.section-big.works-about 
     .works__bg        
       img(src="./assets/img/bg/water.png")

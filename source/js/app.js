@@ -10,7 +10,8 @@ import submit from './modules/submit';
 import preload from './modules/preload';
 import scrollButton from './modules/arrow';
 import tabs from './modules/tabs';
-import upload from './modules/uploadImg';
+import uploadImg from './modules/uploadImg';
+import uploadArt from './modules/uploadArt';
 import prepareSend from './prepareSend';
 
 
@@ -38,7 +39,8 @@ if (main.length) {
 }
 if (admin.length) {
     tabs(); //Модуль для табов
-    upload();
+    uploadImg();
+    uploadArt();
 }
 //Модуль для прелоадеров
 if (!main.length && !admin.length) {

@@ -15,7 +15,7 @@ block content
                 .card-menu__user     
                   .user
                     .user__pic
-                      img(src="./assets/img/MyPhoto(06.17).png", alt="").user__pic-img
+                      img(src="./assets/img/MyPhoto(06.17).png").user__pic-img
                     .user__description
                       .user__name.user__name_index Кацер Сергей
                       .user__info.user__info_index Личный сайт разработчика
@@ -41,7 +41,7 @@ block content
                     a(href="about", class=`main-nav__link`) Обо мне
                   li.main-nav__item.main-nav__item_blog
                     a(href="blog", class=`main-nav__link`) Блог
-            .card-login
+            form.card-login
               .card__bg
               .card-login__title
                 .block-title.block-title_subtitle.block-title_title-big АВТОРИЗУЙТЕСЬ
@@ -52,7 +52,7 @@ block content
                       svg.social__icon_smaller.icon_color-gray
                         use(xlink:href="./assets/img/sprite.svg#login")
                   .card-login-place__input
-                    input(type="text" placeholder="Логин").login-place-input
+                    input(type="text" placeholder="Логин" name="login").login-place-input
               .card-login__pass
                 .card-login-place
                   .card-login-place__icon
@@ -61,12 +61,12 @@ block content
                       svg.social__icon_smaller.icon_color-gray
                         use(xlink:href="./assets/img/sprite.svg#password")
                   .card-login-place__input
-                    input(type="text" placeholder="Пароль").login-place-input
+                    input(type="text" placeholder="Пароль" name="pass").login-place-input
               .card-login__am-i-humman
                 .am-i-humman
                     .am-i-human__first-check
                       .human-ckeckbox
-                        input(id="ch" type="checkbox" hidden).human-ckeckbox__ch
+                        input(id="ch" type="checkbox" name="humman" hidden).human-ckeckbox__ch
                         label(for="ch").human-tx Я человек                       
                     .am-i-human__ques 
                       .am-i-human-ques
@@ -85,8 +85,7 @@ block content
                     li.card-login-nav__item.card-login-nav__item_login
                       a(href="index", id="goBack" class="card-login-nav__link") На главную
                     li.card-login-nav__item.card-login-nav__item_login
-                      a(href="admin", id="comeIn" class="card-login-nav__link") Войти
-        .main__card
-          
+                      a(id="comeIn" class="card-login-nav__link") Войти
+        .main__card        
   footer.main__footer
     .footer @ Кацер Сергей | Создано с любовью в LoftSchool 2017      

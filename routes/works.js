@@ -1,15 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
+const works = require('../models/works.json');
 const config = require('../config.json');
-
+console.log(works.db);
 router.get('/', (req, res) => {
     let obj = {
         title: 'Мои работы'
     };
-    Object.assign(obj, req.app.locals.settings);
+    Object.assign(obj, req.app.locals.settings, { items: works.db });
     res.render('pages/works', obj);
 });
+
+router.post('/slider', (req, res) => {
+    res.json(works.db);
+});
+
+
 router.post('/', (req, res) => {
     console.log(`"${req.body.name}"`);
     //требуем наличия имени, обратной почты и текста

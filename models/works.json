@@ -1,0 +1,33 @@
+{
+    "db": [{
+            "work": "Работа 1",
+            "tech": "Технологии 1",
+            "link": "#1",
+            "picUrl": "./assets/img/works/work1.png"
+        },
+        {
+            "work": "Работа 2",
+            "tech": "Технологии 2 ",
+            "link": "#2",
+            "picUrl": "./assets/img/works/work2.png"
+        },
+        {
+            "work": "Работа 3",
+            "tech": "Технологии 3",
+            "link": "#3",
+            "picUrl": "./assets/img/works/work3.png"
+        },
+        {
+            "work": "Работа 4",
+            "tech": "Технологии 4",
+            "link": "#4",
+            "picUrl": "./assets/img/works/work4.png"
+        },
+        {
+            "work": "Работа 5",
+            "tech": "Технологии 5",
+            "link": "#5",
+            "picUrl": "./assets/img/works/work5.png"
+        }
+    ]
+}

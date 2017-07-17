@@ -6,6 +6,10 @@
         "user": "",
         "password": ""
     },
+    "admin": {
+        "user": "admin",
+        "password": "12345"
+    },
     "upload": "build/assets/img/works",
     "mail": {
         "subject": "Сообщение с сайта-портфолио",

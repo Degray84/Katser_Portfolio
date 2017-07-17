@@ -36,16 +36,17 @@
         "webpack-stream": "^3.2.0"
     },
     "dependencies": {
-        "jquery": "~3.2.1",
-        "normalize.css": "~7.0.0",
         "body-parser": "~1.17.1",
         "cookie-parser": "~1.4.3",
         "debug": "~2.6.3",
         "express": "~4.15.2",
-        "helmet": "^3.6.1",
-        "jsonfile": "^2.4.0",
         "formidable": "^1.1.1",
+        "helmet": "^3.6.1",
+        "jquery": "~3.2.1",
+        "jsonfile": "^2.4.0",
+        "mongoose": "^4.11.3",
         "morgan": "~1.8.1",
+        "normalize.css": "~7.0.0",
         "pug": "~2.0.0-beta11",
         "serve-favicon": "~2.4.2"
     }

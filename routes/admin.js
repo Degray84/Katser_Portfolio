@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('../config.json');
 
+
 router.get('/', function(req, res) {
     let obj = {
         title: 'Панель администратора'
@@ -45,5 +46,31 @@ router.post('/upload', function(req, res) {
         });
     });
 });
+router.post('/addpost', (req, res) => {
+    if (!req.body.title || !req.body.date || !req.body.article) {
+        //если что-либо не указано - сообщаем об этом
+        return res.json({ status: 'Укажите данные!' });
+    }
+    const Model = mongoose.model('articles');
+    let item = new Model({
+        title: req.body.title,
+        date: new Date(req.body.date),
+        body: req.body.text
+    });
+    item.save().then(
+        i => {
+            return res.json({ status: "Запись успешно добавлена" });
+        },
+        e => {
+            const error = Object.keys(e.errors)
+                .map(key => e.errors[key].message)
+                .join(', ');
+
+            res.json({
+                status: "При добавлении произошла ошибка:" + error
+            });
+        }
+    )
+})
 
 module.exports = router;

@@ -11,22 +11,7 @@ export default function() {
         emailInput = emailPlace.querySelector('.works-submit_place'),
         messInput = messPlace.querySelector('.works-submit_place'),
         closeComplite = document.querySelector('.notify-btn');
-    // if (formMail) {
-    //     formMail.addEventListener('submit', prepareSendMail);
-    // }
 
-    // export default function prepareSendMail(e) {
-    //     e.preventDefault();
-    //     console.log(formMail);
-    //     const data = {
-    //         name: formMail.name.value,
-    //         email: formMail.email.value,
-    //         text: formMail.text.value
-    //     };
-    //     const url = '/works';
-
-    //     prepareSend(url, formMail, data);
-    // }
     function _setUpListeners() {
         submitSb.addEventListener('click', function(ev) {
             ev.preventDefault();

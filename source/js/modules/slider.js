@@ -1,75 +1,73 @@
-import { fileUpload } from '../sendAjax';
 export default function() {
-    var workUrl1 = "./assets/img/works/work1.png",
-        workUrl2 = "./assets/img/works/work2.png",
-        workUrl3 = "./assets/img/works/work3.png",
-        workUrl4 = "./assets/img/works/work4.png",
-        workUrl5 = "./assets/img/works/work5.png",
-        works = [],
-        firstWork = document.querySelector('.first-work-img'),
-        secondWork = document.querySelector('.second-work-img'),
-        thirdWork = document.querySelector('.third-work-img'),
+    var firstWork = Array.prototype.slice.call(document.querySelectorAll('.first-work-img')),
+        secondWork = Array.prototype.slice.call(document.querySelectorAll('.second-work-img')),
+        thirdWork = Array.prototype.slice.call(document.querySelectorAll('.third-work-img')),
         desc = Array.prototype.slice.call(document.querySelectorAll('.slider-desc')),
         activeDesc = document.querySelector('.work_active'),
         leftArrow = document.querySelector('.arrow-works'),
         rightArrow = document.querySelector('.arrow-up__pic');
-    console.log(works);
+
+    // Сдвиг массива второго контейнера изображений
+    _shiftArray(secondWork, "left");
+    // Сдвиг массива третьего контенера изображений
+    _shiftArray(thirdWork, "left");
+    _shiftArray(thirdWork, "left");
     // Передачи ссылок в массив
     function _pushLinks(wirk1, ...workN) {
         for (let i = 0; i < arguments.length; i++) {
             works.push(arguments[i]);
         }
     }
-    // Привязка ссылок к тегам img
-    function _linksInit() {
-        firstWork.src = works[0];
-        secondWork.src = works[1];
-        thirdWork.src = works[2];
-        for (let i = 0; i < desc.length; i++) {
-            if (i == 0) {
-                desc[i].classList.add('work_active');
-            } else { desc[i].classList.remove('work_active'); }
-        }
-    }
     // Сдвиг массива на шаг в лево или право
-    function _shiftArray(arrImg, arrDesc, way) {
+    function _shiftArray(arr, way) {
         if (way == 'left') {
-            let firstImg = arrImg.shift();
-            let firstDesc = arrDesc.shift();
-            arrImg.push(firstImg);
-            arrDesc.push(firstDesc);
+            let first = arr.shift();
+            arr.push(first);
         }
         if (way == 'right') {
-            let firstImg = arrImg.pop();
-            let firstDesc = arrDesc.pop();
-            arrImg.unshift(firstImg);
-            arrDesc.unshift(firstDesc);
+            let first = arr.pop();
+            arr.unshift(first);
         }
     }
+    // Привязка ссылок к тегам img
+    function _linksInit() {
+        for (let i = 0; i < desc.length; i++) {
+            if (i == 0) {
+                firstWork[i].classList.add('work_active');
+                secondWork[i].classList.add('work_active');
+                thirdWork[i].classList.add('work_active');
+                desc[i].classList.add('work_active');
+                _animation(firstWork[i], 'fade', 'up', 'hide')
+                _animation(secondWork[i], 'fade', 'down', 'show')
+                _animation(thirdWork[i], 'fade', 'up', 'show')
+            } else {
+                firstWork[i].classList.remove('work_active');
+                secondWork[i].classList.remove('work_active');
+                thirdWork[i].classList.remove('work_active');
+                desc[i].classList.remove('work_active');
+            }
+        }
+    }
+
     // Привязка ссылок и сдвиг массива вправо по клику на левую стрелку
     function _leftArrowEvent() {
-
         leftArrow.addEventListener("click", function(e) {
             e.preventDefault;
-            _animation(firstWork, 'fade', 'up', 'hide')
-            _animation(secondWork, 'fade', 'down', 'show')
-            _animation(thirdWork, 'fade', 'up', 'show')
-                // _animation(activeDesc, 'fade', 'up', 'show')
-            _shiftArray(works, desc, "right");
-
+            _shiftArray(firstWork, "right");
+            _shiftArray(secondWork, "right");
+            _shiftArray(thirdWork, "right");
+            _shiftArray(desc, "right");
             _linksInit();
         })
-
     };
     // Привязка ссылок и сдвиг массива влево по клику на правую стрелку
     function _rightArrowEvent() {
         rightArrow.addEventListener("click", function(e) {
             e.preventDefault;
-            _animation(firstWork, 'fade', 'down', 'hide')
-            _animation(secondWork, 'fade', 'up', 'show')
-            _animation(thirdWork, 'fade', 'down', 'show')
-                // _animation(activeDesc, 'fade', 'down', 'show')
-            _shiftArray(works, desc, "left");
+            _shiftArray(firstWork, "left");
+            _shiftArray(secondWork, "left");
+            _shiftArray(thirdWork, "left");
+            _shiftArray(desc, "left");
             _linksInit();
         })
     };
@@ -101,7 +99,6 @@ export default function() {
     }
     // Инициализация
     function _init() {
-        _pushLinks(workUrl1, workUrl2, workUrl3, workUrl4, workUrl5)
         _linksInit()
         _leftArrowEvent()
         _rightArrowEvent()
