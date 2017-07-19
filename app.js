@@ -18,25 +18,6 @@ const config = require('./config');
 const uploadDir = path.join(__dirname, config.upload);
 // view engine setup
 
-const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
-
-mongoose
-    .connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
-        useMongoClient: true
-    })
-    .catch(e => {
-        console.error(e);
-        throw e;
-    });
-
-
-require('./models/db-close');
-
-require('./models/articles');
-require('./models/skills');
-require('./models/works');
-
 app.set('views', path.join(__dirname, 'source/template'));
 app.set('view engine', 'pug');
 
@@ -86,10 +67,7 @@ server.on('listening', function() {
                     version: obj.version
                 };
                 console.log('Данные для хеширования ресурсов из version.json прочитаны');
-                //если такой папки нет - создаем ее
-                if (!fs.existsSync(uploadDir)) {
-                    fs.mkdirSync(uploadDir);
-                }
+
                 console.log('Express server started on port %s at %s', server.address().port, server.address().address);
             }
         });

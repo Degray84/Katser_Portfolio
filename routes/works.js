@@ -3,7 +3,6 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const works = require('../models/works.json');
 const config = require('../config.json');
-console.log(works.db);
 router.get('/', (req, res) => {
     let obj = {
         title: 'Мои работы'
@@ -19,11 +18,6 @@ router.post('/slider', (req, res) => {
 
 router.post('/', (req, res) => {
     console.log(`"${req.body.name}"`);
-    //требуем наличия имени, обратной почты и текста
-    // if (!req.body.name || !req.body.email || !req.body.text) {
-    //     //если что-либо не указано - сообщаем об этом
-    //     return res.json({ status: 'Укажите данные!' });
-    // }
 
     //инициализируем модуль для отправки писем и указываем данные из конфига
     const transporter = nodemailer.createTransport(config.mail.smtp);

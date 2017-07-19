@@ -1,15 +1,15 @@
-    function _setPopup(place, text) {
-        let message = document.createElement('div'),
-            popMessage,
+    function setPopup(place, text) {
+        const mess = document.createElement('div'),
             arrow = document.createElement('div'),
-            popArrow,
             box = document.createElement('div'),
-            popBox,
             classPopMessage = 'pop-message pop-message_color-red',
             classColorRed = 'pop-message_color-red',
             classPopMessageArrow = 'pop-message__arrow',
             classPopMessageBox = 'pop-message__box';
-        popMessage = place.appendChild(message);
+        let popMessage,
+            popArrow,
+            popBox;
+        popMessage = place.appendChild(mess);
         popArrow = popMessage.appendChild(arrow);
         popBox = popMessage.appendChild(box);
         popMessage.className = classPopMessage;
@@ -18,6 +18,6 @@
         popBox.innerHTML = text;
         setTimeout(function() {
             place.removeChild(document.querySelector('.pop-message'));
-        }, 3000)
+        }, 2000)
     }
-    export default function() { return _setPopup(place, text); }
+    export { setPopup };

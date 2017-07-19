@@ -8,29 +8,31 @@ export default function() {
         textList = document.querySelectorAll('.blog-nav-text'),
         blockList = document.querySelectorAll('.blog-nav-block'),
         navButton = document.querySelector('.halfcircle');
-
+    // Добавляем прослушку на скролл
     function _setUpListenters() {
         window.addEventListener('scroll', function() {
-            let menuOffset = blogSection.getBoundingClientRect().top;
-            if (menuOffset <= 90) {
-                blogMenu.classList.remove('blog__left_relative');
-                blogMenu.classList.add('blog__left_fixed');
-            }
-            if (menuOffset > 90) {
-                blogMenu.classList.remove('blog__left_fixed');
-                blogMenu.classList.add('blog__left_relative');
-            }
-            _articleOffset()
+                // Добавляем переменную, которая определяет расстояние от секции блога до верхней границы документа, 
+                // добавляет меню fixed, если выходит за границы значения и убирает fixed, если заходит обратно
+                let menuOffset = blogSection.getBoundingClientRect().top;
+                if (menuOffset <= 90) {
+                    blogMenu.classList.remove('blog__left_relative');
+                    blogMenu.classList.add('blog__left_fixed');
+                }
+                if (menuOffset > 90) {
+                    blogMenu.classList.remove('blog__left_fixed');
+                    blogMenu.classList.add('blog__left_relative');
+                }
+                _articleOffset()
 
-        })
+            })
+            // Скрывает или добавляет меню при клике на кнопку
         navButton.addEventListener('click', function() {
-            // console.log(navList, navButton)
             blogList.classList.toggle('blog-nav-list_active');
             navButton.classList.toggle('halfcircle_active');
         })
     }
 
-
+    //Проходится по массиву статей, определяет положение относительно отображения, добавляет активный класс, если статья в зоне видимости, убирает активный класс у остальных
     function _articleOffset() {
         for (let i = 0; i < articlesList.length; i++) {
             let articleOffset = articlesList[i].getBoundingClientRect().top,

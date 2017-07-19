@@ -1,4 +1,5 @@
 import prepareSend from '../prepareSend';
+import { setPopup } from './_popupAdd';
 export default function() {
     const formMail = document.querySelector('#mail');
     var submitSb = document.querySelector('.works-submit-sb'),
@@ -16,7 +17,7 @@ export default function() {
         submitSb.addEventListener('click', function(ev) {
             ev.preventDefault();
             if (nameInput.value == '') {
-                _setPopup(namePlace, "Вы не ввели имя");
+                setPopup(namePlace, "Вы не ввели имя");
                 nameInput.classList.add('login-place-input_invalid');
                 setTimeout(function() {
                     nameInput.classList.remove('login-place-input_invalid');
@@ -24,14 +25,14 @@ export default function() {
 
             } else if (emailInput.value == '') {
 
-                _setPopup(emailPlace, "Вы не ввели Email");
+                setPopup(emailPlace, "Вы не ввели Email");
                 emailInput.classList.add('login-place-input_invalid');
                 setTimeout(function() {
                     emailInput.classList.remove('login-place-input_invalid');
                 }, 3000);
 
             } else if (messInput.value == '') {
-                _setPopup(messPlace, "Введите сообщение");
+                setPopup(messPlace, "Введите сообщение");
                 messInput.classList.add('login-place-input_invalid');
                 setTimeout(function() {
                     messInput.classList.remove('login-place-input_invalid');
@@ -50,9 +51,7 @@ export default function() {
                             text: formMail.text.value
                         };
                         const url = './works';
-
                         prepareSend(url, formMail, data);
-
                         compliteMes.style.display = 'block';
                         nameInput.value = '';
                         nameInput.classList.remove('login-place-input_valid');
@@ -64,7 +63,6 @@ export default function() {
                 }
             }
         })
-
 
         submitRs.addEventListener('click', function(ev) {
             ev.preventDefault();
@@ -79,30 +77,6 @@ export default function() {
             ev.preventDefault();
             compliteMes.style.display = 'none';
         })
-    }
-
-    function _setPopup(place, text) {
-        let message = document.createElement('div'),
-            popMessage,
-            arrow = document.createElement('div'),
-            popArrow,
-            box = document.createElement('div'),
-            popBox,
-            classPopMessage = 'pop-message pop-message_color-red',
-            classColorRed = 'pop-message_color-red',
-            classPopMessageArrow = 'pop-message__arrow',
-            classPopMessageBox = 'pop-message__box';
-        if (typeof(popMessage) != undefined) {}
-        popMessage = place.appendChild(message);
-        popArrow = popMessage.appendChild(arrow);
-        popBox = popMessage.appendChild(box);
-        popMessage.className = classPopMessage;
-        popArrow.className = classPopMessageArrow;
-        popBox.className = classPopMessageBox;
-        popBox.innerHTML = text;
-        setTimeout(function() {
-            place.removeChild(document.querySelector('.pop-message'));
-        }, 3000)
     }
 
     function _init() {

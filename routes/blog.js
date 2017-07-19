@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const articles = require('../models/articles.json');
 
-/* GET home page. */
-
 router.get('/', function(req, res) {
     let obj = {
         title: 'Блог'

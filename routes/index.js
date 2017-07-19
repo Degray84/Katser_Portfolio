@@ -11,10 +11,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/author', function(req, res) {
-    // form.uploadDir = path.join(process.cwd(), config.upload);
 
-    console.log(config.admin.user);
-    console.log(config.admin.password);
     if (!req.body.login) {
         return res.json({ status: 'Введите логин!' });
     } else
@@ -37,22 +34,6 @@ router.post('/author', function(req, res) {
             status: "Вход успешно выполнен"
         });
     }
-
-    // let fileName = path.join(config.upload, files.photo.name);
-    // console.log(fileName);
-    // fs.rename(files.photo.path, fileName, (err) => {
-    //     if (err) {
-    //         fs.unlink(fileName);
-    //         fs.rename(files.photo.path, fileName);
-    //     }
-    //     res.json({
-    //         status: "Работа добавлена",
-    //         work: path.join("./assets/img/works/", files.photo.name),
-    //         name: fields.name,
-    //         desc: fields.desc
-    //     });
-    // });
-    // });
 });
 
 module.exports = router;

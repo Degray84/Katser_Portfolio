@@ -2,7 +2,7 @@ export default function() {
     let icon = document.querySelector('.hamburger-icon'),
         menu = document.querySelector('.hero__hideMenu'),
         menuItem = document.querySelectorAll('.hero__hideMenu');
-
+    //  При клике на иконку  делает активным меню и иконку, при втором клике убирает активный класс
     function _setUpListeners() {
         icon.addEventListener('click', function(ev) {
             ev.preventDefault();

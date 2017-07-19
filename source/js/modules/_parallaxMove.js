@@ -3,7 +3,6 @@ export default function() {
         layers = parallaxCont.children;
 
     function _moveLayers(e) {
-
         var initialX = (window.innerWidth / 2) - e.pageX,
             initialY = (window.innerHeight / 2) - e.pageY;
         [].slice.call(layers).forEach(function(layer, index) {
@@ -14,7 +13,6 @@ export default function() {
                 transformString = 'translate(' + positionX + 'px,' + positionY + 'px)',
                 image = layer.firstElementChild;
             layer.style.transform = transformString;
-            // image.style.bottom = '-' + bottomPosition + 'px';
         });
     };
 
