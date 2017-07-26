@@ -22,12 +22,12 @@
         text-align: center;
         &_about {
             font-size: 35px;
-            color: rgb(255, 255, 255);
+            color: $clear-white;
             line-height: 1.8;
         }
         &_index {
             font-size: 28px;
-            color: rgb(69, 90, 100);
+            color: $sub-main-color;
             line-height: 1.2;
         }
     }
@@ -37,15 +37,15 @@
         line-height: 1.5;
         text-align: center;
         &_index {
-            color: rgba(69, 90, 100, 0.8);
+            color: rgba($sub-main-color, 0.5);
         }
         &_about {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba($clear-white, 0.8);
         }
     }
     &__desc {
         font-weight: 100;
-        color: #fff;
+        color: $clear-white;
     }
     &__description {
         @include centered(x);
@@ -98,7 +98,7 @@
 .text-content {
     font-size: 16px;
     font-family: "Roboto";
-    color: rgb(69, 90, 100);
+    color: $sub-main-color;
     line-height: 1.5;
     text-align: left;
     @include phones {

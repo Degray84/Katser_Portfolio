@@ -19,7 +19,7 @@
         height: 150px;
         border-radius: 50%;
         border: 3px solid transparent;
-        border-top-color: white;
+        border-top-color: $clear-white;
         animation: spin 2s linear infinite;
         &,
         &:after,
@@ -29,7 +29,7 @@
             position: absolute;
             border-radius: 50%;
             border: 3px solid transparent;
-            border-top-color: white;
+            border-top-color: $clear-white;
         }
         &:before {
             $margin: 13px;
@@ -53,7 +53,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: white;
+        color: $clear-white;
     }
 }
 

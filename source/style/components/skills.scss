@@ -24,7 +24,7 @@
     &__title {
         font-size: 28px;
         font-family: "Roboto";
-        color: rgb(69, 90, 100);
+        color: $sub-main-color;
         text-align: left;
         margin-left: 20px;
         @include phones {
@@ -61,7 +61,7 @@
         @include centered();
         font-size: 14px;
         font-family: "Roboto";
-        color: rgb(0, 191, 165);
+        color: $akcent-color;
         text-align: center;
     }
     &__circle {
@@ -90,11 +90,11 @@
         }
     }
     &:hover &__circle-above {
-        stroke: #009688;
+        stroke: $sub-akcent-color;
         stroke-opacity: 1;
     }
     &:hover &__title {
-        color: #009688;
+        color: $sub-akcent-color;
     }
 }
 

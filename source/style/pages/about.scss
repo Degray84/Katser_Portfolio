@@ -10,24 +10,7 @@
     &__triangles {
         position: absolute;
         width: 100vw;
-        // @include desktop {
-        //     height: 180px;
-        //     padding-top: 180px;
-        //     top: 60px;
-        // }
-        // @include laptop {
-        //     height: 125px;
-        //     padding-top: 125px;
-        //     top: 60px;
-        // }
-        // @include tablets {
-        //     padding-top: 60px;
-        //     top: 30px;
-        // }
-        // @include phones {
-        //     padding-top: 25px;
-        //     top: 12px;
-        // }
+
     }
     &__left {
         @include desktop {
@@ -46,7 +29,7 @@
         display: flex;
         align-items: center;
         flex-flow: column;
-        background: $white;
+        background: $light-white;
         &-title {
             @include desktop {}
             @include laptop {}

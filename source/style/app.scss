@@ -1,11 +1,26 @@
-//Цвета
-$white: #efeee9;
+// ----------Переменные----------
+//---Основные цвета---
+// Основной цвет
+$main-color: #373e42; 
+// Дополнительный цвет
+$sub-main-color: #455a64; 
+// Акцентирующий цвет
+$akcent-color: #00bfa5; 
+// Дополнительный акцентирующий цвет
+$sub-akcent-color: #009688; 
+// Красный акцент
+$red-akcent-color: #e44845;
+// ---Дополнительные цвета---
+$light-white: #efeee9;
 $beige: #eeebdf;
-$main-font-color: #373e42;
-$clear-white: #faf8f0;
-$clear-clear-white: #fff;
-$bg-works: #f0efe9;
-//Вложенности
+$white: #faf8f0;
+$clear-white: #fff;
+$bg-minor: #f0efe9;
+
+
+
+
+//----------Вложенности----------
 @import "mixins/mixins.scss";
 @import "common/base.scss";
 @import "common/fonts.scss";

@@ -8,7 +8,6 @@
             height: 100%;
             & img {
                 display: block;
-                // max-width: 100%;
                 height: 100%;
                 @include desktop {
                     width: 3000px;
@@ -40,7 +39,6 @@
                 }
                 @include phones {
                     min-width: 300px;
-                    // width: 94%;
                 }
                 &-form {
                     width: 110%;
@@ -51,7 +49,7 @@
             }
         }
         &__title {
-            background: $clear-white;
+            background: $light-white;
             height: 180px;
         }
         &__scroll-button {
@@ -80,7 +78,7 @@
             }
         }
         &-content {
-            background: $bg-works;
+            background: $bg-minor;
             min-height: 100vh;
         }
     }
@@ -140,7 +138,7 @@
                 &-text {
                     font-size: 16px;
                     font-family: "Roboto";
-                    color: rgb(69, 90, 100);
+                    color: #455a64;
                     line-height: 1.625;
                     text-align: left;
                 }
@@ -150,7 +148,7 @@
                 &-text {
                     font-size: 16px;
                     font-family: "Roboto";
-                    color: rgb(32, 181, 161);
+                    color: #00bfa5;
                     line-height: 1.5;
                     text-align: left;
                     &_bold {

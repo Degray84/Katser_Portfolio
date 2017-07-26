@@ -17,16 +17,16 @@
     }
     &_fill {
         &_white {
-            fill: $white;
+            fill: $light-white;
         }
         &_beige {
             fill: $beige;
         }
         &_clear-white {
-            fill: $clear-white;
+            fill: $white;
         }
         &_clear-clear-white {
-            fill: $clear-clear-white;
+            fill: $clear-white;
         }
     }
     &__svg {

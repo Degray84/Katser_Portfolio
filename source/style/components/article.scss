@@ -5,7 +5,7 @@
 .article-title {
     font-size: 35px;
     font-family: "BERNIER Regular";
-    color: $main-font-color;
+    color: $main-color;
 }
 
 .blog-article__date {
@@ -15,14 +15,14 @@
 .article-date {
     font-size: 16px;
     font-family: "Roboto";
-    color: rgba(0, 191, 165, 0.702);
+    color: rgba($akcent-color,0.7);
     text-align: left;
 }
 
 .article-content {
     font-size: 16px;
     font-family: "Roboto";
-    color: rgb(69, 90, 100);
+    color: $sub-main-color;
     text-align: left;
 }
 

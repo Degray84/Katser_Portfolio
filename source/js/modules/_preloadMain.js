@@ -1,5 +1,5 @@
 export default function() {
-    const urls = [
+    const url = [
         [
             "../assets/img/parallax(laptop-1575)/Layer(000).png",
             "../assets/img/parallax(laptop-1575)/Layer(001).png",

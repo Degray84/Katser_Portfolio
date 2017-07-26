@@ -18,16 +18,16 @@
 }
 
 .icon_color-cyan {
-    fill: rgb(0, 191, 165);
+    fill: $akcent-color;
     opacity: 0.5;
     &:hover {
-        fill: rgb(0, 150, 136);
+        fill: $sub-akcent-color;
         opacity: 0.8;
     }
 }
 
 .icon_color-white {
-    fill: white;
+    fill: $clear-white;
     opacity: 0.5;
     &:hover {
         opacity: 1;
@@ -39,21 +39,21 @@
 }
 
 .icon_color-red {
-    fill: #e44845;
+    fill: $red-akcent-color;
 }
 
 .icon_color-green {
-    fill: #00bfa5;
+    fill: $sub-akcent-color;
 }
 
 .icon_color-clear-white {
-    fill: white;
+    fill: $clear-white;
 }
 
 .icon_color-rounded {
-    fill: rgba(255, 255, 255, 0.3);
+    fill: rgba($clear-white, 0.3);
     &:hover {
-        fill: white;
+        fill: $clear-white;
         circle {
             fill: none;
         }

@@ -1,14 +1,21 @@
+//- Наследуемый шаблон _template
 extends ../_template
-//- block variables
+//- Тело блока
 block content
   main.main
-    #main__parallax.parallax
+    //- Контейнер изображений для параллакс-эффекта
+    //- Изображения подгружаются через _preloadMain.js
+    #main__parallax.parallax 
     .main__container
+        //- Кнопка вызова карточки авторизации
         .main__login
           .login
             a.login__title Авторизация
+        //- Двухсторонняя карточка меню
         .main__card.main__card_active
+          //- Контейнер для flip-эффекта
           .card-flip
+            //- Главная сторона карточки: меню
             .card-menu
               .card__bg
               .card-menu__wrapper
@@ -41,6 +48,7 @@ block content
                     a(href="about", class=`main-nav__link`) Обо мне
                   li.main-nav__item.main-nav__item_blog
                     a(href="blog", class=`main-nav__link`) Блог
+            //- Обратная сторона карточки: форма авторизации
             form.card-login
               .card__bg
               .card-login__title
@@ -85,7 +93,6 @@ block content
                     li.card-login-nav__item.card-login-nav__item_login
                       a(href="index", id="goBack" class="card-login-nav__link") На главную
                     li.card-login-nav__item.card-login-nav__item_login
-                      a(id="comeIn" class="card-login-nav__link") Войти
-        .main__card        
+                      a(id="comeIn" class="card-login-nav__link") Войти     
   footer.main__footer
     .footer @ Кацер Сергей | Создано с любовью в LoftSchool 2017      
