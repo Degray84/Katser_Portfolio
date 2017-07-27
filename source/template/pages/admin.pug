@@ -1,24 +1,32 @@
+//- Наследуемый шаблон _admin-template
 extends ../_admin-template
-block variables
+//- Тело блока
 block content
+    //- Секция администрирования
     section.admin
+        //- Шапка панели администратора
         .admin__header
             .admin__title.admin-title Панель администрирования
             .admin__back
-                a(href="index").admin-title-link Вернуться на сайт
+                a(href="").admin-title-link Вернуться на сайт
+        //- Блок администрирования
         .admin__main
             .admin-main
+                //- -----Список табов-----
                 ul.admin-main__tab-list.admin-tab-list
-                    li.admin-tab-list__item.admin-tab-item Страница "Обо мне"
+                    li.admin-tab-list__item.admin-tab-item.admin-tab-item_active Страница "Обо мне"
                     li.admin-tab-list__item.admin-tab-item Страница "Блог"
-                    li.admin-tab-list__item.admin-tab-item.admin-tab-item_active Страница "Мои работы"
+                    li.admin-tab-list__item.admin-tab-item Страница "Мои работы"
                     li.admin-tab-list__item.admin-tab-item Настройка
                     li.admin-tab-list__item.admin-tab-item-last
+                //- Список контента
                 ul.admin-main__content-list.admin-content-list
+                    //- Подгружаемые фоны для разных устройств
                     img(src="./assets/img/bg/mountains-phones.jpg").admin-main__pic.admin-main__pic_phones
                     img(src="./assets/img/bg/mountains-tablets.jpg").admin-main__pic.admin-main__pic_tablets
                     img(src="./assets/img/bg/mountains-laptop.jpg").admin-main__pic.admin-main__pic_laptop
                     img(src="./assets/img/bg/mountains-desktop.jpg").admin-main__pic.admin-main__pic_desktop
+                    //- ----------Блок настройки сраницы "Обо мне"-----------
                     li.admin-content-list__item.admin-content-list__item_active
                         .adm-about-me
                             .adm-about-me__title.adm-title Страница "Обо мне"
@@ -75,6 +83,7 @@ block content
                                                 .skills-set__perc %            
                             .adm-about-me__btn
                                 button.btn-save Сохранить
+                    //- ----------Блок настройки сраницы "Блог"----------
                     li.admin-content-list__item
                         .adm-blog
                             .adm-blog__title.adm-title Страница "Блог"
@@ -96,6 +105,7 @@ block content
                                             textarea(cols="22" rows="5" placeholder="Содержание" name="article").admin-add_place.admin-add_place-area.works-submit-text
                             .adm-blog__btn
                                 button.btn-save#btn-save-blog Добавить
+                    //- ----------Блок настройки сраницы "Мои работы"----------
                     li.admin-content-list__item
                         .adm-works
                             .adm-works
@@ -115,9 +125,11 @@ block content
                                                     .admin-add__text Загрузить картинку
                                 .adm-works__btn
                                     button.btn-save#btn-save-work Добавить
+                    //- ----------Блок общих настроек, будет редактироваться позже----------
                     li.admin-content-list__item.
                         Пробная вкладка
                           .messages
+    //- Скрытое сообщение для указания успешной отсылки данных формы на сервер
     .messages__notify
       .notify-complite
         .notify-complite__title

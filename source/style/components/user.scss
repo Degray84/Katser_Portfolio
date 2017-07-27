@@ -78,9 +78,10 @@
 }
 
 .user-desription__avatar {
-    width: 443px;
+    width: 440px;
     @include phones {
-        width: 100vw;
+        width: 80vw;
+        margin-left: 10vw;
     }
 }
 

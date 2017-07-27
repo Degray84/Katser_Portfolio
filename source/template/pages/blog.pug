@@ -1,8 +1,15 @@
+//- Наследуемый шаблон _template
 extends ../_template
+//- Переменные для заголовка шапки header
 block variables
+  - var name = 'Блог', info = 'Статьи, которые я написал'
+//- Тело блока
 block content
+  //- Секция шапки сайта
   include ../common/header
+  //- Секция блога
   section.blog
+    //- Треугольники SVG
     .works-triangle__left
       .triangle.triangle_fill_clear-clear-white.about__left-triangle
         svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
@@ -11,6 +18,7 @@ block content
       .triangle.triangle_fill_clear-clear-white.about__left-triangle
         svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
           polygon(points="1000,0 1000,150 0,150")
+    //- Блок навигации по списку статей
     .blog__left.blog__left_relative
       .blog__left-nav   
         ul.blog-nav-list
@@ -20,6 +28,7 @@ block content
               a.blog-nav-text.blog-nav-text_active= titles.title
         svg.halfcircle 
           circle(r="25" cx="30" cy="30" fill="#00bfa5" stroke="#d6d6d6" stroke-width="5") 
+    //- Статьи
     .blog__right
       .blog__right-content
         ul.blog-content-list
@@ -31,4 +40,5 @@ block content
                   .article-date= article.data
               .blog-article__content
                   .article-content= article.body
+  //- Футер
   include ../common/footer

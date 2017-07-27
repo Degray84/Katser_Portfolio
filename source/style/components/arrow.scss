@@ -1,0 +1,21 @@
+.arrow {
+    display: block;
+    z-index: 5;
+    cursor: pointer;
+    fill: $clear-white;
+    opacity: .7;
+    &:hover {
+        opacity: 1;
+    }
+    &_big{
+    width: 40px;
+    height: 26px;
+    }
+    &_small{
+    width: 26px;
+    height: 14px;
+    }
+    &_up{
+    transform: rotate(180deg);
+    }
+}

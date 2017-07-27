@@ -25,13 +25,16 @@
 .map__contacts {
     position: absolute;
     @include desktop {
-        @include centered();
+        @include centered(x);
+        bottom: 400px;
     }
     @include laptop {
-        @include centered();
+        @include centered(x);
+        bottom: 400px;
     }
     @include tablets {
-        @include centered();
+        @include centered(x);
+        bottom: 400px;
     }
     @include phones {
         @include centered(x);
@@ -60,6 +63,9 @@
     @include centered(x);
     top: 100px;
     width: 300px;
+    @include phones {
+        margin-left: 10px;
+    }
 }
 
 .contacts__item {

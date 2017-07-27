@@ -6,9 +6,9 @@
 
 .parallax {
     position: absolute;
-    width: 115%;
-    height: 115%;
-    will-change: transform;
+    width: 112%;
+    height: 112%;
+    will-change: transform; 
     &__image {
         display: none;
         position: absolute;
@@ -29,11 +29,13 @@
     }
     &_desktop {
         @include desk-parallax {
+
             display: block;
         }
     }
     &_retina {
         @include retina-parallax {
+
             display: block;
         }
     }

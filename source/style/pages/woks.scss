@@ -24,7 +24,7 @@
             }
             &-blur {
                 @include centered(x);
-                bottom: 450px;
+                bottom: 400px;
                 height: 445px;
                 border-radius: 5px;
                 overflow: hidden;
@@ -41,33 +41,37 @@
                     min-width: 300px;
                 }
                 &-form {
-                    width: 110%;
-                    height: 110%;
+                    width: 100%;
+                    height: 100%;
                     background: url('../img/bg/water.png') center no-repeat;
                     filter: blur(20px);
                 }
             }
         }
-        &__title {
-            background: $light-white;
-            height: 180px;
+        &__title {}
+        &__slider {
+            background: $bg-minor;
         }
         &__scroll-button {
             z-index: 15;
             @include centered();
         }
         &-title {
-            @include centered(x);
-            top: 15px;
+            text-align: center;
+            padding: 40px 0;
+            background: #faf8f0;
+            @include phones {
+                margin-top: -45px;
+            }
             &__pic {
                 @include centered(x);
-                top: -40px;
+                top: 25px;
                 width: 90vw;
                 max-width: 500px;
                 opacity: 0.1;
                 @include phones {
-                    width: 70vw;
-                    top: -5px;
+                    width: 80vw;
+                    top: -15px;
                 }
                 &_to-bottom {
                     top: 0;
@@ -78,16 +82,33 @@
             }
         }
         &-content {
-            background: $bg-minor;
             min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-flow: column;
+            position: relative;
+            top: -126px;
+            padding-top: 20px;
+            background: #faf8f0;
+            
         }
     }
-    
+
     .works-about {
         position: relative;
         display: flex;
         flex-flow: column;
         align-items: center;
+        &__to-top {
+            @include centered(x);
+            bottom: 330px;
+            @include desktop {
+                bottom: 200px;
+            }
+            @include laptop {
+                bottom: 200px;
+            }
+        }
         &__title {
             position: relative;
         }
@@ -96,7 +117,7 @@
         }
         &__submit {
             @include centered(x);
-            bottom: 450px;
+            bottom: 400px;
         }
         .content-about {
             display: flex;
@@ -173,7 +194,7 @@
             }
         }
     }
-    
+
     .works-triangle__left,
     .works-triangle__right {
         float: left;

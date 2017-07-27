@@ -1,10 +1,15 @@
+//- Наследуемый шаблон _template
 extends ../_template
-
+//- Переменные для заголовка шапки header
 block variables
-
+  - var name = 'Кацер Сергей', info = 'Личный сайт web-разработчика'
+//- Тело блока
 block content
+  //- Секция шапки сайта
   include ../common/header
+  //- Секция слайдера с работами
   section.works
+    //- Треугольники SVG
     .works-triangle__left
       .triangle.triangle_fill_clear-white.about__left-triangle
         svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
@@ -13,18 +18,22 @@ block content
       .triangle.triangle_fill_clear-white.about__left-triangle
         svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
           polygon(points="1000,0 1000,150 0,150")
+    //- Содержимое секции слайдера
     .works-content
+      //- Заголовок секции слайдера
       .works__title
         .works-title
           svg.works-title__pic
             use(xlink:href="./assets/img/sprite.svg#works_header")
           .block-title.block-title_title Мои работы
-      .wk-slider
+      //- Слайдер
+      .wk-slider.works__slider
+        //- Блок описаний работ слайдера
         .wk-slider-left__card
           each work in items
             .slider-desc
               .slider-desc__title
-                .block-title.block-title_subtitle.block-title_width-big= work.work
+                .block-title.block-title_subtitle= work.work
               .slider-desc__tech
                 .desc-tech= work.tech
               .slider-desc__link
@@ -32,34 +41,42 @@ block content
                   svg.site-btn__icon.btn-icon.icon_color-clear-white
                       use(xlink:href="./assets/img/sprite.svg#link")
                   span.site-btn__text Посмотреть сайт
-        .wk-slider-present__first
+        //- Блок главного изображения слайдера
+        .wk-slider-present__first.wk-slider-first-cont
           each first,index in items
             img(src=`${first.picUrl}` class=`first-work-img_${index}`).first-work-img
+        //- Контейнер второстепенных блоков слайдера
         .wk-slider-present
+          //- Первый второстепенный блок слайдера
           .wk-slider-present__second
             .bg_color_gray
-            .arrow-works.works__scroll-button
-              svg.arrow-down__pic
+            .works__scroll-button
+              svg.arrow.arrow_big
                 use(xlink:href="./assets/img/sprite.svg#arrow_down")
             each second,index in items
               img(src=`${second.picUrl}` class=`second-work-img_${index}`).second-work-img
+          //- Первый второстепенный блок слайдера
           .wk-slider-present__third
             .bg_color_gray
-            .arrow-works.works__scroll-button
-              svg.arrow-up__pic
+            .works__scroll-button
+              svg.arrow.arrow_big.arrow_up
                 use(xlink:href="./assets/img/sprite.svg#arrow_down")
             each third,index in items
               img(src=`${third.picUrl}` class=`third-work-img_${index}`).third-work-img    
-            //- img.third-work-img
+  //- Секция с отзывами преподавателей и карточкой submit
   section.section-big.works-about 
+    //- Фон секции с отзывами
     .works__bg        
       img(src="./assets/img/bg/water.png")
+    //- Сегмент секции для blur эффекта
     .works__bg-blur
       .works__bg-blur-form
+    //- Заголовок секции с отзывами
     .works-about__title
       .block-title.block-title_title.block-title_width-big Что обо мне говорят
       svg.works-title__pic.works-title__pic_to-bottom
         use(xlink:href="./assets/img/sprite.svg#about_header")
+    //- Блок с отзывами
     .works-about__content
       .content-about
         .content-about__first
@@ -88,9 +105,9 @@ block content
                 .content-about-pers-desc
                   .content-about-pers-who__name.content-about__pers-text.content-about__pers-text_bold Сабанцев Владимир
                   .content-about-pers-who__desc.content-about__pers-text Преподаватель
+    //- Блок с формой обратной связи
     .works-about__submit
       form.works-submit#mail
-        .works-filter
         .works-submit__title
           .block-title.block-title_subtitle.block-title_width-big Связаться со мной
         label.works-submit__name
@@ -103,8 +120,11 @@ block content
           input(name="" type="submit" value="Отправить").works-submit-sb
           input(name="" type="reset"  value="Очистить").works-submit-rs
     .works-about__to-top
-      .arrow.arrow_to-top           
+      svg.arrow.arrow_small.arrow_up
+        use(xlink:href="./assets/img/sprite.svg#arrow_down")    
+  //- Футер      
   include ../common/footer
+  //- Скрытое сообщение для указания успешной отсылки данных формы на сервер
   .messages
     .messages__notify
       .notify-complite

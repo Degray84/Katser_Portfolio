@@ -1,8 +1,15 @@
+//- Наследуемый шаблон _template
 extends ../_template
+//- Переменные для заголовка шапки header
 block variables
+    - var name = 'Кацер Сергей', info = 'Личный сайт web-разработчика'
+//- Тело блока
 block content
+      //- Секция шапки сайта
     include ../common/header
+      //- Секция описания пользователя
     section.about
+         //- Треугольники SVG
         .about__triangles
             .works-triangle__left
                 .triangle.triangle_fill_white.about__left-triangle
@@ -12,11 +19,14 @@ block content
                 .triangle.triangle_fill_beige.about__left-triangle
                         svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
                             polygon(points="1000,0 1000,150 0,150")
+        //- Блок описания пользователя
         .about__left
+            //- Заголовок описания
             .about__left-title
                 .block-title.block-title_title Обо мне
             svg.about-left-title__pic
                 use(xlink:href="./assets/img/sprite.svg#about_header")
+            //- Контент
             .about__left-content
                 .user-user__description
                     .user-desription__image
@@ -26,11 +36,13 @@ block content
                     .user-desription__text.text-content
                         p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                         p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+        //- Блок описания навыков
         .about__right
             .about__right-title
                 .block-title.block-title_subtitle.block-title_width-big Чем я могу быть вам полезен
             .about__right-text.text-content Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
             .about__right-content
+                //- Список навыков
                 ul.skills-list
                     li.skills-list__item
                         .skills-row
@@ -103,10 +115,12 @@ block content
                                         svg.skills__circle
                                             circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
                                             circle(class=`skills__circle-above skills__circle-above_cyan circle-${skills.skills[2].items[2].value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skills__title #{skills.skills[2].items[2].name}              
+                                            .skills__title #{skills.skills[2].items[2].name}  
+    //- Секция контактов            
     section.section.map 
+        //- google maps на основе snazzymaps
         iframe(src="https://snazzymaps.com/embed/2297" width="100%" height="100%" style="border:none;").google-map
-        //- img.google-map(src="./assets/img/bg/map.png")
+        //- Блок со списком контактов
         .map__contacts
             .contacts
                 .contacts__title
@@ -132,5 +146,6 @@ block content
                                 svg.contacts-row__icon
                                     use(xlink:href="./assets/img/sprite.svg#map_marker")
                                 .contacts-row__content Жодино
+      //- Футер 
     include ../common/footer
         

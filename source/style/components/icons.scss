@@ -51,6 +51,7 @@
 }
 
 .icon_color-rounded {
+    fill-rule: evenodd;
     fill: rgba($clear-white, 0.3);
     &:hover {
         fill: $clear-white;

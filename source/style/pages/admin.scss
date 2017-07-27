@@ -114,12 +114,14 @@
                         display: none;
                         @include tablets {
                             top: -40px;
+                            min-height: 950px;
                         }
                         @include laptop {
                             top: -40px;
                         }
                         @include desktop {
                             top: -40px;
+                            min-width: 100vw;
                         }
                         &_phones {
                             @include phones {
@@ -157,6 +159,7 @@
                     padding-bottom: 15px;
                     @include tablets {
                         flex-flow: row;
+                        justify-content: left;
                     }
                     @include laptop {
                         flex-flow: row;
@@ -192,6 +195,9 @@
                     width: 100%;
                     height: 45px;
                     flex-shrink: 0;
+                     @include tablets {
+                        width: 180px;
+                    }
                     @include laptop {
                         width: 180px;
                     }
@@ -201,9 +207,6 @@
                     &-last {
                         background-color: rgb(240, 239, 233);
                         width: 100%;
-                        @include tablets {
-                            display: none;
-                        }
                         @include phones {
                             display: none;
                         }
