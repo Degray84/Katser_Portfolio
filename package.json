@@ -36,6 +36,7 @@
         "webpack-stream": "^3.2.0"
     },
     "dependencies": {
+        "animate.css": "^3.5.2",
         "body-parser": "~1.17.1",
         "cookie-parser": "~1.4.3",
         "debug": "~2.6.3",

@@ -27,12 +27,5 @@ export default function() {
             message(status);
         });
 
-        // nameInput.value = '';
-        // nameInput.classList.remove('login-place-input_valid');
-        // emailInput.value = '';
-        // emailInput.classList.remove('login-place-input_valid');
-        // messInput.value = '';
-        // messInput.classList.remove('login-place-input_valid');
-
     })
 };
