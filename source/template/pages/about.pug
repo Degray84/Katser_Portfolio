@@ -5,12 +5,12 @@ block variables
     - var name = 'Кацер Сергей', info = 'Личный сайт web-разработчика'
 //- Тело блока
 block content
-      //- Секция шапки сайта
+    //- Секция шапки сайта
     include ../common/header
-      //- Секция описания пользователя
+    //- Секция описания пользователя
     section.about
-         //- Треугольники SVG
         .about__triangles
+            //- Треугольники SVG
             .works-triangle__left
                 .triangle.triangle_fill_white.about__left-triangle
                     svg(viewbox="0 0 1000 150" preserveAspectRatio="none").triangle__svg
@@ -46,76 +46,16 @@ block content
                 ul.skills-list
                     li.skills-list__item
                         .skills-row
-                            .skills-row__title #{skills.skills[0].name}
-                            ul.skills-row-list
-                                li.skills-row-item
-                                    .skills
-                                        svg.skills__circle
-                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class=`skills__circle-above skills__circle-above_cyan circle-${skills.skills[0].items[0].value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skills__title #{skills.skills[0].items[0].name}
-                                li.skills-row-item
-                                    .skills
-                                        svg.skills__circle
-                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class=`skills__circle-above skills__circle-above_cyan circle-${skills.skills[0].items[1].value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skills__title #{skills.skills[0].items[1].name}
-                                li.skills-row-item
-                                    .skills
-                                        svg.skills__circle
-                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class=`skills__circle-above skills__circle-above_cyan circle-${skills.skills[0].items[2].value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skills__title #{skills.skills[0].items[2].name}
-                    li.skills-list__item
-                        .skills-row
-                            .skills-row__title #{skills.skills[1].name}
-                            ul.skills-row-list
-                                li.skills-row-item
-                                    .skills
-                                        svg.skills__circle
-                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class=`skills__circle-above skills__circle-above_light circle-${skills.skills[1].items[0].value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skills__title #{skills.skills[1].items[0].name}
-                                li.skills-row-item
-                                    .skills
-                                        svg.skills__circle
-                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class=`skills__circle-above skills__circle-above_light circle-${skills.skills[1].items[1].value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skills__title #{skills.skills[1].items[1].name}
-                                li.skills-row-item
-                                    .skills
-                                        svg.skills__circle
-                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class=`skills__circle-above skills__circle-above_light circle-${skills.skills[1].items[2].value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skills__title #{skills.skills[1].items[2].name}   
-                                li.skills-row-item
-                                    .skills
-                                        svg.skills__circle
-                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class=`skills__circle-above skills__circle-above_light circle-${skills.skills[1].items[3].value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skills__title #{skills.skills[1].items[3].name}                                                
-                    li.skills-list__item
-                        .skills-row
-                            .skills-row__title #{skills.skills[2].name}
-                            ul.skills-row-list
-                                li.skills-row-item
-                                    .skills
-                                        svg.skills__circle
-                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class=`skills__circle-above skills__circle-above_cyan circle-${skills.skills[2].items[0].value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skills__title #{skills.skills[2].items[0].name}
-                                li.skills-row-item
-                                    .skills
-                                        svg.skills__circle
-                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class=`skills__circle-above skills__circle-above_cyan circle-${skills.skills[2].items[1].value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skills__title #{skills.skills[2].items[1].name}
-                                li.skills-row-item
-                                    .skills
-                                        svg.skills__circle
-                                            circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
-                                            circle(class=`skills__circle-above skills__circle-above_cyan circle-${skills.skills[2].items[2].value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
-                                            .skills__title #{skills.skills[2].items[2].name}  
+                            each skill in skills.skills   
+                                .skills-row__title= skill.name
+                                ul.skills-row-list
+                                    each skillItem in skill.items
+                                        li.skills-row-item
+                                            .skills
+                                                svg.skills__circle
+                                                    circle(class="skills__circle-under" cx="50%" cy="50%" r="50")
+                                                    circle(class=`skills__circle-above skills__circle-above_cyan circle-${skillItem.value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                                    .skills__title #{skillItem.name}
     //- Секция контактов            
     section.section.map 
         //- google maps на основе snazzymaps
@@ -146,6 +86,6 @@ block content
                                 svg.contacts-row__icon
                                     use(xlink:href="./assets/img/sprite.svg#map_marker")
                                 .contacts-row__content Жодино
-      //- Футер 
+    //- Футер 
     include ../common/footer
         

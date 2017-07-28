@@ -37,10 +37,6 @@ section.section.hero
             a(href="about").hideMenu-nav__item Обо мне
             a(href="blog").hideMenu-nav__item Блог
             a(href="/").hideMenu-nav__item Авторизация
-    //- Стрелка для прокрутки экрана ко второй секции
-    .hero__scroll-button
-      svg.arrow.arrow_small
-        use(xlink:href="./assets/img/sprite.svg#arrow_down")
     //- Заголовок шапки
     .hero__title
       .section-title
@@ -54,6 +50,10 @@ section.section.hero
         .user__description
           .user__name.user__name_about #{name}
           .user__info.user__info_about #{info}
+    //- Стрелка для прокрутки экрана ко второй секции
+    .hero__scroll-button
+      svg.arrow.arrow_small
+        use(xlink:href="./assets/img/sprite.svg#arrow_down")
 
     
   

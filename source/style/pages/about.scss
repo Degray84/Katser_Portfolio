@@ -14,13 +14,13 @@
     }
     &__left {
         @include desktop {
-            width: 50vw;
+            width: 50%;
         }
         @include laptop {
-            width: 50vw;
+            width: 50%;
         }
         @include tablets {
-            width: 50vw;
+            width: 50%;
         }
         @include phones {
             width: 100vw;
@@ -44,13 +44,13 @@
     }
     &__right {
         @include desktop {
-            width: 50vw;
+            width: 50%;
         }
         @include laptop {
-            width: 50vw;
+            width: 50%;
         }
         @include tablets {
-            width: 50vw;
+            width: 50%;
         }
         @include phones {
             width: 100vw;
