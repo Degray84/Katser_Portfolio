@@ -1,22 +1,28 @@
+import {
+    animate
+} from './_animation';
 export default function () {
-    var indexCard = document.getElementsByClassName("card-flip"),
-        authoriz = document.getElementsByClassName("login"),
-        indexBack = document.getElementById("goBack");
-
+    const indexCard = document.querySelector(".card-flip"),
+        authoriz = document.querySelector(".login"),
+        indexBack = document.querySelector("#goBack");
     // При клике на кнопку "Авторизация" поворот карточки на 180 гр.
     function _authorization() {
-        $(authoriz).click(function (e) {
+        authoriz.addEventListener('click', (e) => {
             e.preventDefault();
-            $(indexCard).css("transform", "rotateY(180deg)");
-            $(this).fadeOut(1000);
+            indexCard.style = 'transform: rotateY(180deg)';
+            animate(authoriz, 'fadeOut', 1000);
+            setTimeout(() => {
+                authoriz.style = 'display: none';
+            }, 1000)
         });
     };
     // При клике на кнопку "Главное меню" поворот карточки на 180 гр обратно.
     function _goBack() {
-        $(indexBack).click(function (e) {
+        indexBack.addEventListener('click', (e) => {
             e.preventDefault();
-            $(indexCard).css("transform", "rotateY(0deg)");
-            $(authoriz).fadeIn(1000);
+            indexCard.style = 'transform: rotateY(0deg)';
+            authoriz.style = 'display: block';
+            animate(authoriz, 'fadeIn', 1000);
         });
     };
 
