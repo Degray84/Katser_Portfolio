@@ -16,8 +16,10 @@
         popArrow.className = classPopMessageArrow;
         popBox.className = classPopMessageBox;
         popBox.innerHTML = text;
-        setTimeout(function() {
+        setTimeout(function () {
             place.removeChild(document.querySelector('.pop-message'));
         }, 2000)
     }
-    export { setPopup };
+    export {
+        setPopup
+    };

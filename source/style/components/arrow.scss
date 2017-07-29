@@ -1,5 +1,6 @@
 .arrow {
     display: block;
+    user-select: none;
     z-index: 9999;
     cursor: pointer;
     fill: $clear-white;

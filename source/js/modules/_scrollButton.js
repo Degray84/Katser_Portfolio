@@ -1,25 +1,34 @@
-export default function() {
-    let scrollButton = document.querySelector('.hero__scroll-button');
+import {
+    scroll
+} from './_scrollBy';
+export default function () {
+    const arrowDown = document.querySelector('.hero__scroll-button'),
+        arrowUp = document.querySelector('.works-about__to-top');
+    // Вызываем функцию scroll при клике, прокручиваем страницу вниз на расстояние высоты экрана
+    function _scrollDown() {
+        if (arrowDown === null) {
+            return false
+        } else {
+            arrowDown.addEventListener('click', function () {
+                return scroll(document.documentElement.clientHeight)
 
-    function _scrollDown(button) {
-        button.addEventListener('click', function() {
-            return _scroll()
-        })
+            })
+        }
     }
-
-    function _scroll() {
-        var timeOut = setInterval(function() {
-            if (window.pageYOffset > document.documentElement.clientHeight) {
-                clearInterval(timeOut);
-                return false;
-            } else {
-                window.scrollBy(0, 20);
-            }
-        }, 20)
+    // Вызываем функцию scroll при клике, прокручиваем страницу вверх до 0
+    function _scrollUp() {
+        if (arrowUp === null) {
+            return false
+        } else {
+            arrowUp.addEventListener('click', function () {
+                return scroll(0)
+            })
+        }
     }
-
+    // Инициализируем обработчики в функции инициализации
     function _init() {
-        _scrollDown(scrollButton)
+        _scrollDown()
+        _scrollUp()
     }
     return {
         init: _init()

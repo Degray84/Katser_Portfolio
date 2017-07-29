@@ -1,11 +1,12 @@
+import { animate } from './_animation';
 export default function() {
     var firstWork = Array.prototype.slice.call(document.querySelectorAll('.first-work-img')),
         secondWork = Array.prototype.slice.call(document.querySelectorAll('.second-work-img')),
         thirdWork = Array.prototype.slice.call(document.querySelectorAll('.third-work-img')),
         desc = Array.prototype.slice.call(document.querySelectorAll('.slider-desc')),
         activeDesc = document.querySelector('.work_active'),
-        leftArrow = document.querySelector('.arrow-works'),
-        rightArrow = document.querySelector('.arrow-up__pic');
+        leftArrow = document.querySelector('#arrow-down'),
+        rightArrow = document.querySelector('#arrow-up');
 
     // Сдвиг массива второго контейнера изображений
     _shiftArray(secondWork, "left");
@@ -37,14 +38,20 @@ export default function() {
                 secondWork[i].classList.add('work_active');
                 thirdWork[i].classList.add('work_active');
                 desc[i].classList.add('work_active');
-                _animation(firstWork[i], 'fade', 'up', 'hide')
-                _animation(secondWork[i], 'fade', 'down', 'show')
-                _animation(thirdWork[i], 'fade', 'up', 'show')
+                animate(firstWork[i], 'zoomInDown');
+                animate(secondWork[i], 'fadeInDown');
+                animate(thirdWork[i], 'fadeInUp');
+                animate(desc[i], 'fadeIn');
             } else {
+                animate(firstWork[i], 'zoomOutRight');
+                animate(secondWork[i], 'fadeOutDown');
+                animate(thirdWork[i], 'fadeOutUp');
+                desc[i].classList.remove('work_active');
+                setTimeout(function(){
                 firstWork[i].classList.remove('work_active');
                 secondWork[i].classList.remove('work_active');
                 thirdWork[i].classList.remove('work_active');
-                desc[i].classList.remove('work_active');
+                },1000)
             }
         }
     }
@@ -71,32 +78,6 @@ export default function() {
             _linksInit();
         })
     };
-    // Анимация прозрачности fade: определяет путь(вниз или вверх), и видимость(появление или исчезание)
-    function _animation(obj, type, way, vis) {
-        if (type == 'fade') {
-            if (way == 'up') {
-                if (vis == 'show') {
-                    obj.classList.add('fadeInUp');
-                    setTimeout(function() { obj.classList.remove('fadeInUp') }, 1000);
-
-                }
-                if (vis == 'hide') {
-                    obj.classList.add('fadeOutUp');
-                    setTimeout(function() { obj.classList.remove('fadeOutUp') }, 1000);
-                }
-            }
-            if (way == 'down') {
-                if (vis == 'show') {
-                    obj.classList.add('fadeInDown');
-                    setTimeout(function() { obj.classList.remove('fadeInDown') }, 1000);
-                }
-                if (vis == 'hide') {
-                    obj.classList.add('fadeOutDown');
-                    setTimeout(function() { obj.classList.remove('fadeOutDown') }, 1000);
-                }
-            }
-        }
-    }
     // Инициализация
     function _init() {
         _linksInit()

@@ -1,6 +1,5 @@
 .wk-slider {
     position: relative;
-    min-height: 700px;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
@@ -33,12 +32,15 @@
         justify-content: space-around;
         order: 3;
         width: 100vw;
+        height: 35vw;
         overflow: hidden;
         @include desktop {
             width: 50vw;
+            height: 17.5vw;
         }
         @include laptop {
             width: 50vw;
+            height: 17.5vw;
             align-self: flex-end;
         }
         &__second {
@@ -68,11 +70,15 @@
         margin: auto;
         display: flex;
         width: 40vw;
+        position: relative;
+        height: 25vw;
         @include phones {
             width: 90vw;
+            height: 60vw;
         }
         @include tablets {
             width: 90vw;
+             height: 60vw;
         }
     }
 }
@@ -125,11 +131,9 @@
 }
 
 .first-work-img {
-    position: relative;
+    position: absolute;
     display: none;
     width: 100%;
-    float: left;
-    height: 100%;
     @include desktop {
         width: 40vw;
     }
@@ -144,7 +148,7 @@
     margin-left: 5%;
     display: none;
     width: 90%;
-    float: left;
+    position: absolute;
 }
 
 .bg_color_gray {

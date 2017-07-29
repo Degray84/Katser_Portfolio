@@ -1,16 +1,8 @@
-import {
-    animate
-} from './_animation';
 export default function () {
     var indexCard = document.getElementsByClassName("card-flip"),
         authoriz = document.getElementsByClassName("login"),
         indexBack = document.getElementById("goBack");
 
-    function _animateCard() {
-        setTimeout(function () {
-            animate(indexCard, 'fadeInX');
-        }, 5000)
-    };
     // При клике на кнопку "Авторизация" поворот карточки на 180 гр.
     function _authorization() {
         $(authoriz).click(function (e) {

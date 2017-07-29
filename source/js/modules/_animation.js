@@ -1,8 +1,9 @@
     function animate(content, type) {
-    const aniClass = `animated ${type}`;
-        content.classList.add(aniClass);
+        content.classList.add('animated');
+        content.classList.add(type);
         setTimeout(function() {
-            content.classList.remove(aniClass);
-        }, 10000)
+            content.classList.remove(type);
+            content.classList.remove('animated');
+        }, 1000)
     }
     export { animate };
