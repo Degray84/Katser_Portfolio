@@ -63,8 +63,8 @@ export default function () {
     // первый аргумента - блок для анимации, 
     // второй аргумент - анимация из animate.css
     function _animation() {
-        animate(indexCard, 'flipInX');
-        animate(authoriz, 'lightSpeedIn');
+        animate(indexCard, 'flipInX', 1000);
+        animate(authoriz, 'lightSpeedIn', 1000);
     };
     // Функция создает изображение и увеличивает счетчик cur на единицу
     function loadImage(url, classPar) {

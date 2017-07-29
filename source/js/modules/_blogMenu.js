@@ -1,6 +1,9 @@
 import {
     scroll
 } from './_scrollBy';
+import {
+    animate
+} from './_animation';
 export default function () {
     let blogSection = document.querySelector('.blog'),
         heroSection = document.querySelector('.hero'),
@@ -30,8 +33,17 @@ export default function () {
         })
         // Скрывает или добавляет меню при клике на кнопку
         navButton.addEventListener('click', function () {
-            blogList.classList.toggle('blog-nav-list_active');
-            navButton.classList.toggle('halfcircle_active');
+            if (blogMenu.classList.contains('blog__left_active') === true) {
+                animate(blogMenu, 'bounceOutLeft', 1000);
+                setTimeout(function () {
+                    blogMenu.classList.remove('blog__left_active');
+                }, 500);
+            }
+            if (blogMenu.classList.contains('blog__left_active') === false) {
+                blogMenu.classList.add('blog__left_active');
+                animate(blogMenu, 'bounceInLeft', 1000);
+            }
+
         })
     }
 

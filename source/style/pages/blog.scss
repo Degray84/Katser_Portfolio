@@ -3,8 +3,27 @@
     width: 100%;
     position: relative;
     margin-bottom: 500px;
-    &__left {
+    &-nav {
+        position: relative;
+        width: 30%;
         height: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: flex-end;
+        @include phones {
+            width: 280px;
+            height: 100%; // &_active {
+            //     left: -30px;
+            // }
+        }
+        @include tablets {
+            width: 280px;
+            height: 100%; // &_active {
+            //     left: -30px;
+            // }
+        }
+    }
+    &__left {
         width: 30%;
         &_relative {
             position: relative;
@@ -13,28 +32,33 @@
         }
         &_fixed {
             position: fixed;
+            top: 140px;
             z-index: 100;
-            top: 130px;
         }
         @include phones {
+            width: 280px;
             position: fixed;
             z-index: 100;
-            top: 200px;
-            left: 0;
+            top: 0;
+            left: -280px;
             margin-top: 0;
+            &_active {
+                left: -30px;
+            }
         }
         @include tablets {
+            width: 280px;
             position: fixed;
             z-index: 100;
-            top: 200px;
-            left: 0;
+            top: 0;
+            left: -280px;
             margin-top: 0;
+            &_active {
+                left: -30px;
+            }
         }
         &-nav {
-            padding-right: 40px;
-            display: flex;
-            flex-flow: column;
-            align-items: flex-end;
+            float: right;
         }
     }
     &__right {
@@ -62,51 +86,38 @@
     position: absolute;
     width: 60px;
     height: 60px;
-    top: 70px;
+    bottom: 70px;
     z-index: -10;
     display: none;
     @include phones {
         display: block;
-        left: -30px;
-        &_active {
-            left: 250px;
-        }
+        left: 250px;
     }
     @include tablets {
         display: block;
-        left: -30px;
-        &_active {
-            left: 250px;
-        }
+        left: 250px;
     }
 }
 
 .blog-nav-list {
     position: relative;
     display: block;
+    padding-right: 40px;
     width: 280px;
     text-align: right;
     background: $clear-white;
     overflow: hidden;
     @include phones {
-        position: fixed;
+        padding-right: 5px;
         top: 0;
-        left: -280px;
         height: 100vh;
         background: $akcent-color;
-        &_active {
-            left: 0;
-        }
     }
     @include tablets {
-        position: fixed;
+        padding-right: 5px;
         top: 0;
-        left: -280px;
         height: 100vh;
         background: $akcent-color;
-        &_active {
-            left: 0;
-        }
     }
 }
 
@@ -120,8 +131,7 @@
     @include centered(y);
     cursor: pointer;
     right: 20px;
-    font-size: 16px;
-    // width: 280px;
+    font-size: 16px; // width: 280px;
     font-family: "Roboto";
     color: $sub-main-color;
     text-align: right;

@@ -14,13 +14,13 @@ export default function () {
             ev.preventDefault();
             menu.classList.toggle('active');
             icon.classList.toggle('hamburger-icon_active');
-            animate(bgLeft, 'slideInLeft');
-            animate(bgRight, 'slideInRight');
+            animate(bgLeft, 'slideInLeft', 1000);
+            animate(bgRight, 'slideInRight', 1000);
             menuItems.forEach(function (element) {
                 element.style.display = 'none';
             });
             setTimeout(() => {
-                animateList(menuItems, 'rubberBand', 200);
+                animateList(menuItems, 'rubberBand', 500);
             }, 1000);
         })
     }
