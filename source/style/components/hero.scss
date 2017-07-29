@@ -17,6 +17,14 @@
         height: 100%;
         background: $akcent-color;
         opacity: 0.8;
+        &_left {
+            width: 50vw;
+            left: 0;
+        }
+        &_right {
+            width: 50vw;
+            right: 0;
+        }
     }
     &__menuBlock {
         @include centered();

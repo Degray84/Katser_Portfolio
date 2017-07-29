@@ -1,6 +1,10 @@
 .hideMenu-nav {
+    height: 400px;
     display: flex;
     flex-flow: column;
+    @include phones {
+        height: 200px;
+    }
     &__item {
         position: relative;
         width: 100%;
