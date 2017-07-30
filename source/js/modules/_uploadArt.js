@@ -1,29 +1,25 @@
-import { sendJson } from '../sendAjax';
-
-export default function() {
+import {
+    sendJson
+} from '../sendAjax';
+import {
+    message
+} from './_message';
+// МОДУЛЬ ОТПРАВКИ СТАТЬИ БЛОГА ИЗ ПАНЕЛИ АДМИНИСТРАТОРА
+export default function () {
+    // Объявление констант
     const formBlog = document.querySelector('#blog');
     const addArt = document.querySelector('#btn-save-blog');
-
-    function message(mess) {
-        const resultContainer = document.querySelector('.notify-complite'),
-            closeComplite = document.querySelector('.notify-btn'),
-            closeTitle = document.querySelector('.notify-title');
-
-        closeTitle.innerHTML = mess;
-        resultContainer.style.display = "block";
-        closeComplite.addEventListener('click', function() {
-            resultContainer.style.display = "none";
-        })
-    };
-
     const data = {
         title: formBlog.title.value,
         date: formBlog.date.value,
         article: formBlog.article.value
     };
     const url = './admin/addpost';
-    addArt.addEventListener('click', function() {
-        sendJson(url, data, "POST", function(status) {
+    // Прослушка при клике 
+    addArt.addEventListener('click', function () {
+        // Послать запрос с данными
+        sendJson(url, data, "POST", function (status) {
+            // Вызов функции и помещение в нее текста из collback
             message(status);
         });
 

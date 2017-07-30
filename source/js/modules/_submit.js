@@ -1,8 +1,15 @@
 import prepareSend from '../prepareSend';
-import { setPopup } from './_popupAdd';
-export default function() {
+import {
+    setPopup
+} from './_popupAdd';
+import {
+    message
+} from './_message';
+// МОДУЛЬ ВАЛИДАЦИИ ФОРМЫ ОТПРАВКИ СООБЩЕНИЯ НА ПОЧТУ
+export default function () {
+    // Объявление констант
     const formMail = document.querySelector('#mail');
-    var submitSb = document.querySelector('.works-submit-sb'),
+    const submitSb = document.querySelector('.works-submit-sb'),
         submitRs = document.querySelector('.works-submit-rs'),
         compliteMes = document.querySelector('.notify-complite'),
         namePlace = document.querySelector('.works-submit__name'),
@@ -14,27 +21,27 @@ export default function() {
         closeComplite = document.querySelector('.notify-btn');
 
     function _setUpListeners() {
-        submitSb.addEventListener('click', function(ev) {
+        submitSb.addEventListener('click', function (ev) {
             ev.preventDefault();
             if (nameInput.value == '') {
-                setPopup(namePlace, "Вы не ввели имя");
+                setPopup(namePlace, "Вы не ввели имя", 'bottom');
                 nameInput.classList.add('login-place-input_invalid');
-                setTimeout(function() {
+                setTimeout(function () {
                     nameInput.classList.remove('login-place-input_invalid');
                 }, 3000);
 
             } else if (emailInput.value == '') {
 
-                setPopup(emailPlace, "Вы не ввели Email");
+                setPopup(emailPlace, "Вы не ввели Email", 'bottom');
                 emailInput.classList.add('login-place-input_invalid');
-                setTimeout(function() {
+                setTimeout(function () {
                     emailInput.classList.remove('login-place-input_invalid');
                 }, 3000);
 
             } else if (messInput.value == '') {
-                setPopup(messPlace, "Введите сообщение");
+                setPopup(messPlace, "Введите сообщение", 'top');
                 messInput.classList.add('login-place-input_invalid');
-                setTimeout(function() {
+                setTimeout(function () {
                     messInput.classList.remove('login-place-input_invalid');
                 }, 3000);
 
@@ -52,7 +59,7 @@ export default function() {
                         };
                         const url = './works';
                         prepareSend(url, formMail, data);
-                        compliteMes.style.display = 'block';
+                        message('Сообщение отправлено');
                         nameInput.value = '';
                         nameInput.classList.remove('login-place-input_valid');
                         emailInput.value = '';
@@ -64,7 +71,7 @@ export default function() {
             }
         })
 
-        submitRs.addEventListener('click', function(ev) {
+        submitRs.addEventListener('click', function (ev) {
             ev.preventDefault();
             nameInput.value = '';
             nameInput.classList.remove('login-place-input_valid');
@@ -72,10 +79,6 @@ export default function() {
             emailInput.classList.remove('login-place-input_valid');
             messInput.value = '';
             messInput.classList.remove('login-place-input_valid');
-        })
-        closeComplite.addEventListener('click', function(ev) {
-            ev.preventDefault();
-            compliteMes.style.display = 'none';
         })
     }
 

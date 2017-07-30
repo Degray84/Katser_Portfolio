@@ -1,25 +1,34 @@
-import { sendJson } from '../sendAjax';
-import { setPopup } from './_popupAdd';
-export default function() {
+import {
+    sendJson
+} from '../sendAjax';
+import {
+    setPopup
+} from './_popupAdd';
+// МОДУЛЬ ВАЛИДАЦИИ ФОРМЫ АВТОРИЗАЦИИ ГЛАВНОЙ СТРАНИЦЫ
+export default function () {
+    // Определение постоянных переменных
     const comeIn = document.querySelector('#comeIn'),
         robot = document.querySelector('#rad1'),
         humman = document.querySelector('#ch'),
         hummanPlace = document.querySelector('.human-ckeckbox'),
         namePlace = document.querySelector('.card-login__name'),
         passPlace = document.querySelector('.card-login__pass'),
-        cardLogin = document.querySelector('.card-login');
-
+        cardLogin = document.querySelector('.card-login'),
+        humanPlace = document.querySelector('.human-ckeckbox');
     // При клике собирает данные из формы cardLogin и отправляет ajax запрос по адресу url
     function _setUpListeners() {
-        comeIn.addEventListener('click', function(ev) {
+        comeIn.addEventListener('click', function (ev) {
+            // Объект data с данными формы
             const data = {
                 login: cardLogin.login.value,
                 pass: cardLogin.pass.value,
                 humman: cardLogin.humman.checked,
                 robot: cardLogin.robot[0].checked
             };
+            // Адрес отправки данных формы
             const url = '/author';
-            sendJson(url, data, "POST", function(st) {
+            // Вызов Ajax функции
+            sendJson(url, data, "POST", function (st) {
                 checkInput(st); // проверяем данные, отображаем popup
                 validInput(); // подсвечиваем поле
             });
@@ -29,16 +38,16 @@ export default function() {
     function checkInput(mess) {
         switch (mess) {
             case 'Введите логин!':
-                setPopup(namePlace, mess);
+                setPopup(namePlace, mess, 'bottom');
                 break;
             case 'Неправильный логин!':
-                setPopup(namePlace, mess);
+                setPopup(namePlace, mess, 'bottom');
                 break;
             case 'Введите пароль!':
-                setPopup(passPlace, mess);
+                setPopup(passPlace, mess, 'bottom');
                 break;
             case 'Неправильный пароль!':
-                setPopup(passPlace, mess);
+                setPopup(passPlace, mess, 'bottom');
                 break;
         }
     }
@@ -50,7 +59,7 @@ export default function() {
             if ((nameInputs[i].value == '')) {
                 nameInputs[i].classList.add('login-place-input_invalid')
                 iconInput.classList.add('icon_color-red');
-                setTimeout(function() {
+                setTimeout(function () {
                     nameInputs[i].classList.remove('login-place-input_invalid')
                     iconInput.classList.remove('icon_color-red');
                 }, 2000);
@@ -59,7 +68,7 @@ export default function() {
                 iconInput.classList.remove('icon_color-red');
                 nameInputs[i].classList.add('login-place-input_valid')
                 iconInput.classList.add('icon_color-green');
-                setTimeout(function() {
+                setTimeout(function () {
                     nameInputs[i].classList.remove('login-place-input_valid')
                     iconInput.classList.remove('icon_color-green');
                 }, 2000);

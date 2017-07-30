@@ -1,15 +1,16 @@
 import {
     animate
 } from './_animation';
+// МОДУЛЬ СЛАЙДЕРА
 export default function () {
-    var firstWork = Array.prototype.slice.call(document.querySelectorAll('.first-work-img')),
+    // Объявление констант
+    const firstWork = Array.prototype.slice.call(document.querySelectorAll('.first-work-img')),
         secondWork = Array.prototype.slice.call(document.querySelectorAll('.second-work-img')),
         thirdWork = Array.prototype.slice.call(document.querySelectorAll('.third-work-img')),
         desc = Array.prototype.slice.call(document.querySelectorAll('.slider-desc')),
         activeDesc = document.querySelector('.work_active'),
         leftArrow = document.querySelector('#arrow-down'),
         rightArrow = document.querySelector('#arrow-up');
-
     // Сдвиг массива второго контейнера изображений
     _shiftArray(secondWork, "left");
     // Сдвиг массива третьего контенера изображений
@@ -40,15 +41,15 @@ export default function () {
                 secondWork[i].classList.add('work_active');
                 thirdWork[i].classList.add('work_active');
                 desc[i].classList.add('work_active');
-                animate(firstWork[i], 'zoomInDown', 1000);
-                animate(secondWork[i], 'fadeInDown', 1000);
-                animate(thirdWork[i], 'fadeInUp', 1000);
-                animate(desc[i], 'fadeIn', 1000);
+                animate(firstWork[i], 'zoomInDown');
+                animate(secondWork[i], 'fadeInDown');
+                animate(thirdWork[i], 'fadeInUp');
+                animate(desc[i], 'fadeIn');
             } else {
-                animate(firstWork[i], 'zoomOutRight', 1000);
-                animate(secondWork[i], 'fadeOutDown', 1000);
-                animate(thirdWork[i], 'fadeOutUp', 1000);
-                desc[i].classList.remove('work_active', 1000);
+                animate(firstWork[i], 'zoomOutRight');
+                animate(secondWork[i], 'fadeOutDown');
+                animate(thirdWork[i], 'fadeOutUp');
+                desc[i].classList.remove('work_active');
                 setTimeout(function () {
                     firstWork[i].classList.remove('work_active');
                     secondWork[i].classList.remove('work_active');
@@ -57,7 +58,6 @@ export default function () {
             }
         }
     }
-
     // Привязка ссылок и сдвиг массива вправо по клику на левую стрелку
     function _leftArrowEvent() {
         leftArrow.addEventListener("click", function (e) {

@@ -1,6 +1,7 @@
 import {
     animate
 } from './_animation';
+// МОДУЛЬ ЗАГРУЗЧИКА ИЗОБРАЖЕНИЙ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ
 export default function () {
     // Загрузка массива изображений для параллакс-эффекта
     const url = [
@@ -63,8 +64,8 @@ export default function () {
     // первый аргумента - блок для анимации, 
     // второй аргумент - анимация из animate.css
     function _animation() {
-        animate(indexCard, 'flipInX', 1000);
-        animate(authoriz, 'lightSpeedIn', 1000);
+        animate(indexCard, 'flipInX');
+        animate(authoriz, 'lightSpeedIn');
     };
     // Функция создает изображение и увеличивает счетчик cur на единицу
     function loadImage(url, classPar) {

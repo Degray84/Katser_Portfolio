@@ -2,8 +2,10 @@ import {
     animate,
     animateList
 } from './_animation';
+// МОДУЛЬ МЕНЮ-ГАМБУРГЕРА
 export default function () {
-    let icon = document.querySelector('.hamburger-icon'),
+    // Определение постоянных переменных
+    const icon = document.querySelector('.hamburger-icon'),
         menu = document.querySelector('.hero__hideMenu'),
         menuItems = document.querySelectorAll('.hideMenu-nav__item'),
         bgLeft = menu.querySelector('.hero__menuBg_left'),
@@ -14,13 +16,13 @@ export default function () {
             ev.preventDefault();
             menu.classList.toggle('active');
             icon.classList.toggle('hamburger-icon_active');
-            animate(bgLeft, 'slideInLeft', 1000);
-            animate(bgRight, 'slideInRight', 1000);
+            animate(bgLeft, 'slideInLeft');
+            animate(bgRight, 'slideInRight');
             menuItems.forEach(function (element) {
                 element.style.display = 'none';
             });
             setTimeout(() => {
-                animateList(menuItems, 'rubberBand', 500);
+                animateList(menuItems, 'rubberBand');
             }, 1000);
         })
     }

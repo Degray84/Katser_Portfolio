@@ -4,8 +4,10 @@ import {
 import {
     animate
 } from './_animation';
+// МОДУЛЬ МЕНЮ БЛОГА
 export default function () {
-    let blogSection = document.querySelector('.blog'),
+    // Определение постоянных переменных
+    const blogSection = document.querySelector('.blog'),
         heroSection = document.querySelector('.hero'),
         blogMenu = document.querySelector('.blog__left'),
         blogList = document.querySelector('.blog-nav-list'),
@@ -14,10 +16,10 @@ export default function () {
         textList = document.querySelectorAll('.blog-nav-text'),
         blockList = document.querySelectorAll('.blog-nav-block'),
         navButton = document.querySelector('.halfcircle');
-    // Добавляем прослушку на скролл
+    // Добавляется прослушка на скролл
     function _setUpListenters() {
         window.addEventListener('scroll', function () {
-            // Добавляем переменную, которая определяет расстояние от секции блога до верхней границы документа, 
+            // Добавляется переменная, которая определяет расстояние от секции блога до верхней границы документа, 
             // добавляет меню fixed, если выходит за границы значения и убирает fixed, если заходит обратно
             let menuOffset = blogSection.getBoundingClientRect().top;
             if (menuOffset <= 90) {
@@ -29,19 +31,18 @@ export default function () {
                 blogMenu.classList.add('blog__left_relative');
             }
             _articleOffset()
-
         })
         // Скрывает или добавляет меню при клике на кнопку
         navButton.addEventListener('click', function () {
             if (blogMenu.classList.contains('blog__left_active') === true) {
-                animate(blogMenu, 'bounceOutLeft', 1000);
+                animate(blogMenu, 'bounceOutLeft');
                 setTimeout(function () {
                     blogMenu.classList.remove('blog__left_active');
                 }, 500);
             }
             if (blogMenu.classList.contains('blog__left_active') === false) {
                 blogMenu.classList.add('blog__left_active');
-                animate(blogMenu, 'bounceInLeft', 1000);
+                animate(blogMenu, 'bounceInLeft');
             }
 
         })
@@ -56,12 +57,10 @@ export default function () {
                 // Центр экрана
                 offsetPoint = window.innerHeight / 2,
                 activList = navList[i];
-
             activList.onclick = function () {
                 // Расстояние от начала статьи до начала документа + 30px
                 let pageOffset = articlesList[i].offsetTop + heroSection.offsetHeight + 30;
                 return scroll(pageOffset);
-                // window.scrollTo(0, pageOffset);
             };
             if (articleOffset <= offsetPoint) {
                 for (let a = 0; a < articlesList.length; a++) {

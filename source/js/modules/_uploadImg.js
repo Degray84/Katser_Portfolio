@@ -1,22 +1,14 @@
-import { fileUpload } from '../sendAjax';
-
-export default function() {
+import {
+    fileUpload
+} from '../sendAjax';
+import {
+    message
+} from './_message';
+// МОДУЛЬ ЗАГРУЗКИ ИЗОБРАЖЕНИЙ ИЗ ПАНЕЛИ АДМИНИСТРАЦИИ
+export default function () {
     const btnUpload = document.querySelector('#btn-save-work');
 
-
-    function message(mess) {
-        const resultContainer = document.querySelector('.notify-complite'),
-            closeComplite = document.querySelector('.notify-btn'),
-            closeTitle = document.querySelector('.notify-title');
-
-        closeTitle.innerHTML = mess;
-        resultContainer.style.display = "block";
-        closeComplite.addEventListener('click', function() {
-            resultContainer.style.display = "none";
-        })
-    }
-    btnUpload.addEventListener('click', function() {
-
+    btnUpload.addEventListener('click', function () {
 
         let file = document.querySelector('#admin-add-img').files[0];
         console.log(file);

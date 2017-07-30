@@ -1,7 +1,9 @@
 import {
     animate
 } from './_animation';
+// МОДУЛЬ FLIP АНИМАЦИИ КАРТОЧКИ ГЛАВНОЙ СТРАНИЦЫ
 export default function () {
+    // Определение постоянных переменных
     const indexCard = document.querySelector(".card-flip"),
         authoriz = document.querySelector(".login"),
         indexBack = document.querySelector("#goBack");
@@ -10,7 +12,7 @@ export default function () {
         authoriz.addEventListener('click', (e) => {
             e.preventDefault();
             indexCard.style = 'transform: rotateY(180deg)';
-            animate(authoriz, 'fadeOut', 1000);
+            animate(authoriz, 'fadeOut');
             setTimeout(() => {
                 authoriz.style = 'display: none';
             }, 1000)
@@ -22,7 +24,7 @@ export default function () {
             e.preventDefault();
             indexCard.style = 'transform: rotateY(0deg)';
             authoriz.style = 'display: block';
-            animate(authoriz, 'fadeIn', 1000);
+            animate(authoriz, 'fadeIn');
         });
     };
 

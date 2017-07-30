@@ -1,6 +1,7 @@
 import {
     scroll
 } from './_scrollBy';
+// МОДУЛЬ ПРОКРУТКИ ЭКРАНА ПРИ НАЖАТИИ НА СТРЕЛКИ
 export default function () {
     const arrowDown = document.querySelector('.hero__scroll-button'),
         arrowUp = document.querySelector('.works-about__to-top');
@@ -11,7 +12,6 @@ export default function () {
         } else {
             arrowDown.addEventListener('click', function () {
                 return scroll(document.documentElement.clientHeight)
-
             })
         }
     }
