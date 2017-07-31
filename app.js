@@ -21,8 +21,6 @@ const uploadDir = path.join(__dirname, config.upload);
 app.set('views', path.join(__dirname, 'source/template'));
 app.set('view engine', 'pug');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 app.use(helmet());
 app.use(logger('dev'));
@@ -32,7 +30,7 @@ app.use(cookieParser());
 
 
 app.use(express.static(path.join(__dirname, currentStatic)));
-// app.use(favicon(path.join(__dirname, currentStatic, 'favicon.ico')));
+app.use(favicon(path.join(__dirname, currentStatic, "/assets/img/", 'favicon.ico')));
 
 app.use('/', require('./routes/index'));
 app.use('/about', require('./routes/about'));

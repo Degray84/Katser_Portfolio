@@ -12,9 +12,9 @@ export default function () {
         leftArrow = document.querySelector('#arrow-down'),
         rightArrow = document.querySelector('#arrow-up');
     // Сдвиг массива второго контейнера изображений
+    _shiftArray(secondWork, "left");.
     _shiftArray(secondWork, "left");
     // Сдвиг массива третьего контенера изображений
-    _shiftArray(thirdWork, "left");
     _shiftArray(thirdWork, "left");
     // Передачи ссылок в массив
     function _pushLinks(wirk1, ...workN) {
