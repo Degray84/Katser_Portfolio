@@ -37,8 +37,9 @@ block content
               .blog-article__title
                 .article-title= article.title
               .blog-article__date
-                  .article-date= article.data
+                .article-date= article.data
               .blog-article__content
-                  .article-content= article.body
+                each par in article.body
+                  .article-content= par
   //- Футер
   include ../common/footer
