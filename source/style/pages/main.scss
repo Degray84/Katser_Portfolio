@@ -1,5 +1,6 @@
         .main {
             height: 100vh;
+            min-height: 620px;
             @include landscape {
                 height: 560px;
             }
@@ -73,7 +74,7 @@
                 width: 100%;
             }
         }
-        
+
         .login {
             display: block;
             border-width: 1px;
@@ -104,7 +105,7 @@
                 }
             }
         }
-        
+
         .card-menu {
             border-radius: 5px;
             overflow: hidden;
@@ -123,7 +124,7 @@
                 right: 0;
             }
         }
-        
+
         .main-nav {
             display: flex;
             justify-content: space-between;
@@ -141,6 +142,7 @@
             }
             &__link {
                 font-size: 16px;
+                user-select: none;
                 font-family: "Roboto";
                 color: rgb(255, 255, 255);
                 line-height: 2.8;
@@ -164,7 +166,7 @@
                 height: 45px;
             }
         }
-        
+
         .footer {
             font-size: 16px;
             font-family: "Roboto";

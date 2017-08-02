@@ -1,3 +1,6 @@
+import {
+    animate
+} from './_animation';
 // МОДУЛЬ ТАБОВ
 export default function () {
     // Объявление констант
@@ -18,6 +21,7 @@ export default function () {
                     contentArr[a].classList.remove(contentClass);
                     // Присвоить активный класс табу, на который кликнули
                     contentArr[i].classList.add(contentClass);
+                    animate(contentArr[i],"fadeIn");
                     // Убрать активный класс со всех блоков контента
                     tabList[a].classList.remove(tabsClass);
                     // Присвоить активный класс блока контента с индексом,

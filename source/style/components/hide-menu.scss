@@ -1,41 +1,10 @@
 .hideMenu-nav {
-    height: 400px;
+    height: 320px;
     display: flex;
     flex-flow: column;
-    @include phones {
-        height: 200px;
-    }
+    text-decoration: none;
+    text-align: center;
     &__item {
-        position: relative;
-        width: 100%;
-        text-decoration: none;
-        font-size: 63px;
-        font-family: "bernier";
-        color: $clear-white;
-        text-align: center;
-        display: inline-block;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        @include phones {
-            font-size: 36px;
-        }
-        &:hover {
-            &:after,
-            &:before {
-                content: "";
-                display: block;
-                @include centered(y);
-                width: 22px;
-                height: 5px;
-                background: rgba($main-color, .2);
-            }
-            &:after {
-                right: -40px;
-            }
-            &:before {
-                left: -40px;
-            }
-        }
+        padding: 10px 0; 
     }
 }

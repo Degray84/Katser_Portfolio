@@ -87,7 +87,7 @@
     position: relative;
     display: none;
     width: 420px;
-    height: 300px;
+    height: 270px;
     margin: auto;
     &__link {
         @include centered(x);
@@ -95,10 +95,13 @@
     }
     &__title {
         @include centered(x);
+        top: 10px;
+        text-align: center;
+        width: 100%;
     }
     &__tech {
         @include centered(x);
-        top: 125px;
+        top: 85px;
         width: 80%;
     }
 }
@@ -109,6 +112,7 @@
     color: $akcent-color;
     line-height: 1.4;
     text-align: center;
+    padding: 0 10px;
     &:before {
         content: "";
         display: block;

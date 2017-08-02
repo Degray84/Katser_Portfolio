@@ -3,7 +3,9 @@
             overflow: hidden;
             &__title {
                 @include centered(x);
-                top: 10px;
+                width: 100%;
+                text-align: center;
+                top: 30px;
             }
             &__name {
                 @include centered(x);

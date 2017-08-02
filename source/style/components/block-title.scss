@@ -1,9 +1,4 @@
 .block-title {
-    min-width: 130px;
-    padding: 20px 65px;
-    @include phones {
-        padding: 20px 50px;
-    }
     position: relative;
     display: inline-block;
     background-position: center center;
@@ -13,17 +8,18 @@
     &:before {
         content: "";
         display: block;
-        @include centered(y);
+        position: absolute;
+        top: 29px;
         width: 22px;
         height: 5px;
         background: rgba($main-color, .2);
     }
-    $margin: 20px;
+    $margin: 35px;
     &:after {
-        right: $margin;
+        right: -$margin;
     }
     &:before {
-        left: $margin;
+        left: -$margin;
     }
     &_title {
         font-size: 63px;
@@ -34,6 +30,10 @@
         @include phones {
             font-size: 35px;
             line-height: 1.2;
+            &:after,
+            &:before {
+                top: 19px;
+            }
         }
     }
     &_subtitle {
@@ -41,14 +41,63 @@
         font-family: "bernier";
         color: $main-color;
         text-align: center;
-        @include phones {
-            font-size: 32px;
+        &:after,
+        &:before {
+            top: 22px;
         }
     }
-    &_width-big {
-        width: 300px;
+    @include phones {
+        font-size: 32px;
+        &:after,
+        &:before {
+            top: 19px;
+        }
     }
-    &_width-small {
-        width: 200px;
+    &_cent {
+        @include phones {
+            &:after,
+            &:before {
+                @include centered(y);
+            }
+        }
+    }
+    &-hover{
+       position: relative;
+    display: inline-block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    &:hover:after,
+    &:hover:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 29px;
+        width: 22px;
+        height: 5px;
+        background: rgba($clear-white, 1);
+    }
+    $margin: 35px;
+    &:hover:after {
+        right: -$margin;
+    }
+    &:hover:before {
+        left: -$margin;
+    }
+    &_title {
+        font-size: 63px;
+        color: $clear-white;
+        font-family: "bernier";
+        text-align: center;
+        line-height: 1;
+        @include phones {
+            font-size: 35px;
+            line-height: 1.2;
+            &:hover:after,
+            &:hover:before {
+                top: 19px;
+            }
+        }
+    }
     }
 }
