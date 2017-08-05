@@ -16,14 +16,14 @@ export default function () {
             ev.preventDefault();
             menu.classList.toggle('active');
             icon.classList.toggle('hamburger-icon_active');
-            animate(bgLeft, 'slideInLeft');
-            animate(bgRight, 'slideInRight');
+            animate(bgLeft, 'slideInLeft', 0.3);
+            animate(bgRight, 'slideInRight', 0.3);
             menuItems.forEach(function (element) {
                 element.style.display = 'none';
             });
             setTimeout(() => {
-                animateList(menuItems, 'rubberBand');
-            }, 1000);
+                animateList(menuItems, 'rubberBand', 0.8);
+            }, 500);
         })
     }
 

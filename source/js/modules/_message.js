@@ -10,13 +10,13 @@
            closeTitle = document.querySelector('.notify-title');
        // Присвоение текста сообщения
        closeTitle.innerHTML = mess;
-       animate(resultContainer, 'bounceIn')
+       animate(resultContainer, 'bounceIn', 0.5)
        resultContainer.style.display = "block";
        closeComplite.addEventListener('click', function () {
-           animate(resultContainer, 'bounceOut');
+           animate(resultContainer, 'bounceOut', 0.5);
            setTimeout(function () {
                resultContainer.style.display = "none"
-           }, 1000);
+           }, 500);
        })
    };
    export {

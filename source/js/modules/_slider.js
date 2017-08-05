@@ -41,20 +41,20 @@ export default function () {
                 secondWork[i].classList.add('work_active');
                 thirdWork[i].classList.add('work_active');
                 desc[i].classList.add('work_active');
-                animate(firstWork[i], 'zoomInDown');
-                animate(secondWork[i], 'fadeInDown');
-                animate(thirdWork[i], 'fadeInUp');
-                animate(desc[i], 'fadeIn');
+                animate(firstWork[i], 'zoomInDown', 0.6);
+                animate(secondWork[i], 'fadeInDown', 0.6);
+                animate(thirdWork[i], 'fadeInUp', 0.6);
+                animate(desc[i], 'fadeIn', 0.6);
             } else {
-                animate(firstWork[i], 'zoomOutRight');
-                animate(secondWork[i], 'fadeOutDown');
-                animate(thirdWork[i], 'fadeOutUp');
-                desc[i].classList.remove('work_active');
+                animate(firstWork[i], 'zoomOutRight', 0.6);
+                animate(secondWork[i], 'fadeOutDown', 0.6);
+                animate(thirdWork[i], 'fadeOutUp', 0.6);
+                desc[i].classList.remove('work_active', 0.6);
                 setTimeout(function () {
                     firstWork[i].classList.remove('work_active');
                     secondWork[i].classList.remove('work_active');
                     thirdWork[i].classList.remove('work_active');
-                }, 1000)
+                }, 600)
             }
         }
     }

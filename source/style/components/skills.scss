@@ -78,8 +78,7 @@
             opacity: .9;
             -webkit-transition: all .9s;
             -o-transition: all .9s;
-            transition: all .9s;
-            // stroke: #16c2aa;
+            transition: all .9s; // stroke: #16c2aa;
             stroke-dasharray: .0010 360;
             &_light {
                 stroke: #65ccbb;
@@ -103,74 +102,130 @@
     stroke-opacity: 0;
 }
 
-.circle-5 {
+.circle-5.aniScreen {
     stroke-dasharray: 15.7 314;
     stroke-opacity: calc(15.7 / 314);
 }
 
-.circle-10 {
+.circle-5 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-10.aniScreen {
     stroke-dasharray: 31.4 314;
     stroke-opacity: calc(31.4 / 314);
 }
 
-.circle-15 {
+.circle-10 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-15.aniScreen {
     stroke-dasharray: 47.1 314;
     stroke-opacity: calc(47.1 / 314);
 }
 
-.circle-20 {
+.circle-15 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-20.aniScreen {
     stroke-dasharray: 62.8 314;
     stroke-opacity: calc(63 / 314);
 }
 
-.circle-25 {
+.circle-20 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-25.aniScreen {
     stroke-dasharray: 78.5 314;
     stroke-opacity: calc(78 / 314);
 }
 
-.circle-30 {
+.circle-25 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-30.aniScreen {
     stroke-dasharray: 94.2 314;
     stroke-opacity: calc(94 / 314);
 }
 
-.circle-35 {
+.circle-30 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-35.aniScreen {
     stroke-dasharray: 109.9 314;
     stroke-opacity: calc(110 / 314);
 }
 
-.circle-40 {
+.circle-35 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-40.aniScreen {
     stroke-dasharray: 125.6 314;
     stroke-opacity: calc(125 / 314);
 }
 
-.circle-45 {
+.circle-40 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-45.aniScreen {
     stroke-dasharray: 141.3 314;
     stroke-opacity: calc(141 / 314);
 }
 
-.circle-50 {
+.circle-45 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-50.aniScreen {
     stroke-dasharray: 157 314;
     stroke-opacity: calc(157 / 314);
 }
 
-.circle-55 {
+.circle-50 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-55 .aniScreen {
     stroke-dasharray: 172.7 314;
     stroke-opacity: calc(172 / 314);
 }
 
-.circle-60 {
+.circle-55 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-60.aniScreen {
     stroke-dasharray: 188.4 314;
     stroke-opacity: calc(188 / 314);
 }
 
-.circle-65 {
+.circle-60 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-65.aniScreen {
     stroke-dasharray: 204.1 314;
     stroke-opacity: calc(204 / 314);
 }
 
-.circle-70 {
+.circle-65 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-70.aniScreen {
     stroke-dasharray: 219.8 314;
     stroke-opacity: calc(220 / 314);
+}
+
+.circle-70 {
+    stroke-dasharray: .001 314;
 }
 
 .circle-75 {
@@ -178,27 +233,51 @@
     stroke-opacity: calc(235 / 314);
 }
 
-.circle-80 {
+.circle-75 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-80.aniScreen {
     stroke-dasharray: 251.2 314;
     stroke-opacity: calc(251 / 314);
 }
 
-.circle-85 {
+.circle-80 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-85.aniScreen {
     stroke-dasharray: 266.9 314;
     stroke-opacity: calc(267 / 314);
 }
 
-.circle-90 {
+.circle-85 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-90.aniScreen {
     stroke-dasharray: 282.6 314;
     stroke-opacity: calc(282 / 314);
 }
 
-.circle-95 {
+.circle-90 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-95.aniScreen {
     stroke-dasharray: 298.3 314;
     stroke-opacity: calc(300 / 314);
 }
 
-.circle-100 {
+.circle-95 {
+    stroke-dasharray: .001 314;
+}
+
+.circle-100.aniScreen {
     stroke-dasharray: 314 314;
     stroke-opacity: 1;
+}
+
+.circle-100 {
+    stroke-dasharray: .001 314;
 }

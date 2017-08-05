@@ -13,6 +13,9 @@ import tabs from './modules/_tabs';
 import uploadImg from './modules/_uploadImg';
 import uploadArt from './modules/_uploadArt';
 import prepareSend from './prepareSend';
+import {
+    aniScreen
+} from './modules/_animation';
 
 
 // Переменная для проверки страницы на наличие контейнеров
@@ -43,6 +46,7 @@ if (admin.length) {
 }
 
 if (!main.length && !admin.length) {
+    aniScreen('fadeIn','fadeOut', 0.5);
     preload(); //Модуль прелоадеров
     scrollButton(); //Модуль перехода от клика на стрелку
 };
