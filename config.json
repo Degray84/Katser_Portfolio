@@ -1,0 +1,26 @@
+{
+    "db": {
+        "host": "localhost",
+        "port": "27017",
+        "name": "test",
+        "user": "",
+        "password": ""
+    },
+    "admin": {
+        "user": "admin",
+        "password": "12345"
+    },
+    "upload": "build/assets/img/works",
+    "mail": {
+        "subject": "Сообщение с сайта-портфолио",
+        "smtp": {
+            "host": "smtp.gmail.com",
+            "port": 465,
+            "secure": true,
+            "auth": {
+                "user": "dorian848484@gmail.com",
+                "pass": "dorian84"
+            }
+        }
+    }
+}

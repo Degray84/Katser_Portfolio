@@ -1,0 +1,10 @@
+.hideMenu-nav {
+    height: 320px;
+    display: flex;
+    flex-flow: column;
+    text-decoration: none;
+    text-align: center;
+    &__item {
+        padding: 10px 0; 
+    }
+}

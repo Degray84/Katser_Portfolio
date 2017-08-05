@@ -1,0 +1,65 @@
+section.section.hero
+  //- Загрузка фоновых изображения в зависимости от типа девайса
+  .hero__bg
+      img(src="./assets/img/bg/mountains-retina.jpg").parallax__scroll.parallax_retina
+      img(src="./assets/img/bg/mountains-desktop.jpg").parallax__scroll.parallax_desktop
+      img(src="./assets/img/bg/mountains-laptop.jpg").parallax__scroll.parallax_laptop
+      img(src="./assets/img/bg/mountains-tablets.jpg").parallax__scroll.parallax_tablets
+      img(src="./assets/img/bg/mountains-phones.jpg").parallax__scroll.parallax_phones
+  //- Содержимое шапки сайта
+  .hero__container
+    //- Социальные иконки
+    .hero__socials
+      ul.socials
+        li.socials__item
+          a(href="https://vk.com/id258183174", target="_blank")
+            svg.social__icon_small.icon_color-white
+              use(xlink:href="./assets/img/sprite.svg#vk")
+        li.socials__item
+          a(href="https://github.com/Degray84", target="_blank")
+            svg.social__icon_small.icon_color-white
+              use(xlink:href="./assets/img/sprite.svg#github")         
+        li.socials__item
+          a(href="https://www.linkedin.com/in/%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B9-%D0%BA%D0%B0%D1%86%D0%B5%D1%80-35b351141/", target="_blank")
+            svg.social__icon_small.icon_color-white
+              use(xlink:href="./assets/img/sprite.svg#in")
+    //- Гамбургер-меню сайта
+    .hamburger.hero__menu
+      .hamburger-icon
+        span.hamburger-icon__line.hamburger-icon__line-top
+        span.hamburger-icon__line.hamburger-icon__line-middle
+        span.hamburger-icon__line.hamburger-icon__line-bottom
+      .hero__hideMenu
+        .hero__menuBg.hero__menuBg_left
+        .hero__menuBg.hero__menuBg_right
+        .hero__menuBlock
+          nav.hideMenu-nav
+            a(href="works").hideMenu-nav__item
+              .block-title-hover.block-title-hover_title Мои работы
+            a(href="about").hideMenu-nav__item
+              .block-title-hover.block-title-hover_title Обо мне
+            a(href="blog").hideMenu-nav__item
+              .block-title-hover.block-title-hover_title Блог
+            a(href="/").hideMenu-nav__item
+              .block-title-hover.block-title-hover_title Авторизация
+    //- Заголовок шапки
+    .hero__title
+      .section-title
+        svg.section-title__pic
+          use(xlink:href="./assets/img/sprite.svg#portfolio_header")
+    //- Блок информации о пользователе
+    .hero__user
+      .user
+        .user__pic
+          img(src="./assets/img/MyPhoto(06.17).png", alt="").user__pic-img
+        .user__description
+          .user__name.user__name_about #{name}
+          .user__info.user__info_about #{info}
+    //- Стрелка для прокрутки экрана ко второй секции
+    .hero__scroll-button
+      svg.arrow.arrow_small
+        use(xlink:href="./assets/img/sprite.svg#arrow_down")
+
+    
+  
+    

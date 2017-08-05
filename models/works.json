@@ -1,0 +1,33 @@
+{
+    "db": [{
+            "work": "Сайт портфолио",
+            "tech": "Pug, Sass, 90% классический JavaScript(ES6), 10% Jquery, Gulp, Webpack, Git, NodeJs, Express",
+            "link": "/",
+            "picUrl": "./assets/img/works/work1.png"
+        },
+        {
+            "work": "Для примера 2",
+            "tech": "Будут добавлены позже",
+            "link": "#2",
+            "picUrl": "./assets/img/works/work2.png"
+        },
+        {
+            "work": "Для примера 3",
+            "tech": "Будут добавлены позже",
+            "link": "#3",
+            "picUrl": "./assets/img/works/work3.png"
+        },
+        {
+            "work": "Для примера 4",
+            "tech": "Будут добавлены позже",
+            "link": "#4",
+            "picUrl": "./assets/img/works/work4.png"
+        },
+        {
+            "work": "Для примера 5",
+            "tech": "Будут добавлены позже",
+            "link": "#5",
+            "picUrl": "./assets/img/works/work5.png"
+        }
+    ]
+}

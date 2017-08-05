@@ -1,0 +1,52 @@
+#main__parallax {
+    position: absolute;
+    @include centered();
+    overflow: hidden;
+}
+
+.parallax {
+    position: absolute;
+    width: 112%;
+    height: 112%;
+    will-change: transform; 
+    &__image {
+        display: none;
+        position: absolute;
+        bottom: -15%;
+    }
+    &__scroll {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 125%;
+        transform: translateX(-50%);
+    }
+    &_laptop {
+        @include lap-parallax {
+            display: block;
+        }
+    }
+    &_desktop {
+        @include desk-parallax {
+
+            display: block;
+        }
+    }
+    &_retina {
+        @include retina-parallax {
+
+            display: block;
+        }
+    }
+    &_tablets {
+        @include tab-parallax {
+            display: block;
+        }
+    }
+    &_phones {
+        @include phones {
+            display: block;
+        }
+    }
+}

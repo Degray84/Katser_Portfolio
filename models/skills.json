@@ -1,0 +1,59 @@
+{
+    "skills": [{
+            "name": "Frontend",
+            "items": [{
+                    "name": "HTML5 & Pug",
+                    "value": 80
+                },
+                {
+                    "name": "CSS & Sass",
+                    "value": 60
+                },
+                {
+                    "name": "BEM",
+                    "value": 70
+                },
+                {
+                    "name": "JavaScript & Jquery",
+                    "value": 45
+                }
+            ]
+        },
+        {
+            "name": "Backend",
+            "items": [{
+                    "name": "PHP",
+                    "value": 20
+                },
+                {
+                    "name": "mySQL",
+                    "value": 25
+                },
+                {
+                    "name": "Node.js & npm",
+                    "value": 65
+                },
+                {
+                    "name": "Mongo.db",
+                    "value": 45
+                }
+            ]
+        },
+        {
+            "name": "WorkFlow",
+            "items": [{
+                    "name": "Git",
+                    "value": 80
+                },
+                {
+                    "name": "Gulp",
+                    "value": 65
+                },
+                {
+                    "name": "Webpack",
+                    "value": 35
+                }
+            ]
+        }
+    ]
+}

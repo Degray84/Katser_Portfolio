@@ -1,0 +1,62 @@
+.messages {
+    &__notify {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 42;
+    }
+    &__pop {}
+}
+
+.notify-complite {
+    display: none;
+    position: relative;
+    border-radius: 5px;
+    background-color: $clear-white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    height: 112px;
+    &__title {
+        position: absolute;
+        @include centered(x);
+        top: 16px;
+    }
+    &__btn {
+        position: absolute;
+        @include centered(x);
+        top: 50px;
+    }
+}
+
+.notify-title {
+    width: 280px;
+    font-size: 16px;
+    font-family: "Roboto";
+    color: rgba($main-color, 0.8);
+    text-align: center;
+}
+
+.notify-btn {
+    cursor: pointer;
+    width: 104px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: $akcent-color;
+    font-size: 16px;
+    font-family: "Roboto";
+    color: rgba($clear-white, 0.8);
+    text-align: center;
+}
+
+.notification {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1500px;
+    height: 1082px;
+    z-index: 46;
+}
+

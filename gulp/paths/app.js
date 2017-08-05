@@ -1,5 +1,3 @@
 'use strict';
 
-module.exports = [
-  './source/js/app.js'
-];
+module.exports = './source/js/app.js';

@@ -1,0 +1,147 @@
+    .works-submit {
+        position: relative;
+        height: 445px;
+        border-radius: 5px;
+        overflow: hidden;
+        @include desktop {
+            width: 380px;
+        }
+        @include laptop {
+            width: 380px;
+        }
+        @include tablets {
+            width: 348px;
+        }
+        @include phones {
+            min-width: 300px;
+            width: 94%;
+        }
+        &__title {
+            @include centered(x);
+            width: 100%;
+            text-align: center;
+            top: 30px;
+        }
+        &__name {
+            @include centered(x);
+            top: 105px;
+            z-index: 10;
+        }
+        &_place {
+            border-radius: 5px;
+            background-color: $clear-white;
+            @include desktop {
+                width: calc(380px - 55px);
+            }
+            @include laptop {
+                width: calc(380px - 55px);
+            }
+            @include tablets {
+                width: calc(348px - 55px);
+            }
+            @include phones {
+                min-width: calc(300px - 55px);
+                width: 94%;
+            }
+            height: 40px;
+            padding-left: 18px;
+            outline: none;
+            border: 0;
+            &-area {
+                padding-top: 18px;
+                height: 125px;
+                resize: none;
+            }
+            &:focus {
+                box-shadow: 0 0 0 1pt $akcent-color;
+            }
+        }
+        &__email {
+            @include centered(x);
+            top: 170px;
+            z-index: 5;
+        }
+        &__message {
+            @include centered(x);
+            top: 235px;
+            z-index: 0;
+        }
+        &-text {
+            font-size: 16px;
+            font-family: "Roboto";
+            color: rgba($main-color, 0.5);
+            text-align: left;
+        }
+        &__buttons {
+            position: absolute;
+            bottom: 0;
+            margin-left: -2px;
+        }
+        &-buttons {
+            @include desktop {
+                width: 382px;
+            }
+            @include laptop {
+                width: 382px;
+            }
+            @include tablets {
+                width: 350px;
+            }
+            @include phones {
+                min-width: 302px;
+                width: 94%;
+            }
+            height: 45px;
+            display: flex;
+            justify-content: space-between;
+        }
+        &-sb {
+            cursor: pointer;
+            background-color: rgba($akcent-color, 0.8);
+            width: 50%;
+            font-size: 16px;
+            font-family: "Roboto";
+            color: $clear-white;
+            line-height: 2.257;
+            text-align: center;
+            border: none;
+            border-left: 2px solid rgba(222, 227, 231, 0.5);
+            &:hover {
+                background-color: rgba($akcent-color, 0.5);
+            }
+        }
+        &-rs {
+            cursor: pointer;
+            background-color: rgba($akcent-color, 0.8);
+            width: 50%;
+            font-size: 16px;
+            font-family: "Roboto";
+            color: rgb(255, 255, 255);
+            line-height: 2.257;
+            text-align: center;
+            border: none;
+            border-left: 2px solid rgba(222, 227, 231, 0.5);
+            &:hover {
+                background-color: rgba($akcent-color, 0.5);
+            }
+        }
+        &__name-validat {
+            position: absolute;
+            top: 156px;
+            left: 40px;
+            z-index: 9999;
+        }
+        &__email-validat {
+            position: absolute;
+            top: 221px;
+            left: 40px;
+            z-index: 9999;
+        }
+        &__message-validat {
+            position: absolute;
+            top: 180px;
+            left: 40px;
+            z-index: 9999;
+        }
+    }
+    

@@ -1,0 +1,179 @@
+        .map__footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: inherit;
+        }
+        
+        .footer {
+            &__row {
+                background: rgba(0, 0, 0, 0.5);
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                display: block;
+                border-bottom: 2px solid rgba($clear-white, 0.2);
+            }
+        }
+        
+        .row-first {
+            position: relative;
+            display: flex;
+            align-items: center;
+            @include desktop {
+                justify-content: space-between;
+                align-items: center;
+                height: 75px;
+            }
+            @include laptop {
+                justify-content: space-between;
+                align-items: center;
+                height: 75px;
+            }
+            @include tablets {
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                height: 120px;
+            }
+            @include phones {
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                height: 120px;
+            }
+            &__col-left {
+                order: 1;
+                width: 500px;
+            }
+            &__col-right {
+                order: 2;
+                @include desktop {
+                    margin-right: 30px;
+                }
+                @include laptop {
+                    margin-right: 30px;
+                }
+                @include tablets {
+                    margin-top: -20px;
+                }
+                @include phones {
+                    margin-top: -20px;
+                }
+            }
+        }
+        
+        .row-second {
+            position: relative;
+            display: flex;
+            align-items: center;
+            @include desktop {
+                justify-content: space-between;
+                align-items: center;
+                height: 75px;
+            }
+            @include laptop {
+                justify-content: space-between;
+                align-items: center;
+                height: 75px;
+            }
+            @include tablets {
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                height: 150px;
+            }
+            @include phones {
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                height: 150px;
+            }
+            &__col-left {
+                position: relative;
+                @include desktop {
+                    width: 500px;
+                    text-align: left;
+                    margin-left: 30px;
+                }
+                @include laptop {
+                    width: 500px;
+                    text-align: left;
+                    margin-left: 30px;
+                }
+                @include tablets {
+                    width: 85%;
+                    text-align: center;
+                }
+                @include phones {
+                    width: 85%;
+                    text-align: center;
+                }
+            }
+            &__col-right {
+                @include desktop {
+                    width: 500px;
+                    text-align: left;
+                    margin-left: 30px;
+                }
+                @include laptop {
+                    width: 500px;
+                    text-align: left;
+                    margin-left: 30px;
+                }
+                @include tablets {
+                    width: 80%;
+                    text-align: center;
+                    margin-top: -20px;
+                }
+                @include phones {
+                    width: 80%;
+                    text-align: center;
+                    margin-top: -20px;
+                }
+            }
+        }
+        
+        .menu-footer {
+            margin-left: -12px;
+            &__item {
+                text-decoration: none;
+                font-size: 16px;
+                font-family: "Roboto";
+                color: $clear-white;
+                @include desktop {
+                    margin-left: 38px;
+                }
+                @include laptop {
+                    margin-left: 38px;
+                }
+                @include tablets {
+                    margin-left: 38px;
+                }
+                @include phones {
+                    margin-left: 12px;
+                    font-size: 14px;
+                }
+                &:hover {
+                    color: rgba($akcent-color, 0.8);
+                }
+            }
+        }
+        
+        .footer__text {
+            font-family: "Roboto";
+            color: rgba($clear-white, 0.5);
+            @include desktop {
+                font-size: 16px;
+            }
+            @include laptop {
+                font-size: 16px;
+            }
+            @include tablets {
+                font-size: 14px;
+            }
+            @include phones {
+                font-size: 14px;
+            }
+        }

@@ -1,0 +1,388 @@
+            .admin {
+                position: relative;
+                display: flex;
+                flex-flow: column;
+                font-size: 14px;
+                font-family: "Roboto";
+                color: rgb(69, 90, 100);
+                @include laptop {
+                    height: 100vh;
+                }
+                @include desktop {
+                    height: 100vh;
+                }
+                &__header {
+                    position: relative;
+                    display: flex;
+                    flex-flow: column;
+                    background-color: rgb(0, 191, 165);
+                    @include tablets {
+                        flex-flow: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 80px;
+                    }
+                    @include laptop {
+                        flex-flow: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 80px;
+                    }
+                    @include desktop {
+                        flex-flow: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 80px;
+                    }
+                }
+                &__main {
+                    position: relative;
+                    display: flex;
+                    flex-flow: column;
+                }
+                &__title {
+                    @include tablets {
+                        order: 0;
+                    }
+                    @include laptop {
+                        order: 0;
+                    }
+                    @include desktop {
+                        order: 0;
+                    }
+                    margin: 0;
+                    padding: 0;
+                    order: 2;
+                    display: block;
+                    position: relative;
+                    text-align: center;
+                }
+                &-title {
+                    font-size: 21px;
+                    font-family: "Roboto";
+                    color: rgb(255, 255, 255);
+                    line-height: 2;
+                    height: 45px;
+                    padding: 0 24px;
+                    @include laptop {
+                        font-size: 28px;
+                        height: auto;
+                    }
+                    @include desktop {
+                        font-size: 28px;
+                        height: auto;
+                    }
+                    &-link {
+                        font-size: 14px;
+                        font-family: "Roboto";
+                        color: rgba(255, 255, 255, 0.7);
+                        text-decoration: underline;
+                        @include tablets {
+                            font-size: 16px;
+                        }
+                        @include laptop {
+                            font-size: 16px;
+                        }
+                        @include desktop {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                &__back {
+                    @include tablets {
+                        padding-top: 0;
+                    }
+                    @include laptop {
+                        padding-top: 0;
+                    }
+                    @include desktop {
+                        padding-top: 0;
+                    }
+                    margin: 0;
+                    padding: 20px 24px 0 24px;
+                    order: 1;
+                    display: block;
+                    position: relative;
+                    text-align: center;
+                }
+                &-main {
+                    &__pic {
+                        @include centered(x);
+                        top: -25px;
+                        filter: opacity(0.15);
+                        z-index: -999;
+                        display: none;
+                        @include tablets {
+                            top: -40px;
+                            min-height: 950px;
+                        }
+                        @include laptop {
+                            top: -40px;
+                        }
+                        @include desktop {
+                            top: -40px;
+                            min-width: 100vw;
+                        }
+                        &_phones {
+                            @include phones {
+                                display: block;
+                            }
+                        }
+                        &_tablets {
+                            @include tablets {
+                                display: block;
+                            }
+                        }
+                        &_laptop {
+                            @include laptop {
+                                display: block;
+                            }
+                        }
+                        &_desktop {
+                            @include desktop {
+                                display: block;
+                            }
+                        }
+                    }
+                    &__tab-list {
+                        position: relative;
+                    }
+                    &__content-list {
+                        position: relative;
+                    }
+                }
+                &-tab-list {
+                    position: relative;
+                    display: flex;
+                    flex-flow: column;
+                    text-align: center;
+                    padding-bottom: 15px;
+                    @include tablets {
+                        flex-flow: row;
+                        justify-content: left;
+                    }
+                    @include laptop {
+                        flex-flow: row;
+                        justify-content: left;
+                    }
+                    @include desktop {
+                        flex-flow: row;
+                        justify-content: left;
+                    }
+                    &__item {
+                        margin-bottom: 2px;
+                        @include tablets {
+                            margin-bottom: 0;
+                            margin-right: 2px;
+                        }
+                        @include laptop {
+                            margin-bottom: 0;
+                            margin-right: 2px;
+                        }
+                        @include desktop {
+                            margin-bottom: 0;
+                            margin-right: 2px;
+                        }
+                    }
+                }
+                &-tab-item {
+                    cursor: pointer;
+                    background-color: rgb(240, 239, 233);
+                    font-size: 14px;
+                    font-family: "Roboto";
+                    color: rgba(69, 90, 100, 0.8);
+                    line-height: 3.5;
+                    width: 100%;
+                    height: 45px;
+                    flex-shrink: 0;
+                     @include tablets {
+                        width: 180px;
+                    }
+                    @include laptop {
+                        width: 180px;
+                    }
+                    @include desktop {
+                        width: 180px;
+                    }
+                    &-last {
+                        background-color: rgb(240, 239, 233);
+                        width: 100%;
+                        @include phones {
+                            display: none;
+                        }
+                    }
+                    &_active {
+                        background-color: rgb(255, 255, 255);
+                        color: rgb(0, 191, 165);
+                    }
+                }
+                &-content-list {
+                    margin: 10px;
+                    @include tablets {
+                        margin: 24px;
+                    }
+                    @include laptop {
+                        margin: 24px;
+                    }
+                    @include desktop {
+                        margin: 24px;
+                    }
+                    &__item {
+                        display: none;
+                        &_active {
+                            display: block;
+                        }
+                    }
+                }
+                &-add {
+                    &__title {
+                        padding: 10px 0;
+                    }
+                    &__place {
+                        margin-bottom: 20px;
+                    }
+                    &_place {
+                        border-radius: 5px;
+                        background-color: rgb(255, 255, 255);
+                        border: 0;
+                        width: 300px;
+                        height: 45px;
+                        padding: 0;
+                        margin: 0;
+                        text-indent: 15px;
+                    }
+                    &_place-area {
+                        padding-top: 15px;
+                        height: 250px;
+                        outline: none;
+                        resize: none;
+                        @include tablets {
+                            width: 500px;
+                            height: 300px;
+                        }
+                        @include laptop {
+                            width: 500px;
+                            height: 300px;
+                        }
+                        @include desktop {
+                            width: 500px;
+                            height: 300px;
+                        }
+                    }
+                    &-text {
+                        outline: none;
+                        font-size: 14px;
+                        font-family: "Roboto";
+                        color: rgba(55, 62, 66, 0.502);
+                        text-align: left;
+                    }
+                    &__load {
+                        position: relative;
+                        display: flex;
+                        justify-content: space-around;
+                        flex-flow: row;
+                        align-items: center;
+                        cursor: pointer;
+                        width: 180px;
+                    }
+                    &__img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                    &__text {
+                        text-indent: 10px;
+                        font-size: 14px;
+                        font-family: "Roboto";
+                        color: rgba(0, 191, 165, 0.702);
+                    }
+                }
+            }
+            
+            .adm-about-me {
+                position: relative;
+                display: flex;
+                flex-flow: column;
+                &__title {
+                    order: 1;
+                }
+                &__content {
+                    order: 2;
+                    &-flow {
+                        padding-bottom: 25px;
+                        display: flex;
+                        flex-flow: column;
+                        align-content: flex-start;
+                        @include laptop {
+                            flex-wrap: wrap;
+                            height: 60vh;
+                        }
+                        @include desktop {
+                            flex-wrap: wrap;
+                            height: 60vh;
+                        }
+                    }
+                }
+                &__btn {
+                    order: 2;
+                }
+            }
+            
+            .btn-save {
+                border-radius: 5px;
+                background-color: rgb(0, 191, 165);
+                border: 0;
+                width: 110px;
+                height: 40px;
+                font-size: 14px;
+                font-family: "Roboto";
+                color: rgb(255, 255, 255);
+                line-height: 2.581;
+                text-align: center;
+                margin: 8px 0;
+                align-self: flex-end;
+                &:hover {
+                    background-color: rgb(0, 150, 136);
+                }
+            }
+            
+            .skills-set {
+                padding: 10px 0;
+                width: 280px;
+                &__title {
+                    line-height: 2.421;
+                    text-align: left;
+                }
+                &__list {
+                    position: relative;
+                    display: flex wrap;
+                    flex-flow: column;
+                }
+                &__item {
+                    position: relative;
+                    display: flex;
+                    flex-flow: row;
+                    align-items: center;
+                    margin: 5px;
+                    margin-left: 20px;
+                }
+                &__desc {
+                    width: 100px;
+                }
+                &__value {
+                    border-radius: 5px;
+                    background-color: rgb(255, 255, 255);
+                    border: 0;
+                    width: 46px;
+                    height: 32px;
+                    text-align: center;
+                }
+                &__perc {
+                    padding: 0 10px;
+                }
+            }
+            
+            .adm-title {
+                font-size: 21px;
+                font-family: "Roboto";
+                color: rgb(69, 90, 100);
+            }
