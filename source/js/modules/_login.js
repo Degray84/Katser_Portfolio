@@ -49,6 +49,9 @@ export default function () {
             case 'Неправильный пароль!':
                 setPopup(passPlace, mess, 'bottom');
                 break;
+            case "Вход успешно выполнен":
+                document.location.href = '/admin';
+                break;
         }
     }
     // Находит валидный и невалидный input, находит соответствующую ему иконку и подвсечивает соответствующим цветом

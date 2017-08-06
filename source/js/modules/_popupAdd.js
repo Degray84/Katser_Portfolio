@@ -1,3 +1,6 @@
+import {
+    animate
+} from './_animation';
 // МОДУЛЬ ВСПЛЫВАЮЩИХ СООБЩЕНИЙ POPUP
 // place - элемент, к которому будет присоединяться сообщение
 // text - текст сообщения
@@ -35,13 +38,20 @@ function setPopup(place, text, dir) {
         popMessage.parentElement.style.zIndex = '9999';
         // Настройка сообщения снизу
         if (dir === 'bottom') {
-            popMessage.style = `top:${place.offsetHeight+8}px; left: 15px;`;
+            animate(popMessage, 'bounceInUp', 0.4);
+            popMessage.style.top = `${place.offsetHeight+8}px`;
+            popMessage.style.left = "left: 15px";
             popArrow.classList.add('pop-message__arrow_up');
+
         }
         // Настройка сообщения сверху
         if (dir === 'top') {
-            popMessage.style = `top:-${popMessage.offsetHeight-12}px; left: 15px;`;
+            animate(popMessage, 'bounceInDown', 0.4);
+            popMessage.style.top = `-${popMessage.offsetHeight-12}px`
+            popMessage.style.left = "15px"
+
             popArrow.classList.add('pop-message__arrow_down');
+
         }
         // Прослушка на контейнере сообщения, при клике на него, оно удаляется
         popMessage.addEventListener('click', () => {

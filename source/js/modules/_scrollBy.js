@@ -13,9 +13,9 @@ function scroll(dist) {
                 clearInterval(timeOut);
                 return false;
             } else {
-                window.scrollBy(0, 16);
+                window.scrollBy(0, 40);
             }
-        }, 10)
+        }, 20)
         // При прокрутке вверх в качестве dist берется расстояние от начала 
         // документа, к которому нужно прокрутить экран.
     } else if (window.pageYOffset > dist) {
@@ -26,12 +26,12 @@ function scroll(dist) {
                 return false;
             }
             if (window.pageYOffset > dist) {
-                window.scrollBy(0, -16);
+                window.scrollBy(0, -40);
             } else {
                 clearInterval(timeOut);
                 return false;
             }
-        }, 10)
+        }, 20)
     } else {
         return false;
     }

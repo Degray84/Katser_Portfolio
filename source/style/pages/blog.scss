@@ -130,6 +130,7 @@
 .blog-nav-text {
     @include centered(y);
     cursor: pointer;
+    user-select: none;
     right: 20px;
     font-size: 16px; // width: 280px;
     font-family: "Roboto";

@@ -60,29 +60,26 @@
             text-align: center;
             padding: 40px 0;
             background: #faf8f0;
-            @include phones {
-                margin-top: -45px;
-            }
             &__pic {
                 @include centered(x);
-                top: 25px;
+                top: 0;
                 width: 90vw;
                 max-width: 500px;
                 opacity: 0.1;
                 @include phones {
-                    width: 80vw;
-                    top: -15px;
+                    width: 50vw;
+                    min-width: 220px;
+                    top: -5px;
                 }
                 &_to-bottom {
-                    top: 0;
+                    top: -20px;
                     @include phones {
-                        top: -30px;
+                        top: -55px;
                     }
                 }
             }
         }
         &-content {
-            min-height: 100vh;
             width: 100vw;
             display: flex;
             flex-flow: column;
@@ -90,7 +87,6 @@
             top: -126px;
             padding-top: 20px;
             background: #faf8f0;
-            
         }
     }
 
@@ -109,8 +105,15 @@
                 bottom: 200px;
             }
         }
+        &-title {
+            width: 300px;
+            @include phones {
+                width: 160px;
+            }
+        }
         &__title {
             position: relative;
+            top: -20px;
         }
         &__content {
             position: relative;

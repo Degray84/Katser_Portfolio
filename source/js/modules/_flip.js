@@ -12,7 +12,7 @@ export default function () {
         authoriz.addEventListener('click', (e) => {
             e.preventDefault();
             indexCard.style = 'transform: rotateY(180deg)';
-            animate(authoriz, 'fadeOut');
+            animate(authoriz, 'fadeOut', 1);
             setTimeout(() => {
                 authoriz.style = 'display: none';
             }, 1000)
@@ -24,7 +24,7 @@ export default function () {
             e.preventDefault();
             indexCard.style = 'transform: rotateY(0deg)';
             authoriz.style = 'display: block';
-            animate(authoriz, 'fadeIn');
+            animate(authoriz, 'fadeIn', 1);
         });
     };
 

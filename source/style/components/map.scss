@@ -57,6 +57,7 @@
 
 .contacts__title {
     @include centered(x);
+    top: 20px;
 }
 
 .contacts__list {

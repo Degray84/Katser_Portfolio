@@ -18,6 +18,7 @@ export default function () {
         navButton = document.querySelector('.halfcircle');
     // Добавляется прослушка на скролл
     function _setUpListenters() {
+        swipe();
         window.addEventListener('scroll', function () {
             // Добавляется переменная, которая определяет расстояние от секции блога до верхней границы документа, 
             // добавляет меню fixed, если выходит за границы значения и убирает fixed, если заходит обратно
@@ -35,17 +36,56 @@ export default function () {
         // Скрывает или добавляет меню при клике на кнопку
         navButton.addEventListener('click', function () {
             if (blogMenu.classList.contains('blog__left_active') === true) {
-                animate(blogMenu, 'bounceOutLeft');
+                animate(blogMenu, 'bounceOutLeft', 0.5);
                 setTimeout(function () {
                     blogMenu.classList.remove('blog__left_active');
                 }, 500);
             }
             if (blogMenu.classList.contains('blog__left_active') === false) {
                 blogMenu.classList.add('blog__left_active');
-                animate(blogMenu, 'bounceInLeft');
+                animate(blogMenu, 'bounceInLeft', 0.5);
             }
 
         })
+    }
+
+    function swipe() {
+        let initialPoint,
+            finalPoint;
+        document.addEventListener('touchstart', function (event) {
+            // event.preventDefault();
+            event.stopPropagation();
+            initialPoint = event.changedTouches[0];
+        }, false);
+        document.addEventListener('touchend', function (event) {
+            // event.preventDefault();
+            event.stopPropagation();
+            finalPoint = event.changedTouches[0];
+            let xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX),
+                yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
+            if (xAbs > 20 || yAbs > 20) {
+                if (xAbs > yAbs) {
+                    if (finalPoint.pageX < initialPoint.pageX) {
+                        /*СВАЙП ВЛЕВО*/
+                        if (blogMenu.classList.contains('blog__left_active') === true) {
+                            animate(blogMenu, 'bounceOutLeft', 0.5);
+                            setTimeout(function () {
+                                blogMenu.classList.remove('blog__left_active');
+                            }, 500);
+                        }
+                    } else {
+                        /*СВАЙП ВПРАВО*/
+                        if (blogMenu.classList.contains('blog__left_active') === false) {
+                            blogMenu.classList.add('blog__left_active');
+                            animate(blogMenu, 'bounceInLeft', 0.5);
+                        }
+                    }
+                } else {
+                    return false;
+                }
+            }
+
+        }, false);
     }
 
     //Проходится по массиву статей, определяет положение относительно отображения,

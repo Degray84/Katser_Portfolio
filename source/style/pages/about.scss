@@ -10,7 +10,6 @@
     &__triangles {
         position: absolute;
         width: 100vw;
-
     }
     &__left {
         @include desktop {
@@ -31,12 +30,13 @@
         flex-flow: column;
         background: $light-white;
         &-title {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
             @include desktop {}
             @include laptop {}
             @include tablets {}
-            @include phones {
-                width: 240px;
-            }
+            @include phones {}
         }
         &-content {
             position: relative;
@@ -60,7 +60,18 @@
         align-items: center;
         flex-flow: column;
         background: $beige;
-        &-title {}
+        &-title {
+            width: 200px;
+            @include tablets {
+                width: 230px;
+            }
+            @include desktop {
+                width: 230px;
+            }
+            @include laptop {
+                width: 230px;
+            }
+        }
         &-content {
             position: relative;
             @include desktop {
