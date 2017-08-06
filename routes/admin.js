@@ -46,24 +46,21 @@ router.post('/upload', function (req, res) {
                 fs.unlink(fileName);
                 fs.rename(files.photo.path, fileName);
             }
+            const Model = mongoose.model('works');
             const item = new Model({
                 name: fields.name,
-                work: path.join("./assets/img/works/", files.photo.name),
+                picture: path.join("./assets/img/works/", files.photo.name),
                 desc: fields.desc
             });
             item.save().then(
                 i => res.json({
+                    
                     status: "Работа добавлена"
                 }),
                 e => res.json({
                     status: e.message
                 })
             );
-            // res.json({,
-            //     work: path.join("./assets/img/works/", files.photo.name),
-            //     name: fields.name,
-            //     desc: fields.desc
-            // });
         });
     });
 });
@@ -78,7 +75,7 @@ router.post('/addpost', (req, res) => {
     let item = new Model({
         title: req.body.title,
         date: new Date(req.body.date),
-        body: req.body.text
+        body: req.body.article
     });
     item.save().then(
         i => {
@@ -92,7 +89,7 @@ router.post('/addpost', (req, res) => {
                 .join(', ');
 
             res.json({
-                status: "При добавлении произошла ошибка:" + error
+                status: error
             });
         }
     )

@@ -33,9 +33,9 @@ block content
           each work in items
             .slider-desc
               .slider-desc__title
-                .block-title.block-title_subtitle= work.work
+                .block-title.block-title_subtitle= work.name
               .slider-desc__tech
-                .desc-tech= work.tech
+                .desc-tech= work.desc
               .slider-desc__link
                 a(href=`${work.link}`).site-btn
                   svg.site-btn__icon.btn-icon.icon_color-clear-white
@@ -44,7 +44,7 @@ block content
         //- Блок главного изображения слайдера
         .wk-slider-present__first.wk-slider-first-cont
           each first,index in items
-            img(src=`${first.picUrl}` class=`first-work-img_${index}`).first-work-img
+            img(src=`${first.picture}` class=`first-work-img_${index}`).first-work-img
         //- Контейнер второстепенных блоков слайдера
         .wk-slider-present
           //- Первый второстепенный блок слайдера
@@ -54,7 +54,7 @@ block content
               svg.arrow.arrow_big
                 use(xlink:href="./assets/img/sprite.svg#arrow_down")
             each second,index in items
-              img(src=`${second.picUrl}` class=`second-work-img_${index}`).second-work-img
+              img(src=`${second.picture}` class=`second-work-img_${index}`).second-work-img
           //- Первый второстепенный блок слайдера
           .wk-slider-present__third
             .bg_color_gray
@@ -62,7 +62,7 @@ block content
               svg.arrow.arrow_big.arrow_up
                 use(xlink:href="./assets/img/sprite.svg#arrow_down")
             each third,index in items
-              img(src=`${third.picUrl}` class=`third-work-img_${index}`).third-work-img    
+              img(src=`${third.picture}` class=`third-work-img_${index}`).third-work-img    
   //- Секция с отзывами преподавателей и карточкой submit
   section.section-big.works-about 
     //- Фон секции с отзывами

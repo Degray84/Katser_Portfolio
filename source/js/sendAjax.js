@@ -12,6 +12,7 @@
          }
          cb(result.status);
      };
+        console.log(data);
      xhr.send(JSON.stringify(data));
  }
 
