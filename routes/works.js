@@ -3,12 +3,22 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const works = require('../models/works.json');
 const config = require('../config.json');
+const mongoose = require('mongoose');
 router.get('/', (req, res) => {
     let obj = {
         title: 'Мои работы'
     };
-    Object.assign(obj, req.app.locals.settings, { items: works.db });
-    res.render('pages/works', obj);
+    // Object.assign(obj, req.app.locals.settings, {
+    //     items: works.db
+    // });
+    const modelWorks = mongoose.model('works');
+    modelWorks.find().then(items => {
+        Object.assign(obj, {
+            items: items
+        });
+        res.render('pages/works', obj);
+    })
+
 });
 
 router.post('/slider', (req, res) => {
@@ -32,12 +42,16 @@ router.post('/', (req, res) => {
             .slice(0, 500) + `\n Отправлено с: <${req.body.email}>`
     };
     //отправляем почту
-    transporter.sendMail(mailOptions, function(error, info) {
+    transporter.sendMail(mailOptions, function (error, info) {
         //если есть ошибки при отправке - сообщаем об этом
         if (error) {
-            return res.json({ status: 'При отправке письма произошла ошибка' });
+            return res.json({
+                status: 'При отправке письма произошла ошибка'
+            });
         }
-        res.json({ status: 'Письмо успешно отправлено' });
+        res.json({
+            status: 'Письмо успешно отправлено'
+        });
     });
 });
 

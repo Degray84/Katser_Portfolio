@@ -16,6 +16,23 @@ const currentStatic = require('./gulp/config').root;
 const config = require('./config');
 
 const uploadDir = path.join(__dirname, config.upload);
+// Подключение модулей mongodb
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+// Соединение с базой данных с параметрами из конфига
+mongoose
+    .connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
+        useMongoClient: true
+    })
+    .catch(e => {
+        console.error(e);
+        throw e;
+    });
+require('./models/db-close');
+// Подключаем модели базы данных
+require('./models/articles');
+require('./models/skills');
+require('./models/works');
 // view engine setup
 
 app.set('views', path.join(__dirname, 'source/template'));
@@ -27,7 +44,9 @@ app.set('view engine', 'pug');
 app.use(helmet());
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(cookieParser());
 
 
@@ -42,22 +61,22 @@ app.use('/admin', require('./routes/admin'));
 
 
 // 404 catch-all handler (middleware)
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.status(404);
     res.render('404');
 });
 
 // 500 error handler (middleware)
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     console.error(err.stack);
     res.status(500);
     res.render('500');
 });
 server.listen(3000, 'localhost');
 // server.listen(3000, '0.0.0.0');
-server.on('listening', function() {
+server.on('listening', function () {
     jsonfile
-        .readFile(fileVersionControl, function(err, obj) {
+        .readFile(fileVersionControl, function (err, obj) {
             if (err) {
                 console.log('Данные для хеширования ресурсов из version.json не прочитаны');
                 console.log('Сервер остановлен');
