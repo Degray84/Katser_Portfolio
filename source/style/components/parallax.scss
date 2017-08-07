@@ -8,9 +8,20 @@
     position: absolute;
     width: 112%;
     height: 112%;
-    will-change: transform; 
+    overflow: hidden;
+    will-change: transform;
+    &__layer {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        will-change: transform;
+    }
     &__image {
         display: none;
+        left: 50%;
+        transform: translateX(-50%);
         position: absolute;
         bottom: -15%;
     }
@@ -29,13 +40,11 @@
     }
     &_desktop {
         @include desk-parallax {
-
             display: block;
         }
     }
     &_retina {
         @include retina-parallax {
-
             display: block;
         }
     }

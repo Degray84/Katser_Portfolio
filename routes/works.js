@@ -8,9 +8,6 @@ router.get('/', (req, res) => {
     let obj = {
         title: 'Мои работы'
     };
-    // Object.assign(obj, req.app.locals.settings, {
-    //     items: works.db
-    // });
     const modelWorks = mongoose.model('works');
     modelWorks.find().then(items => {
         Object.assign(obj, {
@@ -18,7 +15,6 @@ router.get('/', (req, res) => {
         });
         res.render('pages/works', obj);
     })
-
 });
 
 router.post('/slider', (req, res) => {

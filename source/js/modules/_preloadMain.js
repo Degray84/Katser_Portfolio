@@ -51,6 +51,7 @@ export default function () {
         classRetina = "parallax__image parallax_retina",
         classTablets = "parallax__scroll parallax_tablets",
         classPhones = "parallax__scroll parallax_phones",
+        classLayer = "parallax__layer",
         // Блоки для анимации
         indexCard = document.querySelector(".card-flip"),
         authoriz = document.querySelector(".login"),
@@ -70,10 +71,12 @@ export default function () {
     // Функция создает изображение и увеличивает счетчик cur на единицу
     function loadImage(url, classPar) {
         return new Promise(function (resolve, reject) {
-            var image = new Image();
-            document.querySelector('.parallax').appendChild(image);
+            var image = new Image(),
+                layer = document.createElement('div');
+                document.querySelector('.parallax').appendChild(layer).appendChild(image);
             image.src = url;
             image.className = classPar;
+            layer.className = classLayer;
             image.addEventListener('load', function () {
                 resolve();
                 _setPercent(tot, cur);
